@@ -1,91 +1,3 @@
-/*
- Theme Name:  Edward R. Murrow College of Communication
- Theme URI:   https://murrow.wsu.edu
- Description: A Spine child theme for the College of Communication
- Author:      WSU University Communications
- Author URI:  https://web.wsu.edu
- Template:    spine
- Version:     0.0.1
-*/
-
-html {
-	background: #fff;
-}
-
-/* Overwrite max width constraint */
-#jacket #binder {
-	max-width: 100%;
-}
-
-/* Overwrite because there is no longer a vertical nav to account for */
-main {
-	background: #fff;
-	margin-left: 0;
-	position: relative;
-}
-
-main * {
-	box-sizing: border-box;
-}
-
-/* Max widths for content sections */
-.main-header .hgroup,
-main .page > .section-wrapper > section,
-main .page > section,
-.blog main > section,
-.single-post main > section,
-.archive main > section,
-.search main > section,
-.page-template-search main > section {
-	width: 100%;
-	max-width: 1188px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/* Page header */
-header.main-header {
-	background-color: #981e32;
-	color: #fff;
-	height: auto;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin-bottom: 0;
-}
-
-.main-header .hgroup {
-	padding-top: 2.5em;
-	padding-bottom: 2.5em;
-}
-
-.main-header-name {
-	font-size: .9em;
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 4px;
-	margin-bottom: .25rem;
-	line-height: 1;
-}
-
-.main-header-description {
-	font-size: 2.2em;
-	font-weight: 300;
-	text-transform: uppercase;
-	line-height: 1;
-	margin: 0;
-	padding: 0;
-}
-
-@media (max-width: 1250px) {
-
-	.main-header .hgroup {
-		padding-left: 2rem;
-		padding-right: 2rem;
-	}
-}
-
-
 /* Use Open Sans for the Spine */
 #spine,
 .site-search {
@@ -102,9 +14,7 @@ header.main-header {
 }
 
 .site-search input.search-field {
-	-webkit-appearance: none;
-	   -moz-appearance: none;
-	        appearance: none;
+	appearance: none;
 	border: none;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
 	color: #981e32;
@@ -200,13 +110,9 @@ header.main-header {
 	}
 
 	.site-search ul {
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
 		font-size: .9em;
-		-webkit-box-pack: end;
-		    -ms-flex-pack: end;
-		        justify-content: flex-end;
+		justify-content: flex-end;
 		list-style: none;
 		padding: 0;
 		margin-top: 2.5em;
@@ -320,8 +226,6 @@ header.main-header {
 	#spine nav.spine-sitenav > ul > li > ul {
 		position: absolute;
 		width: 100%;
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
 		background: #333;
 		left: 0;
@@ -380,15 +284,11 @@ header.main-header {
 	}
 
 	#spine nav.spine-sitenav > ul > li > ul {
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
 	}
 
 	#spine nav > ul > li > ul > li {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1;
-		        flex: 1;
+		flex: 1;
 	}
 
 	#jacket #spine nav > ul > li > ul > li > a,
@@ -539,11 +439,8 @@ header.main-header {
 	/* Navigation for site header and site footer */
 	.footer-nav > ul,
 	#spine nav.spine-sitenav > ul {
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
-		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
+		flex-wrap: wrap;
 		padding: 0;
 	}
 
@@ -558,9 +455,7 @@ header.main-header {
 	}
 
 	.footer-nav > ul > li {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1;
-		        flex: 1;
+		flex: 1;
 	}
 
 	.footer-nav > ul > li {
@@ -652,15 +547,11 @@ header.main-header {
 	}
 
 	.spine-animating.spine-move-right #glue {
-		-webkit-transform: translate(100vw);
-		    -ms-transform: translate(100vw);
-		        transform: translate(100vw);
+		transform: translate(100vw);
 	}
 
 	.spine-animating.spine-move-left #glue {
-		-webkit-transform: translate(-100vw);
-		    -ms-transform: translate(-100vw);
-		        transform: translate(-100vw);
+		transform: translate(-100vw);
 	}
 
 	.spine-mobile #spine footer {
@@ -671,4 +562,3 @@ header.main-header {
 		background-image: url(./images/murrow-logo-horizontal.svg);
 	}
 }
-/*# sourceMappingURL=style.css.map */

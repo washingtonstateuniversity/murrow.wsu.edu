@@ -1,0 +1,76 @@
+html {
+	background: #fff;
+}
+
+/* Overwrite max width constraint */
+#jacket #binder {
+	max-width: 100%;
+}
+
+/* Overwrite because there is no longer a vertical nav to account for */
+main {
+	background: #fff;
+	margin-left: 0;
+	position: relative;
+}
+
+main * {
+	box-sizing: border-box;
+}
+
+/* Max widths for content sections */
+.main-header .hgroup,
+main .page > .section-wrapper > section,
+main .page > section,
+.blog main > section,
+.single-post main > section,
+.archive main > section,
+.search main > section,
+.page-template-search main > section {
+	width: 100%;
+	max-width: 1188px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Page header */
+header.main-header {
+	background-color: #981e32;
+	color: #fff;
+	height: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 0;
+}
+
+.main-header .hgroup {
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
+}
+
+.main-header-name {
+	font-size: .9em;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	margin-bottom: .25rem;
+	line-height: 1;
+}
+
+.main-header-description {
+	font-size: 2.2em;
+	font-weight: 300;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 1250px) {
+
+	.main-header .hgroup {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
