@@ -1,2 +1,1 @@
-Edward R. Murrow College of Communication Theme
-===============================
+# Edward R. Murrow College of Communication Theme

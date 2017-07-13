@@ -13,6 +13,17 @@ module.exports = function( grunt ) {
 			dist: {
 				src: "css/*.css",
 				dest: "tmp-style.css"
+			},
+			spine_js: {
+				src: [
+					"src/js/wsu_autocomplete.js",
+					"src/js/ui.spine.js",
+					"src/js/ui.spine.framework.js",
+					"src/js/ui.spine.search.js",
+					"src/js/ui.spine.social.js",
+					"src/js/spine.js"
+				],
+				dest: "js/spine.js"
 			}
 		},
 
@@ -83,6 +94,13 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		uglify: {
+			spine_js: {
+				src: "js/spine.js",
+				dest: "js/spine.min.js"
+			}
+		},
+
 		phpcs: {
 			plugin: {
 				src: "./"
@@ -115,18 +133,19 @@ module.exports = function( grunt ) {
 
 	} );
 
-	grunt.loadNpmTasks( "grunt-postcss" );
+	grunt.loadNpmTasks( "grunt-contrib-clean" );
 	grunt.loadNpmTasks( "grunt-contrib-concat" );
 	grunt.loadNpmTasks( "grunt-contrib-connect" );
-	grunt.loadNpmTasks( "grunt-contrib-clean" );
-	grunt.loadNpmTasks( "grunt-contrib-watch" );
-	grunt.loadNpmTasks( "grunt-phpcs" );
-	grunt.loadNpmTasks( "grunt-stylelint" );
-	grunt.loadNpmTasks( "grunt-jscs" );
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
+	grunt.loadNpmTasks( "grunt-contrib-uglify" );
+	grunt.loadNpmTasks( "grunt-contrib-watch" );
+	grunt.loadNpmTasks( "grunt-jscs" );
+	grunt.loadNpmTasks( "grunt-phpcs" );
+	grunt.loadNpmTasks( "grunt-postcss" );
+	grunt.loadNpmTasks( "grunt-stylelint" );
 
 	// Default task(s).
-	grunt.registerTask( "default", [ "jscs", "jshint", "stylelint", "concat", "postcss", "clean" ] );
+	grunt.registerTask( "default", [ "jscs", "jshint", "stylelint", "concat", "postcss", "clean", "uglify" ] );
 
 	grunt.registerTask( "serve", [ "connect", "watch" ] );
 };
