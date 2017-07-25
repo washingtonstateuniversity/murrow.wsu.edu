@@ -1,6 +1,12 @@
-<?php $main_header_elements = murrow_get_main_header(); ?>
-<header class="main-header">
-	<div class="hgroup">
-		<h1 class="main-header-description"><?php echo esc_html( $main_header_elements['description'] ); ?></h1>
-	</div>
-</header>
+<?php
+
+if ( spine_display_breadcrumbs( 'top' ) ) {
+	$breadcrumb_display = apply_filters( 'murrow_filter_breadcrumb', bcn_display( true ) );
+	?>
+	<section class="row single breadcrumbs breadcrumbs-top gutter pad-top" typeof="BreadcrumbList" vocab="http://schema.org/">
+		<div class="column one">
+			<?php echo bcn_display( true ); //@codingStandardsIgnoreLine ?>
+		</div>
+	</section>
+	<?php
+}
