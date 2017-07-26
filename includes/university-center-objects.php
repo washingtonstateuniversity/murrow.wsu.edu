@@ -5,6 +5,8 @@ namespace WSU\Murrow\University_Center_Objects;
 add_action( 'after_setup_theme', 'WSU\Murrow\University_Center_Objects\theme_support' );
 add_filter( 'wsuwp_uc_people_content_type', 'WSU\Murrow\University_Center_Objects\people_content_type' );
 add_filter( 'wsuwp_uc_project_content_type', 'WSU\Murrow\University_Center_Objects\project_content_type' );
+add_filter( 'wsuwp_uc_entity_type_taxonomy_enabled', '__return_false' );
+add_filter( 'wsuwp_uc_topic_taxonomy_enabled', '__return_false' );
 
 /**
  * Filter the post type used for people in University Center Objects
