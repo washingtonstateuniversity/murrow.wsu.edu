@@ -1,5 +1,7 @@
 <?php
 
+include_once __DIR__ . '/includes/university-center-objects.php';
+
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
 	return '0.0.1';
