@@ -291,23 +291,6 @@ function murrow_get_main_header() {
 	return $main_header;
 }
 
-add_action( 'admin_enqueue_scripts', 'murrow_admin_enqueue_scripts' );
-/**
- * Enqueue scripts and styles used in the admin.
- *
- * @param string $hook_suffix
- */
-function murrow_admin_enqueue_scripts( $hook_suffix ) {
-	if ( 'post' !== get_current_screen()->post_type ) {
-		return;
-	}
-
-	if ( in_array( $hook_suffix, array( 'post.php', 'post-new.php' ), true ) ) {
-		wp_enqueue_style( 'murrow-post', get_stylesheet_directory_uri() . '/admin-css/edit-post.css' );
-		wp_enqueue_script( 'murrow-post', get_stylesheet_directory_uri() . '/js/admin-edit-post.min.js', array( 'jquery' ), null, true );
-	}
-}
-
 add_action( 'edit_form_after_title', 'murrow_subhead_input' );
 /**
  * Adds an input for capturing a subhead below the post title field.
