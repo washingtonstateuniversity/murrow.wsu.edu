@@ -777,4 +777,11 @@ main a::selection {
 		background-image: url(./images/murrow-logo-horizontal.svg);
 	}
 }
+
+@media (min-width: 530px ) and (max-width: 633px ) {
+
+	#binder #wsu-signature {
+		background-size: auto 25px;
+	}
+}
 /*# sourceMappingURL=style.css.map */
