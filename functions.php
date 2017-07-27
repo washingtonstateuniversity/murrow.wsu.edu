@@ -1,5 +1,7 @@
 <?php
 
+include_once __DIR__ . '/includes/university-center-objects.php';
+
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
 	return '0.0.1';
@@ -287,4 +289,57 @@ function murrow_get_main_header() {
 		$main_header['description'] = get_the_title( $page_for_posts );
 	}
 	return $main_header;
+}
+
+add_action( 'edit_form_after_title', 'murrow_subhead_input' );
+/**
+ * Adds an input for capturing a subhead below the post title field.
+ *
+ * @param WP_Post $post Post object.
+ */
+function murrow_subhead_input( $post ) {
+	if ( 'post' !== $post->post_type ) {
+		return;
+	}
+
+	wp_nonce_field( 'save-murrow-subhead', '_murrow_subhead_nonce' );
+
+	$subhead = get_post_meta( $post->ID, '_murrow_subhead', true );
+	$subhead_editor_settings = array(
+		'media_buttons' => false,
+		'textarea_rows' => 2,
+		'teeny' => true,
+		'quicktags' => false,
+	);
+
+	?><h2>Subhead</h2><?php
+
+	wp_editor( $subhead, '_murrow_subhead', $subhead_editor_settings );
+}
+
+add_action( 'save_post', 'murrow_save_post', 10, 2 );
+/**
+ * Saves additional data associated with a post.
+ *
+ * @param int     $post_id
+ * @param WP_Post $post
+ */
+function murrow_save_post( $post_id, $post ) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	if ( 'auto-draft' === $post->post_status ) {
+		return;
+	}
+
+	if ( ! isset( $_POST['_murrow_subhead_nonce'] ) || ! wp_verify_nonce( $_POST['_murrow_subhead_nonce'], 'save-murrow-subhead' ) ) {
+		return;
+	}
+
+	if ( isset( $_POST['_murrow_subhead'] ) ) {
+		update_post_meta( $post_id, '_murrow_subhead', wp_kses_post( $_POST['_murrow_subhead'] ) );
+	} else {
+		delete_post_meta( $post_id, '_murrow_subhead' );
+	}
 }
