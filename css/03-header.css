@@ -85,13 +85,6 @@
 		border-bottom: 1px solid rgba(0, 0, 0, .1);
 	}
 
-	.global-bar {
-		max-width: 1186px;
-		margin: 0 auto;
-		text-align: right;
-		padding: .5em 0;
-	}
-
 	#jacket .global-bar a.global-home {
 		color: #981e32;
 		text-transform: uppercase;
@@ -145,12 +138,19 @@
 	}
 
 	.site-search ul,
+	#jacket #binder #spine header.spine-header,
+	#spine nav.spine-sitenav,
+	#spine nav ul.sub-menu,
 	#glue {
 		position: static;
 		width: 100%;
 		max-width: 1188px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	#glue {
+		max-width: 100%;
 	}
 
 	#spine #glue:before,
@@ -160,16 +160,17 @@
 
 	#jacket #binder #spine header {
 		background-color: transparent;
-		height: 68px;
-		margin: 2.5em 0 2.2em;
+		height: 55px;
+		margin: 1.25rem 0 1rem;
 		position: static;
 	}
 
 	#binder #wsu-signature {
 		background-image: url(./images/murrow-logo.svg);
-		background-size: 260px auto;
-		width: 260px;
-		height: 68px;
+		background-position: left;
+		background-size: 297px auto;
+		width: 297px;
+		height: 57px;
 		text-indent: 99163px;
 		z-index: 5;
 	}
@@ -180,14 +181,10 @@
 		display: none;
 	}
 
-	#spine .spine-sitenav {
-		padding: 0;
-		margin: 0;
-	}
-
-	#spine .spine-navigation {
-		padding: 0;
-		margin: 0;
+	#spine nav.spine-sitenav {
+		margin: 0 auto;
+		padding: .5rem 0 0;
+		position: relative !important;
 	}
 
 	#jacket #spine .spine-search-tab button,
@@ -201,6 +198,11 @@
 
 	#jacket #spine .spine-sitenav > ul > li:first-child > a:hover {
 		background: none;
+	}
+
+	#spine .spine-navigation {
+		border-top: 1px solid #e5e5e5;
+		padding: 0;
 	}
 
 	#spine nav.spine-sitenav > ul > li {
@@ -255,11 +257,6 @@
 	#jacket #spine nav li.parent.active > a,
 	#jacket #spine nav li.parent.opened > a {
 		color: #981e32;
-		font-weight: 700;
-	}
-
-	#jacket #spine nav li.parent.active > a {
-		font-weight: 800;
 	}
 
 	#spine nav.spine-sitenav > ul > li > ul:before {
@@ -294,7 +291,6 @@
 	#jacket #spine nav > ul > li > ul > li > a,
 	#jacket #spine .spine-sitenav > ul > li > ul > li.parent.active > a {
 		color: #fff;
-		font-weight: 700;
 	}
 
 	#spine nav > ul > li > ul > li,
@@ -370,7 +366,6 @@
 	#jacket #spine nav > ul > li > ul > li > ul > li.opened.parent > a,
 	#jacket #spine nav > ul > li > ul > li > ul > li.active.parent > a {
 		color: #fff !important;
-		font-weight: 700;
 		padding-bottom: .35em;
 	}
 
@@ -393,7 +388,6 @@
 	#jacket #spine .spine-sitenav > ul > li > ul > li > a,
 	.parent-anchor {
 		color: #fff;
-		font-weight: 700;
 		padding-bottom: .35em;
 	}
 
@@ -463,14 +457,12 @@
 	}
 
 	#spine nav.spine-sitenav > ul > li > a {
-		font-weight: 700;
 		margin-bottom: 1em;
 		text-transform: uppercase;
 	}
 
 	.footer-nav > ul > li > a {
 		color: #fff;
-		font-weight: 700;
 	}
 
 	.footer-nav > ul > li > ul,
@@ -501,8 +493,7 @@
 
 @media (max-width: 1250px) {
 
-	.site-search ul,
-	#glue {
+	.site-search ul {
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
