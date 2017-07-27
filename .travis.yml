@@ -47,3 +47,4 @@ before_script:
 script:
   - grunt --version
   - grunt default
+  - grunt phpcs
