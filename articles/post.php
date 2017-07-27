@@ -24,7 +24,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 		</hgroup>
 
 		<?php
-		if ( is_singular() && in_array( $post_share_placement, array( 'top', 'both' ) ) ) {
+		if ( is_singular() && in_array( $post_share_placement, array( 'top', 'both' ), true ) ) {
 			get_template_part( 'parts/share-tools' );
 		}
 		?>
@@ -65,7 +65,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 
 	<footer class="article-footer">
 		<?php
-		if ( is_singular() && in_array( $post_share_placement, array( 'bottom', 'both' ) ) ) {
+		if ( is_singular() && in_array( $post_share_placement, array( 'bottom', 'both' ), true ) ) {
 			get_template_part( 'parts/share-tools' );
 		}
 		?>
@@ -75,7 +75,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 		echo '<dl class="categorized">';
 		echo '<dt><span class="categorized-default">Categorized</span></dt>';
 		foreach ( get_the_category() as $category ) {
-			echo '<dd><a href="' . get_category_link( $category->cat_ID ) . '">' . $category->cat_name . '</a></dd>';
+			echo '<dd><a href="' . esc_url( get_category_link( $category->cat_ID ) ) . '">' . esc_html( $category->cat_name ) . '</a></dd>';
 		}
 		echo '</dl>';
 	}
@@ -90,7 +90,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 			foreach ( $university_category_terms as $term ) {
 				$term_link = get_term_link( $term->term_id, 'wsuwp_university_category' );
 				if ( ! is_wp_error( $term_link ) ) {
-					echo '<dd><a href="' . esc_url( $term_link ) . '">' . $term->name . '</a></dd>';
+					echo '<dd><a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a></dd>';
 				}
 			}
 			echo '</dl>';
@@ -102,7 +102,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 		echo '<dl class="tagged">';
 		echo '<dt><span class="tagged-default">Tagged</span></dt>';
 		foreach ( get_the_tags() as $tag ) {
-			echo '<dd><a href="' . get_tag_link( $tag->term_id ) . '">' . $tag->name . '</a></dd>';
+			echo '<dd><a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . esc_html( $tag->name ) . '</a></dd>';
 		}
 		echo '</dl>';
 	}
@@ -117,36 +117,13 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 			foreach ( $university_location_terms as $term ) {
 				$term_link = get_term_link( $term->term_id, 'wsuwp_university_location' );
 				if ( ! is_wp_error( $term_link ) ) {
-					echo '<dd><a href="' . esc_url( $term_link ) . '">' . $term->name . '</a></dd>';
+					echo '<dd><a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a></dd>';
 				}
 			}
 			echo '</dl>';
 		}
 	}
 
-	// If a user has filled out their description and this is a multi-author blog, show a bio on their entries.
-	if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
-		<div class="author-info">
-			<div class="author-avatar">
-				<?php
-				/** This filter is documented in author.php */
-				$author_bio_avatar_size = apply_filters( 'twentytwelve_author_bio_avatar_size', 68 );
-				echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
-				?>
-			</div><!-- .author-avatar -->
-			<div class="author-description">
-				<h2><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h2>
-				<p><?php the_author_meta( 'description' ); ?></p>
-				<?php if ( '1' === spine_get_option( 'show_author_page' ) ) : ?>
-				<div class="author-link">
-					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentytwelve' ), get_the_author() ); ?>
-					</a>
-				</div><!-- .author-link	-->
-				<?php endif; ?>
-			</div><!-- .author-description -->
-		</div><!-- .author-info -->
-	<?php endif; ?>
-	</footer><!-- .entry-meta -->
+?>
 
 </article>
