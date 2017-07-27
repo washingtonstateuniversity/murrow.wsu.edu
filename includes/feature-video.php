@@ -4,6 +4,7 @@ namespace WSU\Murrow\Feature_Video;
 
 add_action( 'add_meta_boxes', 'WSU\Murrow\Feature_Video\add_meta_boxes' );
 add_action( 'save_post', 'WSU\Murrow\Feature_Video\save_post', 10, 2 );
+add_action( 'rest_api_init', 'WSU\Murrow\Feature_Video\register_api_field' );
 
 /**
  * Add meta box used to control featured videos.
@@ -63,4 +64,41 @@ function save_post( $post_id, $post ) {
 	}
 
 	update_post_meta( $post_id, '_murrow_feature_video', esc_url_raw( $_POST['feature_video_url'] ) );
+}
+
+/**
+ * Register an additional REST API field for featured video.
+ *
+ * @since 0.0.3
+ */
+function register_api_field() {
+	$args = array(
+		'get_callback' => 'WSU\Murrow\Feature_Video\get_api_data',
+		'update_callback' => 'esc_url_raw',
+		'schema' => null,
+	);
+	register_rest_field( 'post', 'feature_video', $args );
+}
+
+/**
+ * Return data for the featured video REST API field.
+ *
+ * @param array            $object
+ * @param string           $field
+ * @param \WP_REST_Request $request
+ *
+ * @return mixed|string
+ */
+function get_api_data( $object, $field, $request ) {
+	if ( 'feature_video' !== $field ) {
+		return '';
+	}
+
+	$feature_video = get_post_meta( $object['id'], '_murrow_feature_video', true );
+
+	if ( empty( $feature_video ) ) {
+		return '';
+	}
+
+	return esc_url( $feature_video );
 }
