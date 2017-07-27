@@ -10,7 +10,7 @@ add_filter( 'wsu_content_syndicate_host_data', 'WSU\Murrow\Feature_Video\modify_
 /**
  * Add meta box used to control featured videos.
  *
- * @since 0.0.3
+ * @since 0.0.2
  *
  * @param string $post_type
  */
@@ -25,7 +25,7 @@ function add_meta_boxes( $post_type ) {
 /**
  * Display the meta box used to capture featured video.
  *
- * @since 0.0.3
+ * @since 0.0.2
  *
  * @param \WP_Post $post
  */
@@ -42,7 +42,7 @@ function display_feature_video_meta_box( $post ) {
 /**
  * Attach a featured video to a post.
  *
- * @since 0.0.3
+ * @since 0.0.2
  *
  * @param int     $post_id
  * @param \WP_Post $post
@@ -70,7 +70,7 @@ function save_post( $post_id, $post ) {
 /**
  * Register an additional REST API field for featured video.
  *
- * @since 0.0.3
+ * @since 0.0.2
  */
 function register_api_field() {
 	$args = array(
@@ -83,6 +83,8 @@ function register_api_field() {
 
 /**
  * Return data for the featured video REST API field.
+ *
+ * @since 0.0.2
  *
  * @param array            $object
  * @param string           $field
@@ -106,6 +108,8 @@ function get_api_data( $object, $field, $request ) {
 
 /**
  * Attach feature video data to a content syndicate request.
+ *
+ * @since 0.0.2
  *
  * @param object $subset Data attached to this result.
  * @param object $post   Data for an individual post retrieved via `wp-json/posts` from a remote host.
