@@ -130,6 +130,7 @@
 	}
 
 	#spine {
+		background: #fff;
 		min-height: initial;
 		position: relative;
 		font-size: 12px;
@@ -160,8 +161,9 @@
 
 	#jacket #binder #spine header {
 		background-color: transparent;
-		height: 55px;
-		margin: 1.25rem 0 1rem;
+		height: 95px;
+		padding: 1.25rem 0 1rem;
+		margin: 0 auto;
 		position: static;
 	}
 
