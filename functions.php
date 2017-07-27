@@ -146,6 +146,22 @@ function murrow_spine_wp_enqueue_scripts() {
 	wp_enqueue_script( 'wsu-spine-theme-js', get_template_directory_uri() . '/js/spine-theme.js', array( 'jquery' ), spine_get_script_version(), true );
 }
 
+add_filter( 'bu_filter_list_section_defaults', 'murrow_bu_navigation_sub_menu_class' );
+/**
+ * Add a sub-menu class to child menus in the main navigation.
+ *
+ * @since 0.0.4
+ *
+ * @param array $atts
+ *
+ * @return array
+ */
+function murrow_bu_navigation_sub_menu_class( $atts ) {
+	$atts['container_class'] = 'sub-menu';
+
+	return $atts;
+}
+
 add_filter( 'nav_menu_link_attributes', 'murrow_nav_menu_link_attributes', 20, 3 );
 /**
  * Alters the anchor HREF on section label pages to output as # when building
