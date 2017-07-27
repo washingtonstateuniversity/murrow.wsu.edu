@@ -5,6 +5,7 @@ namespace WSU\Murrow\Feature_Video;
 add_action( 'add_meta_boxes', 'WSU\Murrow\Feature_Video\add_meta_boxes' );
 add_action( 'save_post', 'WSU\Murrow\Feature_Video\save_post', 10, 2 );
 add_action( 'rest_api_init', 'WSU\Murrow\Feature_Video\register_api_field' );
+add_filter( 'wsu_content_syndicate_host_data', 'WSU\Murrow\Feature_Video\modify_content_syndicate_data', 10, 3 );
 
 /**
  * Add meta box used to control featured videos.
@@ -101,4 +102,30 @@ function get_api_data( $object, $field, $request ) {
 	}
 
 	return esc_url( $feature_video );
+}
+
+/**
+ * Attach feature video data to a content syndicate request.
+ *
+ * @param object $subset Data attached to this result.
+ * @param object $post   Data for an individual post retrieved via `wp-json/posts` from a remote host.
+ * @param array  $atts   Array of attributes passed with wp_json shortcode.
+ *
+ * @return object Modified result data.
+ */
+function modify_content_syndicate_data( $subset, $post, $atts ) {
+	if ( get_site()->domain === $atts['host'] ) {
+		$feature_video = get_post_meta( $subset->ID, '_murrow_feature_video', true );
+		if ( empty( $feature_video ) ) {
+			$subset->feature_video = '';
+		} else {
+			$subset->feature_video = esc_url( $feature_video );
+		}
+	} elseif ( isset( $post->feature_video ) && ! empty( $post->feature_video ) ) {
+		$subset->feature_video = $post->feature_video;
+	} else {
+		$subset->feature_video = '';
+	}
+
+	return $subset;
 }
