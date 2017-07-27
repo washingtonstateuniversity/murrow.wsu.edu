@@ -10,7 +10,7 @@
 
 
 html {
-	background: #fff;
+	background: #f2f2f2;
 }
 
 /* Overwrite max width constraint */
@@ -29,6 +29,59 @@ main {
 main * {
 	box-sizing: border-box;
 }
+
+main section {
+	background: #fff;
+	margin-top: 3rem;
+	padding: 2rem 0 0;
+}
+
+main .hentry section {
+	padding: 2rem 0 4rem;
+}
+
+main .hentry section:first-of-type {
+	background: none;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* breadcrumbs */
+main .breadcrumbs {
+	background: none;
+	margin: 0 auto;
+	padding: 0;
+	font-size: .75rem;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+}
+
+main .breadcrumbs span {
+	margin: 0 .15rem 0 .25rem;
+}
+
+.breadcrumbs span:first-child {
+	margin-left: 0;
+}
+
+/* populate red tab */
+#jacket #binder .hentry section.row:before,
+#jacket #binder main section.breadcrumbs:before {
+	content: "";
+	position: absolute;
+	width: 3rem;
+	height: .65rem;
+	background: #ca1237;
+	top: 0;
+	left: 2rem;
+	visibility: visible;
+}
+
+/* no red tab for you */
+#jacket #binder .hentry section.row:first-of-type:before {
+	display: none;
+}
+
 
 /* Max widths for content sections */
 .main-header .hgroup,
@@ -74,7 +127,7 @@ h6 {
 	line-height: 1em;
 	text-transform: uppercase;
 	font-weight: 300;
-	margin: 1.5em 0 .5em;
+	margin: 0;
 }
 
 p,
@@ -339,6 +392,7 @@ main a::selection {
 	}
 
 	#spine {
+		background: #fff;
 		min-height: initial;
 		position: relative;
 		font-size: 12px;
@@ -369,8 +423,9 @@ main a::selection {
 
 	#jacket #binder #spine header {
 		background-color: transparent;
-		height: 55px;
-		margin: 1.25rem 0 1rem;
+		height: 95px;
+		padding: 1.25rem 0 1rem;
+		margin: 0 auto;
 		position: static;
 	}
 
