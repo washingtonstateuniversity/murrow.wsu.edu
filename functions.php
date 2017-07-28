@@ -3,10 +3,11 @@
 include_once __DIR__ . '/includes/university-center-objects.php';
 include_once __DIR__ . '/includes/sub-headline.php';
 include_once __DIR__ . '/includes/feature-video.php';
+include_once __DIR__ . '/includes/people-directory.php';
 
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
-	return '0.0.3';
+	return '0.0.4';
 }
 
 add_action( 'init', 'murrow_remove_spine_wp_enqueue_scripts' );
@@ -144,6 +145,22 @@ function murrow_spine_wp_enqueue_scripts() {
 
 	// Enqueue scripting for the entire parent theme.
 	wp_enqueue_script( 'wsu-spine-theme-js', get_template_directory_uri() . '/js/spine-theme.js', array( 'jquery' ), spine_get_script_version(), true );
+}
+
+add_filter( 'bu_filter_list_section_defaults', 'murrow_bu_navigation_sub_menu_class' );
+/**
+ * Add a sub-menu class to child menus in the main navigation.
+ *
+ * @since 0.0.4
+ *
+ * @param array $atts
+ *
+ * @return array
+ */
+function murrow_bu_navigation_sub_menu_class( $atts ) {
+	$atts['container_class'] = 'sub-menu';
+
+	return $atts;
 }
 
 add_filter( 'nav_menu_link_attributes', 'murrow_nav_menu_link_attributes', 20, 3 );
