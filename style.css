@@ -108,6 +108,11 @@ main .page > section,
 	margin-right: auto;
 }
 
+body {
+	color: #424242;
+	font-weight: 300;
+}
+
 h1,
 h2,
 h3,
@@ -133,9 +138,7 @@ h6 {
 p,
 p ~ p {
 	font-size: 1em;
-	font-weight: 300;
 	line-height: 1.5em;
-	color: #424242;
 	padding-bottom: 1em;
 }
 
@@ -893,11 +896,31 @@ main a::selection {
 .content-item-cta,
 .content-item-categories {
 	display: block;
+	font-size: .8rem;
+	padding: 0 .5rem;
+}
+
+.content-item-title {
+	font-weight: 400;
+	margin-top: 1rem;
+}
+
+.content-item-cta {
+	font-size: .85rem;
+	font-weight: 400;
 }
 
 .content-item-categories {
 	margin-top: auto;
 	padding-top: 2rem;
+}
+
+.content-item-categories a {
+	color: #404040;
+}
+
+.content-item-categories a:hover {
+	border-bottom: 1px solid;
 }
 
 
