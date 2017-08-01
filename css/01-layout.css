@@ -58,9 +58,9 @@ main .breadcrumbs span {
 /* main header */
 .main-header {
 	background: none;
-	height: auto;
-	padding: 0 2rem;
-	margin: 6rem 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
 }
 
 /* populate red tab */
@@ -96,4 +96,40 @@ main .page > section,
 	max-width: 1188px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/* --- secondary pages with featured image --- */
+.hentry {
+	display: grid;
+	grid-template-columns: 1fr minmax(auto, 594px) minmax(auto, 594px) 1fr;
+}
+
+.hentry section {
+	grid-column: 2 / 4;
+}
+
+.has-featured-image .hentry .featured-image-wrapper + section {
+	grid-column: 2 / 3;
+	grid-row-start: 1;
+	background: none;
+	margin-top: 0;
+}
+
+.has-featured-image .hentry .featured-image-wrapper + section .column.one {
+	width: 100%;
+}
+
+.has-featured-image .hentry .featured-image-wrapper + section .column.two {
+	display: none;
+}
+
+.featured-image-wrapper {
+	grid-column: 3 / 4;
+	margin-top: 6rem;
+	padding: 0 2rem;
+}
+
+.featured-image {
+	height: 0;
+	padding-bottom: 60%;
 }

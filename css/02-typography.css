@@ -16,13 +16,20 @@ h6 {
 	padding: .5em 0 .2em;
 }
 
-.page h1 {
+h1 {
 	color: #a60f2d;
 	font-size: 3.5em;
 	line-height: 1em;
 	text-transform: uppercase;
 	font-weight: 300;
-	margin: 0;
+	margin: 5rem 0 2rem;
+}
+
+@media (min-width: 989px) {
+
+	.side-right header h1 {
+		width: 67%;
+	}
 }
 
 p,
