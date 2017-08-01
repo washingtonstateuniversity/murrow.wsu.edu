@@ -81,26 +81,25 @@
 	}
 
 	.global-bar-wrap {
-		background: rgba(0, 0, 0, .05);
-		border-bottom: 1px solid rgba(0, 0, 0, .1);
+		background: linear-gradient(to right, #a60f2d 7%, #ca1237 27%, #ca1237 41%, #a60f2d 75%);
 	}
 
 	.global-bar {
 		max-width: 1186px;
 		margin: 0 auto;
 		text-align: right;
-		padding: .5em 0;
 	}
 
 	#jacket .global-bar a.global-home {
-		color: #981e32;
+		color: #fff;
 		text-transform: uppercase;
 		font-size: 11px;
 		letter-spacing: .5px;
+		transition: color .3s ease;
 	}
 
 	#jacket .global-bar a.global-home:hover {
-		color: #b7203d;
+		color: #cecece;
 	}
 
 	.site-search {
