@@ -17,19 +17,22 @@ function wsuwp_json_output( $content, $data, $atts ) {
 					$offset_x++;
 					continue;
 				}
-
 				// @todo Check for data before outputting it.
 				?>
 				<article class="content-syndicate-item">
+					<?php if ( ! empty( $content->thumbnail ) ) : ?>
 					<figure class="content-item-image">
 						<a href="<?php echo esc_url( $content->link ); ?>"><img src="<?php echo esc_url( $content->thumbnail ); ?>" alt="<?php echo esc_attr( $content->featured_media->alt_text ); ?>"></a>
+						<?php if ( false === strpos( $content->featured_media->caption->rendered, $content->featured_media->source_url ) ) : ?>
 						<figcaption class="caption" itemprop="description">
 							<span class="caption-text"><?php echo wp_kses_post( $content->featured_media->caption->rendered ); ?></span>
 							<span class="credit" itemprop="copyrightHolder">
 								<?php // @todo <span class="visually-hidden">Credit</span> Bob Hubner, WSU Photo Services ?>
 							</span>
 						</figcaption>
+						<?php endif; ?>
 					</figure>
+					<?php endif; ?>
 					<header class="content-item-title"><?php echo esc_html( $content->title ); ?></header>
 					<span class="content-item-byline">
 						<span class="content-item-byline-date"><?php echo esc_html( date( $atts['date_format'], strtotime( $content->date ) ) ); ?></span>
