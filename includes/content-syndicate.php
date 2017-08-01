@@ -29,9 +29,11 @@ function wsuwp_json_output( $content, $data, $atts ) {
 						if ( false === strpos( $content->featured_media->caption->rendered, $content->featured_media->source_url ) ) :?>
 						<figcaption class="caption" itemprop="description">
 							<span class="caption-text"><?php echo wp_kses_post( $content->featured_media->caption->rendered ); ?></span>
-							<span class="credit" itemprop="copyrightHolder">
-								<?php // @todo <span class="visually-hidden">Credit</span> Bob Hubner, WSU Photo Services ?>
-							</span>
+							<?php
+							//<span class="credit" itemprop="copyrightHolder">
+							// @todo <span class="visually-hidden">Credit</span> Bob Hubner, WSU Photo Services
+							// </span>
+							?>
 						</figcaption>
 						<?php endif; ?>
 					</figure>
