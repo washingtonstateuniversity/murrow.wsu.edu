@@ -104,7 +104,7 @@ function wsuwp_json_output( $content, $data, $atts ) {
 						<?php
 
 						// If a caption is not manually assigned, then WordPress will auto-create a caption that we should not use.
-						if ( false === strpos( $content->featured_media->caption->rendered, $content->featured_media->source_url ) ) :?>
+						if ( false === strpos( $content->featured_media->caption->rendered, $content->featured_media->source_url ) ) : ?>
 						<figcaption class="caption" itemprop="description">
 							<span class="caption-text"><?php echo wp_kses_post( $content->featured_media->caption->rendered ); ?></span>
 							<?php
