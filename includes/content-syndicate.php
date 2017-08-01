@@ -26,8 +26,8 @@ function wsuwp_json_output( $content, $data, $atts ) {
 						<figcaption class="caption" itemprop="description">
 							<span class="caption-text"><?php echo wp_kses_post( $content->featured_media->caption->rendered ); ?></span>
 							<span class="credit" itemprop="copyrightHolder">
-                            <?php // @todo <span class="visually-hidden">Credit</span> Bob Hubner, WSU Photo Services ?>
-                        </span>
+								<?php // @todo <span class="visually-hidden">Credit</span> Bob Hubner, WSU Photo Services ?>
+							</span>
 						</figcaption>
 					</figure>
 					<header class="content-item-title"><?php echo esc_html( $content->title ); ?></header>
