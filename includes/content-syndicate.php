@@ -17,13 +17,16 @@ function wsuwp_json_output( $content, $data, $atts ) {
 					$offset_x++;
 					continue;
 				}
-				// @todo Check for data before outputting it.
+
 				?>
 				<article class="content-syndicate-item">
 					<?php if ( ! empty( $content->thumbnail ) ) : ?>
 					<figure class="content-item-image">
 						<a href="<?php echo esc_url( $content->link ); ?>"><img src="<?php echo esc_url( $content->thumbnail ); ?>" alt="<?php echo esc_attr( $content->featured_media->alt_text ); ?>"></a>
-						<?php if ( false === strpos( $content->featured_media->caption->rendered, $content->featured_media->source_url ) ) : ?>
+						<?php
+
+						// If a caption is not manually assigned, then WordPress will auto-create a caption that we should not use.
+						if ( false === strpos( $content->featured_media->caption->rendered, $content->featured_media->source_url ) ) :?>
 						<figcaption class="caption" itemprop="description">
 							<span class="caption-text"><?php echo wp_kses_post( $content->featured_media->caption->rendered ); ?></span>
 							<span class="credit" itemprop="copyrightHolder">
