@@ -25,7 +25,7 @@ get_header();
 
 					?>
 					<div class="featured-image-wrapper">
-						<figure class="featured-image <?php echo $featured_image_position; ?>" style="background-image: url('<?php echo esc_url( $featured_image_src ); ?>');"><?php spine_the_featured_image(); ?></figure>
+						<figure class="featured-image <?php echo esc_attr( $featured_image_position ); ?>" style="background-image: url('<?php echo esc_url( $featured_image_src ); ?>');"><?php spine_the_featured_image(); ?></figure>
 					</div><?php
 				}
 
