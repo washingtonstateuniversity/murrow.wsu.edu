@@ -40,11 +40,21 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 			<ul class="meta-item-list">
 				<li class="meta-item"><a href="#">Health Communication</a></li>
 			</ul>
-			<p class="meta-head meta-people">People</p>
-			<ul class="meta-item-list">
-				<li class="meta-item"><a href="#">Chris Cooney</a></li>
-				<li class="meta-item"><a href="#">Corrie Wilder</a></li>
-			</ul>
+
+			<?php
+			$people = wsuwp_uc_get_object_people( get_the_ID() );
+
+			if ( 0 < count( $people ) ) {
+				echo '<p class="meta-head meta-people">People</p>';
+				echo '<ul class="meta-item-list">';
+
+				foreach ( $people as $person ) {
+					echo '<li class="meta-item"><a href="' . esc_url( $person['url'] ) .'">' . esc_html( $person['name'] ) . '</a></li>';
+				}
+
+				echo '</ul>';
+			}
+			?>
 		</div>
 	</div>
 
