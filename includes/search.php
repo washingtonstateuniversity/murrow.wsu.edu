@@ -11,6 +11,8 @@ add_action( 'template_redirect', 'WSU\Murrow\Search\redirect_wp_default_search' 
  * Filters the nav items attached to the global navigation and appends a
  * search form.
  *
+ * @since 0.3.0
+ *
  * @param $items
  * @param $args
  *
@@ -27,6 +29,8 @@ function add_search_to_menu( $items, $args ) {
 /**
  * Adds support for search indexing while also set as a private site.
  *
+ * @since 0.3.0
+ *
  * @return int
  */
 function search_public_status() {
@@ -35,6 +39,8 @@ function search_public_status() {
 
 /**
  * Redirect requests to the default WordPress search to our new URL.
+ *
+ * @since 0.3.0
  */
 function redirect_wp_default_search() {
 	if ( is_search() ) {
@@ -45,6 +51,8 @@ function redirect_wp_default_search() {
 
 /**
  * Adds `q` as our search query variable.
+ *
+ * @since 0.3.0
  *
  * @param $vars
  *
@@ -58,6 +66,8 @@ function filter_query_variable( $vars ) {
 /**
  * Filters the content returned by Elastic Search for display in a search
  * results page.
+ *
+ * @since 0.3.0
  *
  * @param string $visible_content
  *
@@ -77,6 +87,8 @@ function filter_elastic_content( $visible_content ) {
 
 /**
  * Processes a search request by passing to the WSU ES server.
+ *
+ * @since 0.3.0
  *
  * @param string $var
  *
