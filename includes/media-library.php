@@ -35,8 +35,10 @@ function add_credit_field( $form_fields, $post ) {
  * @param int $attachment_id
  */
 function save_credit_field( $attachment_id ) {
-	if ( isset( $_REQUEST['attachments'][ $attachment_id ]['photo_credit'] ) ) {
-		$credit = wp_kses_post( $_REQUEST['attachments'][ $attachment_id ]['photo_credit'] );
-		update_post_meta( $attachment_id, '_photo_credit', $credit );
+	if ( ! isset( $_POST['attachments'][ $attachment_id ]['photo_credit'] ) ) { // @codingStandardsIgnoreLine
+		return;
 	}
+
+	$credit = wp_kses_post( $_REQUEST['attachments'][ $attachment_id ]['photo_credit'] );
+	update_post_meta( $attachment_id, '_photo_credit', $credit );
 }
