@@ -1,5 +1,6 @@
 <?php
 
+include_once __DIR__ . '/includes/search.php';
 include_once __DIR__ . '/includes/university-center-objects.php';
 include_once __DIR__ . '/includes/sub-headline.php';
 include_once __DIR__ . '/includes/feature-video.php';
