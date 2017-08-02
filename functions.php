@@ -236,23 +236,6 @@ function murrow_nav_menu_id( $id ) {
 	return false;
 }
 
-add_filter( 'wp_nav_menu_items', 'murrow_add_search_form_to_global_top_menu', 10, 2 );
-/**
- * Filters the nav items attached to the global navigation and appends a
- * search form.
- *
- * @param $items
- * @param $args
- *
- * @return string
- */
-function murrow_add_search_form_to_global_top_menu( $items, $args ) {
-	if ( 'global-top-menu' !== $args->theme_location ) {
-		return $items;
-	}
-	return $items . '<li class="search">' . get_search_form( false ) . '</li>';
-}
-
 add_action( 'after_setup_theme', 'murrow_nav_menu_register' );
 /**
  * Register additional menus used by the theme.
