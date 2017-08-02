@@ -1,5 +1,6 @@
 <?php
 
+include_once __DIR__ . '/includes/search.php';
 include_once __DIR__ . '/includes/university-center-objects.php';
 include_once __DIR__ . '/includes/sub-headline.php';
 include_once __DIR__ . '/includes/feature-video.php';
@@ -8,8 +9,16 @@ include_once __DIR__ . '/includes/content-syndicate.php';
 
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
-	return '0.0.4';
+	return '0.2.1';
 }
+
+// Disable background image selection for posts and pages.
+add_filter( 'spine_post_supports_background_image', '__return_false' );
+add_filter( 'spine_page_supports_background_image', '__return_false' );
+
+// Disable thumbnail image selection for posts and pages.
+add_filter( 'spine_post_supports_thumbnail_image', '__return_false' );
+add_filter( 'spine_page_supports_thumbnail_image', '__return_false' );
 
 add_action( 'init', 'murrow_remove_spine_wp_enqueue_scripts' );
 function murrow_remove_spine_wp_enqueue_scripts() {
@@ -225,23 +234,6 @@ add_filter( 'nav_menu_item_id', 'murrow_nav_menu_id', 20 );
  */
 function murrow_nav_menu_id( $id ) {
 	return false;
-}
-
-add_filter( 'wp_nav_menu_items', 'murrow_add_search_form_to_global_top_menu', 10, 2 );
-/**
- * Filters the nav items attached to the global navigation and appends a
- * search form.
- *
- * @param $items
- * @param $args
- *
- * @return string
- */
-function murrow_add_search_form_to_global_top_menu( $items, $args ) {
-	if ( 'global-top-menu' !== $args->theme_location ) {
-		return $items;
-	}
-	return $items . '<li class="search">' . get_search_form( false ) . '</li>';
 }
 
 add_action( 'after_setup_theme', 'murrow_nav_menu_register' );
