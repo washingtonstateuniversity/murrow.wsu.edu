@@ -42,7 +42,11 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 			</ul>
 
 			<?php
-			$people = wsuwp_uc_get_object_people( get_the_ID() );
+			if ( function_exists( 'wsuwp_uc_get_object_people' ) ) {
+				$people = wsuwp_uc_get_object_people( get_the_ID() );
+			} else {
+				$people = array();
+			}
 
 			if ( 0 < count( $people ) ) {
 				echo '<p class="meta-head meta-people">People</p>';
