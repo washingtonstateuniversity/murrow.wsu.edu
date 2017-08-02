@@ -6,6 +6,7 @@ include_once __DIR__ . '/includes/sub-headline.php';
 include_once __DIR__ . '/includes/feature-video.php';
 include_once __DIR__ . '/includes/people-directory.php';
 include_once __DIR__ . '/includes/content-syndicate.php';
+include_once __DIR__ . '/includes/media-library.php';
 
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
