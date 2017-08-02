@@ -48,7 +48,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 
 				foreach ( $categories as $category ) {
 					$url = get_category_link( $category->term_id );
-					echo '<li class="meta-item"><a href="' . esc_url( $url ) . '">' . esc_html( $category->name ) . '</a>';
+					echo '<li class="meta-item"><a href="' . esc_url( $url ) . '">' . esc_html( $category->name ) . '</a></li>';
 				}
 
 				echo '</ul>';
