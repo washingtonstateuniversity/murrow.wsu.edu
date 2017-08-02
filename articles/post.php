@@ -80,9 +80,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 		</h2>
 	</header>
-<?php } ?>
 
-<?php if ( ! is_singular() ) : ?>
 	<div class="article-summary">
 		<?php
 
@@ -103,7 +101,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 			<a href="<?php echo esc_url( get_the_permalink() ); ?>">Read the article</a>
 		</p>
 	</div><!-- .article-summary -->
-<?php endif; ?>
+<?php } ?>
 
 	<footer class="article-footer">
 
