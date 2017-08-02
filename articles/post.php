@@ -4,14 +4,14 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<?php if ( is_single() ) : ?>
+<?php if ( is_single() ) { ?>
 	<header class="article-header">
 		<hgroup>
 			<h1 class="article-title"><?php the_title(); ?></h1>
 			<?php
 			if ( $subhead ) {
 				echo wp_kses_post( apply_filters( 'the_content', $subhead ) );
-				}
+			}
 			?>
 		</hgroup>
 		<div class="featured-image-wrapper">
@@ -25,7 +25,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 				$featured_image_position = '';
 			}
 
-			?><figure class="featured-image <?php echo $featured_image_position; ?>" style="background-image: url('<?php echo esc_url( $featured_image_src ); ?>');"><?php spine_the_featured_image(); ?></figure><?php
+			?><figure class="featured-image <?php echo esc_attr( $featured_image_position ); ?>" style="background-image: url('<?php echo esc_url( $featured_image_src ); ?>');"><?php spine_the_featured_image(); ?></figure><?php
 		}
 		?>
 		</div>
@@ -48,7 +48,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 
 				foreach ( $categories as $category ) {
 					$url = get_category_link( $category->term_id );
-					echo '<li class="meta-item"><a href="' . esc_url( $url ) .'">' . esc_html( $category->name ) . '</a>';
+					echo '<li class="meta-item"><a href="' . esc_url( $url ) . '">' . esc_html( $category->name ) . '</a>';
 				}
 
 				echo '</ul>';
@@ -65,7 +65,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 				echo '<ul class="meta-item-list">';
 
 				foreach ( $people as $person ) {
-					echo '<li class="meta-item"><a href="' . esc_url( $person['url'] ) .'">' . esc_html( $person['name'] ) . '</a></li>';
+					echo '<li class="meta-item"><a href="' . esc_url( $person['url'] ) . '">' . esc_html( $person['name'] ) . '</a></li>';
 				}
 
 				echo '</ul>';
@@ -74,13 +74,13 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 		</div>
 	</div>
 
-<?php else : // If not is_single() ?>
+<?php } else { // If not is_single() ?>
 	<header class="article-header">
 		<h2 class="article-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 		</h2>
 	</header>
-<?php endif; ?>
+<?php } ?>
 
 <?php if ( ! is_singular() ) : ?>
 	<div class="article-summary">
