@@ -8,7 +8,7 @@ include_once __DIR__ . '/includes/content-syndicate.php';
 
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
-	return '0.1.0';
+	return '0.2.0';
 }
 
 // Disable background image selection for posts and pages.
