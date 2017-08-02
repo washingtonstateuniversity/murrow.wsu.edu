@@ -36,12 +36,24 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 			<?php the_content(); ?>
 		</div>
 		<div class="column two">
-			<p class="meta-head meta-topic">Topics</p>
-			<ul class="meta-item-list">
-				<li class="meta-item"><a href="#">Health Communication</a></li>
-			</ul>
-
 			<?php
+			// Get a list of top level categories.
+			$categories = wp_get_object_terms( get_the_ID(), 'category', array(
+				'parent' => 0,
+			) );
+
+			if ( 0 < count( $categories ) ) {
+				echo '<p class="meta-head meta-topic">Topics</p>';
+				echo '<ul class="meta-item-list">';
+
+				foreach ( $categories as $category ) {
+					$url = get_category_link( $category->term_id );
+					echo '<li class="meta-item"><a href="' . esc_url( $url ) .'">' . esc_html( $category->name ) . '</a>';
+				}
+
+				echo '</ul>';
+			}
+
 			if ( function_exists( 'wsuwp_uc_get_object_people' ) ) {
 				$people = wsuwp_uc_get_object_people( get_the_ID() );
 			} else {
