@@ -11,6 +11,10 @@ function murrow_theme_version() {
 	return '0.1.0';
 }
 
+// Disable background image selection for posts and pages.
+add_filter( 'spine_post_supports_background_image', '__return_false' );
+add_filter( 'spine_page_supports_background_image', '__return_false' );
+
 add_action( 'init', 'murrow_remove_spine_wp_enqueue_scripts' );
 function murrow_remove_spine_wp_enqueue_scripts() {
 	remove_action( 'wp_enqueue_scripts', 'spine_wp_enqueue_scripts', 20 );
