@@ -148,6 +148,10 @@ section.pager {
 	padding-top: 0;
 }
 
+.single-post .breadcrumbs .one > span:last-child {
+	display: none;
+}
+
 .single-post .breadcrumbs-top {
 	background: #191919;
 	color: #fff;
