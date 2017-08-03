@@ -100,7 +100,7 @@ function wsuwp_json_output( $content, $data, $atts ) {
 				<article class="content-syndicate-item">
 					<?php if ( ! empty( $content->thumbnail ) ) : ?>
 					<figure class="content-item-image">
-						<a href="<?php echo esc_url( $content->link ); ?>"><img src="<?php echo esc_url( $content->thumbnail ); ?>" alt="<?php echo esc_attr( $content->featured_media->alt_text ); ?>"></a>
+						<a href="<?php echo esc_url( $content->link ); ?>"><img src="<?php echo esc_url( $content->featured_media->media_details->sizes->{'spine-small_size'}->source_url ); ?>" alt="<?php echo esc_attr( $content->featured_media->alt_text ); ?>"></a>
 						<?php
 
 						// If a caption is not manually assigned, then WordPress will auto-create a caption that we should not use.
