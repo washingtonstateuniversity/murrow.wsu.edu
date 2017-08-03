@@ -30,6 +30,10 @@ h1 {
 	.side-right header h1 {
 		width: 67%;
 	}
+
+	.has-featured-image .side-right header h1 {
+		width: 100%;
+	}
 }
 
 p,
