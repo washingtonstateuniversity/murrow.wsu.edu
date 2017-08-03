@@ -8,6 +8,8 @@ add_filter( 'wsuwp_uc_project_content_type', 'WSU\Murrow\University_Center_Objec
 add_filter( 'wsuwp_uc_entity_type_taxonomy_enabled', '__return_false' );
 add_filter( 'wsuwp_uc_topic_taxonomy_enabled', '__return_false' );
 add_filter( 'wsuwp_uc_people_to_add_to_content', '__return_false' );
+add_filter( 'wsuwp_uc_display_project_information_metabox', '__return_false' );
+add_filter( 'wsuwp_uc_display_person_information_meta_box', '__return_false' );
 
 /**
  * Filter the post type used for people in University Center Objects
