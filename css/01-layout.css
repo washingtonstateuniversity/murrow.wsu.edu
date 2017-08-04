@@ -92,11 +92,7 @@ main .breadcrumbs span {
 .main-header,
 main .page > .section-wrapper > section,
 main .page > section,
-.blog main > section,
-.single-post main > section,
-.archive main > section,
-.search main > section,
-.page-template-search main > section,
+main > section,
 section.pager {
 	width: 100%;
 	max-width: 1188px;
