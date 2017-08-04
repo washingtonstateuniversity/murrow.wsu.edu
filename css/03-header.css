@@ -39,7 +39,7 @@
 }
 
 .site-search input.search-submit {
-	background: url(./images/ico-search-thin.svg);
+	background: url(./images/icons/search.svg);
 	border: none;
 	text-indent: 99999px;
 	padding: 0;
