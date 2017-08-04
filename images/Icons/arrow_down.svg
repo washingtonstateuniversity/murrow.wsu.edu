@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="11px" viewBox="0 0 20 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow_down [#339]@1.5x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Arrows" transform="translate(-140.000000, -225.000000)" fill="#FFFFFF">
+            <g id="icons" transform="translate(20.000000, 20.000000)">
+                <path d="M140,206.39 L138.594,205 L129.987,213.261 L129.069,212.38 L129.074,212.385 L121.427,205.045 L120,206.414 C122.113,208.443 128.014,214.107 129.987,216 C131.453,214.594 130.024,215.965 140,206.39" id="arrow_down-[#339]"></path>
+            </g>
+        </g>
+    </g>
+</svg>
