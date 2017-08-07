@@ -1076,4 +1076,38 @@ main a::selection {
 figcaption {
 	display: none;
 }
+
+/* - single simple card in a sidebar - */
+.two .wsu-person.has-photo {
+	width: 100%;
+}
+
+.two .wsu-person.has-photo .card {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+
+.two .wsu-person figure.photo img {
+	max-width: 100%;
+	width: 100%;
+}
+
+.two .wsu-person figure.photo {
+	-webkit-box-ordinal-group: 0;
+	    -ms-flex-order: -1;
+	        order: -1;
+}
+
+.two .wsu-person .email,
+.two .wsu-person .phone,
+.two .wsu-person .office,
+.two .wsu-person .address,
+.two .wsu-person .about {
+	display: none;
+}
 /*# sourceMappingURL=style.css.map */
