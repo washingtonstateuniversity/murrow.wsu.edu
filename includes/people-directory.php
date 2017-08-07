@@ -35,7 +35,7 @@ function search_data( $data, $post ) {
 
 	// Replace the default post content sent to search with the person's about data.
 	$data['content'] = $person['about'];
-	$data['url'] = $person['link'];
+	$data['url'] = get_permalink( $post->ID );
 
 	return $data;
 }
