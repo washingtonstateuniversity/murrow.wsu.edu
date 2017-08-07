@@ -6,6 +6,7 @@ add_filter( 'wp_nav_menu_items', 'WSU\Murrow\Search\add_search_to_menu', 10, 2 )
 add_filter( 'wsuwp_search_public_status', 'WSU\Murrow\Search\search_public_status' );
 add_filter( 'query_vars', 'WSU\Murrow\Search\filter_query_variable' );
 add_action( 'template_redirect', 'WSU\Murrow\Search\redirect_wp_default_search' );
+add_filter( 'wsuwp_search_post_types', 'WSU\Murrow\Search\filter_post_types' );
 
 /**
  * Filters the nav items attached to the global navigation and appends a
@@ -126,4 +127,21 @@ function get_elastic_response( $var ) {
 	wp_cache_set( $search_key, $search_results, 'search', 3600 );
 
 	return $search_results;
+}
+
+/**
+ * Add the WSU people post type to those supported by the WSUWP search plugin.
+ *
+ * @since 0.4.0
+ *
+ * @param array $post_types
+ *
+ * @return array
+ */
+function filter_post_types( $post_types ) {
+	if ( ! in_array( 'wsuwp_people_profile', $post_types, true ) ) {
+		$post_types[] = 'wsuwp_people_profile';
+	}
+
+	return $post_types;
 }
