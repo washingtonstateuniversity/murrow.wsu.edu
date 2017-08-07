@@ -225,6 +225,28 @@ function murrow_nav_menu_css_class( $classes, $item, $args ) {
 	return $classes;
 }
 
+add_filter( 'bcn_breadcrumb_url', 'murrow_modify_breadcrumb_url', 10, 3 );
+/**
+ * Removes the URL from pages that are assigned the section label template.
+ *
+ * @param string $url
+ * @param array  $type
+ * @param int    $id
+ *
+ * @return string|null null if a section label template, untouched URL string if not.
+ */
+function murrow_modify_breadcrumb_url( $url, $type, $id ) {
+	if ( 1 < count( $type ) && 'post-page' === $type[1] ) {
+		$slug = get_page_template_slug( $id );
+
+		if ( 'templates/section-label.php' === $slug ) {
+			return null;
+		}
+	}
+
+	return $url;
+}
+
 add_filter( 'nav_menu_item_id', 'murrow_nav_menu_id', 20 );
 /**
  * Strips menu item IDs as navigation is built.
