@@ -10,7 +10,7 @@ include_once __DIR__ . '/includes/media-library.php';
 
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
-	return '0.3.3';
+	return '0.3.4';
 }
 
 // Disable background image selection for posts and pages.
@@ -228,6 +228,8 @@ function murrow_nav_menu_css_class( $classes, $item, $args ) {
 add_filter( 'bcn_breadcrumb_url', 'murrow_modify_breadcrumb_url', 10, 3 );
 /**
  * Removes the URL from pages that are assigned the section label template.
+ *
+ * @since 0.3.4
  *
  * @param string $url
  * @param array  $type
