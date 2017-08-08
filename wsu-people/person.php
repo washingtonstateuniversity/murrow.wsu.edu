@@ -93,8 +93,13 @@ if ( false !== $display['directory_view'] ) { ?>
 
 		<hgroup>
 			<h1 class="article-title"><?php echo esc_html( $display['name'] ); ?></h1>
-			<span class="degree">MBA</span>
-			<span class="degree">BBA</span>
+			<?php
+			if ( $display['degrees'] ) {
+				foreach ( $display['degrees'] as $degree ) {
+				?><span class="degree"><?php echo esc_html( $degree ); ?></span> <?php
+				}
+			}
+			?>
 
 			<div class="contact">
 				<span class="title"><?php echo wp_kses_post( $display['title'] ); ?></span>
