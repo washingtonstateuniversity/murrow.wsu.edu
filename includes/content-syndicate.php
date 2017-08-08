@@ -179,13 +179,13 @@ function rest_query_vars( $vars ) {
  * @return array
  */
 function rest_post_query( $args ) {
-	if ( isset( $args['category_name'] ) && $args[ 'category_name' ] ) {
+	if ( isset( $args['category_name'] ) && $args['category_name'] ) {
 		$tax_query = array(
-			'relation' => 'AND'
+			'relation' => 'AND',
 		);
 		$categories = explode( ',', $args['category_name'] );
 
-		foreach( $categories as $category ) {
+		foreach ( $categories as $category ) {
 			$tax_query[] = array(
 				'taxonomy' => 'category',
 				'field' => 'slug',
@@ -193,8 +193,8 @@ function rest_post_query( $args ) {
 			);
 		}
 
-		unset( $args[ 'category_name' ] );  // We are replacing with our tax_query
-		$args[ 'tax_query' ] = $tax_query;
+		unset( $args['category_name'] );
+		$args['tax_query'] = $tax_query;
 	}
 
 	return $args;
