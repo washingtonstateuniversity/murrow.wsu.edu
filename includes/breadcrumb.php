@@ -2,6 +2,8 @@
 
 namespace WSU\Murrow\Breadcrumb;
 
+add_action( 'bcn_after_fill', 'WSU\Murrow\Breadcrumb\remove_current_item' );
+
 /**
  * Remove the current (last) item from the breadcrumb trail before output.
  *
