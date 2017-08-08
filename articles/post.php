@@ -60,7 +60,7 @@ $subhead = get_post_meta( get_the_ID(), '_murrow_subhead', true );
 				$people = array();
 			}
 
-			if ( 0 < count( $people ) ) {
+			if ( $people && 0 < count( $people ) ) {
 				echo '<p class="meta-head meta-people">People</p>';
 				echo '<ul class="meta-item-list">';
 
