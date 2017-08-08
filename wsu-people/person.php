@@ -138,7 +138,7 @@ if ( false !== $display['directory_view'] ) { ?>
 		$projects = array();
 	}
 
-	if ( 0 < count( $projects ) ) {
+	if ( $projects && 0 < count( $projects ) ) {
 	?>
 	<div class="wsuwp-uc-projects row single padded-ends">
 		<div class="column one">
