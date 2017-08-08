@@ -1,0 +1,83 @@
+.single-wsuwp_people_profile main section {
+	background: none;
+}
+
+.wsuwp_people_profile .article-header {
+	display: flex;
+	max-width: calc(.67 * 1188px + 4rem);
+	padding: 0 2rem;
+}
+
+.wsuwp_people_profile .article-header * {
+	color: #424242;
+}
+
+.wsuwp_people_profile .photo {
+	margin-right: 2rem;
+	flex: 0 0 198px;
+}
+
+.wsuwp_people_profile .article-title,
+.wsuwp_people_profile .degree {
+	display: inline-block;
+}
+
+.wsuwp_people_profile .article-title {
+	color: #a60f2d;
+	margin: 0 .5rem 0 0;
+	padding: 0;
+}
+
+.wsuwp_people_profile .degree:after {
+	content: ",";
+}
+
+.wsuwp_people_profile .degree:last-of-type:after {
+	content: none;
+}
+
+.wsuwp_people_profile .title {
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.wsuwp_people_profile .contact {
+	margin-top: 1.2rem;
+}
+
+.wsuwp_people_profile .contact span {
+	display: block;
+}
+
+.wsuwp_people_profile .contact span + .link {
+	margin-top: 1rem;
+}
+
+.wsuwp_people_profile .contact .link + .link {
+	margin-top: .2rem;
+}
+
+.wsuwp_people_profile .contact a {
+	border-bottom: 1px solid #f75734;
+}
+
+.wsuwp_people_profile > .row {
+	background: #fff;
+	margin-top: 3rem;
+}
+
+.wsuwp_people_profile > .article-body .column.one:before {
+	background: #ca1237;
+	content: "";
+	height: .65rem;
+	position: absolute;
+	top: 0;
+	width: 3rem;
+}
+
+@media only screen and (max-width: 693px) {
+
+	.wsuwp_people_profile .article-header {
+		flex-wrap: wrap;
+	}
+}
