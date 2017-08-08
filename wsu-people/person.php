@@ -62,9 +62,11 @@ if ( false !== $display['directory_view'] ) { ?>
 		</div>
 		<?php } ?>
 
-		<?php if ( is_admin() ) {
+		<?php
+		if ( is_admin() ) {
 			include $display['directory_view_options'];
-		} ?>
+		}
+		?>
 
 	</article>
 
@@ -114,13 +116,14 @@ if ( false !== $display['directory_view'] ) { ?>
 
 	</header>
 
-	<?php if ( $display['about'] ) { ?>
-	<div class="article-body row side-right guttered">
-		<div class="column one">
-		<?php echo wp_kses_post( wpautop( $display['about'] ) ); ?>
-		</div>
-	</div>
 	<?php
+	if ( $display['about'] ) {
+		?>
+		<div class="article-body row side-right guttered">
+			<div class="column one">
+			<?php echo wp_kses_post( wpautop( $display['about'] ) ); ?>
+			</div>
+		</div>
+		<?php
 	}
-
 }
