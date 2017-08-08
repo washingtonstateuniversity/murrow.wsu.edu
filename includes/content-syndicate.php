@@ -5,6 +5,8 @@ namespace WSU\Murrow\Content_Syndicate;
 add_action( 'rest_api_init', 'WSU\Murrow\Content_Syndicate\register_api_fields' );
 add_filter( 'wsu_content_syndicate_host_data', 'WSU\Murrow\Content_Syndicate\manage_subset_data', 10, 2 );
 add_filter( 'wsuwp_content_syndicate_json_output', 'WSU\Murrow\Content_Syndicate\wsuwp_json_output', 10, 3 );
+add_action( 'rest_query_vars', 'WSU\Murrow\Content_Syndicate\rest_query_vars' );
+add_filter( 'rest_post_query', 'WSU\Murrow\Content_Syndicate\rest_post_query', 11 );
 
 /**
  * Register a syndicate_categories field in the REST API to provide specific
@@ -149,4 +151,51 @@ function wsuwp_json_output( $content, $data, $atts ) {
 	}
 
 	return $content;
+}
+
+/**
+ * Make the `tax_query` argument available to the REST API request.
+ *
+ * @since 0.4.0
+ *
+ * @param array $vars
+ *
+ * @return array
+ */
+function rest_query_vars( $vars ) {
+	array_push( $vars, 'tax_query' );
+	return $vars;
+}
+
+/**
+ * Look for a comma separated category query and ensure an
+ * AND taxonomy query is performed to include posts that contain
+ * each of the included categories.
+ *
+ * @since 0.4.0
+ *
+ * @param array $args
+ *
+ * @return array
+ */
+function rest_post_query( $args ) {
+	if ( isset( $args['category_name'] ) && $args['category_name'] ) {
+		$tax_query = array(
+			'relation' => 'AND',
+		);
+		$categories = explode( ',', $args['category_name'] );
+
+		foreach ( $categories as $category ) {
+			$tax_query[] = array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => $category,
+			);
+		}
+
+		unset( $args['category_name'] );
+		$args['tax_query'] = $tax_query;
+	}
+
+	return $args;
 }
