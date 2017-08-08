@@ -14,6 +14,7 @@ add_filter( 'wsuwp_people_default_rewrite_slug', 'WSU\Murrow\People_Directory\re
 function rewrite_arguments( $rewrite ) {
 	return array(
 		'slug' => 'people',
+		'with_front' => false,
 	);
 }
 
