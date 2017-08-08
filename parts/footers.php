@@ -1,6 +1,6 @@
 <?php
 
-if ( spine_display_breadcrumbs( 'bottom' ) ) {
+if ( ! is_front_page() && spine_display_breadcrumbs( 'bottom' ) ) {
 	?>
 	<section class="row single breadcrumbs breadcrumbs-bottom gutter pad-top" typeof="BreadcrumbList" vocab="http://schema.org/">
 		<div class="column one">
