@@ -126,4 +126,73 @@ if ( false !== $display['directory_view'] ) { ?>
 		</div>
 		<?php
 	}
+
+	if ( function_exists( 'wsuwp_uc_get_object_projects' ) ) {
+		$projects = wsuwp_uc_get_object_projects( get_the_ID() );
+	} else {
+		$projects = array();
+	}
+
+	if ( 0 < count( $projects ) ) {
+	?>
+	<div class="wsuwp-uc-projects row single padded-ends">
+		<div class="column one">
+			<div class="content-syndicate-wrapper">
+			<?php foreach ( $projects as $project ) { ?>
+				<article class="content-syndicate-item">
+					<?php if ( has_post_thumbnail( $project['id'] ) ) { ?>
+					<figure class="content-item-image">
+						<a href="<?php echo esc_url( $project['url'] ); ?>">
+							<?php echo get_the_post_thumbnail( $project['id'], 'spine-small_size' ); ?>
+						</a>
+						<?php
+						$thumbnail_id = get_post_thumbnail_id( $project['id'] );
+						$thumbnail_caption = get_post( $thumbnail_id )->post_excerpt;
+						$thumbnail_credit = get_post_meta( $thumbnail_id, '_photo_credit', true );
+						if ( $thumbnail_caption || $thumbnail_credit ) {
+						?>
+						<figcaption class="caption" itemprop="description">
+							<?php if ( $thumbnail_caption ) { ?>
+							<span class="caption-text"><?php echo wp_kses_post( $thumbnail_caption ); ?></span>
+							<?php } ?>
+							<?php if ( $thumbnail_credit ) { ?>
+							<span class="credit" itemprop="copyrightHolder">
+								<span class="visually-hidden">Credit</span> <?php echo wp_kses_post( $thumbnail_credit ); ?>
+							</span>
+							<?php } ?>
+						</figcaption>
+						<?php } ?>
+					</figure>
+					<?php } ?>
+					<header class="content-item-title"><?php echo esc_html( $project['name'] ); ?></header>
+					<span class="content-item-excerpt">
+						<?php
+						$sub_headline = get_post_meta( $project['id'], '_murrow_subhead', true );
+						if ( $sub_headline ) {
+							echo wp_kses_post( $sub_headline );
+						}
+						?>
+					</span>
+					<span class="content-item-cta">
+						<a href="<?php echo esc_url( $project['url'] ); ?>">Read more</a>
+					</span>
+					<span class="content-item-categories">
+						<?php
+						$categories = get_the_category( $project['id'] );
+						$category_output = array();
+						foreach ( $categories as $category ) {
+							$category_output[] = '<a href="' . esc_url( $category->url ) . '">' . esc_html( $category->name ) . '</a>';
+						}
+
+						$category_output = implode( ', ', $category_output );
+						echo wp_kses_post( $category_output );
+						?>
+					</span>
+				</article>
+			<?php } ?>
+			</div>
+		</div>
+	</div>
+	<?php
+	}
 }
