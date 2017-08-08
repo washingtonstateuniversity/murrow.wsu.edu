@@ -16,3 +16,26 @@ function rewrite_arguments( $rewrite ) {
 		'slug' => 'people',
 	);
 }
+
+add_filter( 'wsuwp_search_post_data', 'WSU\Murrow\People_Directory\search_data', 10, 2 );
+/**
+ * Filter the data sent to Elasticsearch for a profile record.
+ *
+ * @since 0.3.4
+ *
+ * @param array    $data
+ * @param \WP_Post $post
+ *
+ * @return array
+ */
+function search_data( $data, $post ) {
+	$nid = get_post_meta( $post->ID, '_wsuwp_profile_ad_nid', true );
+	$person = \WSUWP_People_Post_Type::get_rest_data( $nid );
+	$person = \WSUWP_Person_Display::get_data( $person );
+
+	// Replace the default post content sent to search with the person's about data.
+	$data['content'] = $person['about'];
+	$data['url'] = get_permalink( $post->ID );
+
+	return $data;
+}
