@@ -78,3 +78,30 @@
 figcaption {
 	display: none;
 }
+
+/* - single simple card in a sidebar - */
+.two .wsu-person.has-photo {
+	width: 100%;
+}
+
+.two .wsu-person.has-photo .card {
+	display: flex;
+	flex-direction: column;
+}
+
+.two .wsu-person figure.photo img {
+	max-width: 100%;
+	width: 100%;
+}
+
+.two .wsu-person figure.photo {
+	order: -1;
+}
+
+.two .wsu-person .email,
+.two .wsu-person .phone,
+.two .wsu-person .office,
+.two .wsu-person .address,
+.two .wsu-person .about {
+	display: none;
+}
