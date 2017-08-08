@@ -79,8 +79,8 @@ main .breadcrumbs span {
 .article-body .column.two:before {
 	content: "";
 	position: absolute;
-	width: 2rem;
-	height: .4rem;
+	width: 3rem;
+	height: .65rem;
 	background: #ca1237;
 	top: 0;
 	left: 2rem;
@@ -257,17 +257,60 @@ section.pager {
 .home #jacket #binder .hentry section.row:first-of-type:before {
 	content: "";
 	position: absolute;
-	width: 2rem;
+	width: 3rem;
 	height: 2rem;
 	background: #ca1237;
 	top: 0;
-	left: 4rem;
+	left: 2rem;
 	visibility: visible;
 }
 
 .home #jacket #binder .hentry section.row:first-of-type:before {
 	display: block;
 	z-index: 3;
+}
+
+/* background video */
+.hero header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin: 0;
+	padding: 2rem;
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+}
+
+.hero header h1 {
+	color: #fff;
+	font-size: 7rem;
+	margin: 0 0 2.5rem;
+	text-align: center;
+	width: 100%;
+}
+
+.hero-video-wrapper {
+	height: 0;
+	width: 100%;
+	padding-bottom: 56.25%;
+}
+
+.hero-video-wrapper iframe {
+	position: absolute;
+	padding: 2rem;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 body {
@@ -306,11 +349,6 @@ h1 {
 	.has-featured-image .side-right header h1 {
 		width: 100%;
 	}
-}
-
-.home-main-head {
-	margin: 5rem 0;
-	padding: 0;
 }
 
 p,
