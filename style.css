@@ -302,7 +302,7 @@ section.pager {
 	padding-bottom: 56.25%;
 }
 
-.hero-video-wrapper iframe {
+.hero-video-wrapper .hero-video {
 	position: absolute;
 	padding: 2rem;
 	top: 0;
