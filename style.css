@@ -454,12 +454,12 @@ h3 + ul {
 }
 
 p::-moz-selection {
-	background: #981e32;
+	background: #a60f2d;
 	color: #fff;
 }
 
 p::selection {
-	background: #981e32;
+	background: #a60f2d;
 	color: #fff;
 }
 
@@ -494,7 +494,7 @@ main a::selection {
 	        appearance: none;
 	border: none;
 	border-bottom: 1px solid rgba(0, 0, 0, .1);
-	color: #981e32;
+	color: #a60f2d;
 	font-size: 1em;
 	font-weight: 300;
 	padding: .25em 1.5em .25em .5em;
@@ -507,7 +507,7 @@ main a::selection {
 }
 
 .site-search input.search-field:focus {
-	border-color: #981e32;
+	border-color: #a60f2d;
 	width: 12em;
 }
 
@@ -608,7 +608,7 @@ main a::selection {
 	}
 
 	.site-search a:hover {
-		color: #981e32;
+		color: #a60f2d;
 	}
 
 	.site-search form {
@@ -747,7 +747,12 @@ main a::selection {
 
 	#jacket #spine nav li.parent.active > a,
 	#jacket #spine nav li.parent.opened > a {
-		color: #981e32;
+		color: #a60f2d;
+	}
+
+	#jacket #spine nav > ul > li.active > a {
+		color: #a60f2d;
+		font-weight: 700;
 	}
 
 	#spine nav.spine-sitenav > ul > li > ul:before {
@@ -830,7 +835,7 @@ main a::selection {
 		left: 0;
 		height: 2px;
 		width: 6px;
-		background: #981e32;
+		background: #a60f2d;
 		opacity: 0;
 		transition: all .5s ease;
 	}
@@ -1069,7 +1074,7 @@ main a::selection {
 	display: grid;
 	grid-column-gap: 0;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	margin: 0 -1rem;
+	margin: 1rem -1rem 0;
 }
 
 /* - allow aligning elements within an item - */
