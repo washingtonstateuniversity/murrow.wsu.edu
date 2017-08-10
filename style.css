@@ -290,10 +290,21 @@ section.pager {
 
 .hero header h1 {
 	color: #fff;
+	display: inline;
 	font-size: 7rem;
-	margin: 0 0 2.5rem;
+	margin: 0 auto -1rem;
+	padding: 0;
+	position: relative;
 	text-align: center;
-	width: 100%;
+}
+
+.hero header h1:before {
+	content: "";
+	height: 1rem;
+	width: 7rem;
+	background: #ca1237;
+	position: absolute;
+	top: -3rem;
 }
 
 .hero-video-wrapper {
@@ -963,7 +974,6 @@ main a::selection {
 
 	#spine nav.spine-sitenav > ul > li > a {
 		margin-bottom: 1em;
-		text-transform: uppercase;
 	}
 
 	.footer-nav > ul > li > a {
