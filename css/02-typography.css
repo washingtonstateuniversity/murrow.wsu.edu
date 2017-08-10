@@ -142,3 +142,27 @@ main a::selection {
 	background: #fa5735;
 	color: #fff;
 }
+
+main a.button,
+main a.button:focus {
+	background: none;
+	border: 1px solid;
+	border-radius: 0;
+	color: #a60f2d;
+	margin-top: 1.5rem;
+	padding: .75rem 2rem;
+	text-transform: uppercase;
+	transition: all .3s ease;
+}
+
+main .side-right .two a.button {
+	font-size: .8em;
+	padding: .5rem 1rem;
+}
+
+main a.button:hover,
+main a.button:active {
+	background: #a60f3d;
+	border: 1px solid;
+	color: #fff;
+}
