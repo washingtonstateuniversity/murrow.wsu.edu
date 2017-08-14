@@ -14,7 +14,6 @@ main {
 	box-shadow: inset 0 4px 4px -4px rgba(0, 0, 0, .25);
 	margin-left: 0;
 	position: relative;
-	margin-bottom: 4rem;
 }
 
 main * {
@@ -66,7 +65,8 @@ main .breadcrumbs span {
 /* populate red tab */
 #jacket #binder .hentry section.row:before,
 #jacket #binder main section.breadcrumbs:before,
-.article-body .column.two:before {
+.article-body .column.two:before,
+.site-footer:before {
 	content: "";
 	position: absolute;
 	width: 3rem;
@@ -93,7 +93,8 @@ main .breadcrumbs span {
 main .page > .section-wrapper > section,
 main .page > section,
 main > section,
-section.pager {
+section.pager,
+footer.site-footer {
 	width: 100%;
 	max-width: 1188px;
 	margin-left: auto;
