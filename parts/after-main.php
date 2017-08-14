@@ -44,7 +44,7 @@
 			<li><a class="social-linkedin"  href="https://www.linkedin.com/groups/63569/profile">LinkedIn</a></li>
 		</ul>
 		<div class="wsu-signature">
-			<a href="https://wsu.edu"><img alt="Washington State University logo" src="https://medicine.wsu.edu/wp-content/themes/wsu-medicine/images/wsu-logo-wht.svg"></a>
+			<a href="https://wsu.edu"><img alt="Washington State University logo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/wsu-logo-white.svg' ); ?>"></a>
 		</div>
 	</div>
 	<div class="footer-bottom-wrap">
