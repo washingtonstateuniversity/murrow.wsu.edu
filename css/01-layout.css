@@ -54,6 +54,10 @@ main .breadcrumbs span {
 	margin-left: 0;
 }
 
+main .breadcrumbs-bottom {
+	margin-bottom: 1rem;
+}
+
 /* main header */
 .main-header {
 	background: none;

@@ -64,6 +64,10 @@ main .breadcrumbs span {
 	margin-left: 0;
 }
 
+main .breadcrumbs-bottom {
+	margin-bottom: 1rem;
+}
+
 /* main header */
 .main-header {
 	background: none;
@@ -758,6 +762,7 @@ main a.button:active {
 		display: flex;
 		background: #333;
 		left: 0;
+		padding: 1rem 0;
 	}
 
 	#spine nav.spine-sitenav > ul > li > ul > li {
