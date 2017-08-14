@@ -1,3 +1,14 @@
+<?php
+$murrow_footer_menu_args = array(
+	'theme_location' => 'site-footer-menu',
+	'menu' => 'site-footer-menu',
+	'container' => false,
+	'menu_class' => null,
+	'menu_id' => null,
+	'items_wrap' => '<ul>%3$s</ul>',
+	'depth' => 3,
+);
+?>
 <footer class="site-footer single">
 	<div class="general-contact">
 		<header>
@@ -15,23 +26,7 @@
 		</p>
 	</div>
 	<nav class="footer-nav">
-		<ul>
-			<li>
-				<a href="#">Degrees and programs</a>
-			</li>
-			<li>
-				<a href="#">Murrow Legacy</a>
-			</li>
-			<li>
-				<a href="#">Another link</a>
-			</li>
-			<li>
-				<a href="#">Support the Murrow College</a>
-			</li>
-			<li>
-				<a href="#">Final Link</a>
-			</li>
-		</ul>
+		<?php wp_nav_menu( $murrow_footer_menu_args ); ?>
 	</nav>
 	<div class="social-wrap">
 		<header>

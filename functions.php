@@ -268,6 +268,7 @@ add_action( 'after_setup_theme', 'murrow_nav_menu_register' );
  */
 function murrow_nav_menu_register() {
 	register_nav_menu( 'global-top-menu', 'Global Top Menu' );
+	register_nav_menu( 'site-footer-menu', 'Footer Menu' );
 	add_theme_support( 'html5', array( 'search-form' ) );
 }
 
