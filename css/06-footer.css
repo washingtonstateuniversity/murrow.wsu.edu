@@ -1,0 +1,150 @@
+
+.site-footer {
+	background-color: #333;
+	box-sizing: border-box;
+	color: rgba(255, 255, 255, .7);
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2rem;
+	position: relative;
+}
+
+.site-footer a {
+	color: currentColor;
+}
+
+.site-footer a:hover {
+	color: #fff;
+}
+
+.general-contact,
+.footer-nav {
+	font-weight: 300;
+	padding: 3rem;
+}
+
+.general-contact header {
+	color: #fff;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+}
+
+.contact-section span {
+	display: block;
+	margin-bottom: .5rem;
+}
+
+.contact-section-head {
+	color: #fff;
+	font-weight: 400;
+}
+
+.footer-nav ul {
+	list-style: none;
+}
+
+.footer-nav li {
+	margin-bottom: .25rem;
+}
+
+.social-wrap {
+	margin-left: auto;
+	text-align: right;
+}
+
+.social-wrap header {
+	color: rgba(255, 255, 255, .85);
+	text-transform: uppercase;
+}
+
+.social-wrap ul {
+	list-style: none;
+	margin: 1rem 0;
+	padding: 0;
+}
+
+.social-wrap li {
+	display: inline-block;
+}
+
+.social-channels a {
+	background-repeat: no-repeat;
+	background-position: center;
+	display: block;
+	height: 1.5rem;
+	width: 1.5rem;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	opacity: .7;
+	transition: all .3s ease;
+}
+
+.social-channels a:hover {
+	opacity: 1;
+}
+
+a.social-facebook {
+	background-image: url(images/icons/social-facebook.svg);
+	background-size: 35%;
+}
+
+a.social-twitter {
+	background-image: url(images/icons/social-twitter.svg);
+	background-position: center 50%;
+	background-size: 70%;
+}
+
+a.social-youtube {
+	background-image: url(images/icons/social-youtube.svg);
+	background-position: center 55%;
+	background-size: 75%;
+}
+
+a.social-linkedin {
+	background-image: url(images/icons/social-linkedin.svg);
+	background-position: center 50%;
+	background-size: 65%;
+}
+
+.wsu-signature {
+	margin-top: 3rem;
+}
+
+.wsu-signature img {
+	opacity: .8;
+	width: 200px;
+	transition: all .3s ease;
+}
+
+.wsu-signature img:hover {
+	opacity: 1;
+}
+
+.footer-bottom-wrap {
+	border-top: solid 1px rgba(255, 255, 255, .2);
+	display: flex;
+	flex-wrap: wrap;
+	font-size: .7rem;
+	padding-top: .75rem;
+	width: 100%;
+}
+
+.footer-contact-info span {
+	margin-right: .5rem;
+}
+
+.global-links {
+	margin-left: auto;
+}
+
+.global-links ul {
+	padding: 0;
+}
+
+.global-links li {
+	display: inline;
+	margin-left: .5rem;
+}

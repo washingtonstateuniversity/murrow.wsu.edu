@@ -443,8 +443,7 @@
 		display: none;
 	}
 
-	/* Navigation for site header and site footer */
-	.footer-nav > ul,
+	/* Navigation for site header */
 	#spine nav.spine-sitenav > ul {
 		display: flex;
 		flex-wrap: wrap;
@@ -461,30 +460,8 @@
 		padding-right: 3em;
 	}
 
-	.footer-nav > ul > li {
-		flex: 1;
-	}
-
-	.footer-nav > ul > li {
-		min-width: 180px;
-	}
-
 	#spine nav.spine-sitenav > ul > li > a {
 		margin-bottom: 1em;
-	}
-
-	.footer-nav > ul > li > a {
-		color: #fff;
-	}
-
-	.footer-nav > ul > li > ul,
-	#spine nav.spine-sitenav > ul > li > ul {
-		padding: 1em 0;
-	}
-
-	.footer-nav > ul > li > ul a {
-		color: rgba(255, 255, 255, .7);
-		font-size: .9em;
 	}
 }
 
