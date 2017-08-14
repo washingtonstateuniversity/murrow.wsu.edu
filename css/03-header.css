@@ -239,6 +239,7 @@
 		display: flex;
 		background: #333;
 		left: 0;
+		padding: 1rem 0;
 	}
 
 	#spine nav.spine-sitenav > ul > li > ul > li {
