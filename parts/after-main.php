@@ -38,10 +38,14 @@
 			Social media
 		</header>
 		<ul class="social-channels">
-			<li><a class="social-facebook" href="https://www.facebook.com/murrowcollege">Facebook</a></li>
-			<li><a class="social-twitter"  href="https://twitter.com/MurrowCollege">Twitter</a></li>
-			<li><a class="social-youtube"  href="https://www.youtube.com/user/murrowcollege?feature=watch">YouTube</a></li>
-			<li><a class="social-linkedin"  href="https://www.linkedin.com/groups/63569/profile">LinkedIn</a></li>
+			<?php
+			foreach ( spine_social_options() as $socialite => $social_url ) {
+				?>
+				<li>
+					<a class="social-<?php echo esc_attr( $socialite ); ?>" href="<?php echo esc_url( $social_url ); ?>"><?php echo esc_html( $socialite ); ?></a>
+				</li><?php
+			}
+			?>
 		</ul>
 		<div class="wsu-signature">
 			<a href="https://wsu.edu"><img alt="Washington State University logo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/wsu-logo-white.svg' ); ?>"></a>
