@@ -72,6 +72,39 @@ function manage_subset_data( $subset, $post ) {
 }
 
 /**
+ * Provide fallback URLs if thumbnail sizes have not been generated
+ * for a post pulled in with content syndicate.
+ *
+ * @param \stdClass $content
+ *
+ * @return string
+ */
+function get_image_url( $content ) {
+	// If no embedded featured media exists, use the full thumbnail.
+	if ( ! isset( $content->featured_media )
+		|| ! isset( $content->featured_media->media_details )
+		|| ! isset( $content->featured_media->media_details->sizes ) ) {
+		return $content->thumbnail;
+	}
+
+	$sizes = $content->featured_media->media_details->sizes;
+
+	if ( isset( $sizes->{'spine-small_size'} ) ) {
+		return $sizes->{'spine-small_size'}->source_url;
+	}
+
+	if ( isset( $sizes->{'medium_large'} ) ) {
+		return $sizes->{'medium_large'}->source_url;
+	}
+
+	if ( isset( $sizes->{'large'} ) ) {
+		return $sizes->{'large'}->source_url;
+	}
+
+	return $content->thumbnail;
+}
+
+/**
  * Provide custom output for the wsuwp_json shortcode.
  *
  * @since 0.0.5
@@ -99,8 +132,11 @@ function wsuwp_json_output( $content, $data, $atts ) {
 				?>
 				<article class="content-syndicate-item">
 					<?php if ( ! empty( $content->thumbnail ) ) : ?>
+						<?php
+						$image_url = get_image_url( $content );
+						?>
 					<figure class="content-item-image">
-						<a href="<?php echo esc_url( $content->link ); ?>"><img src="<?php echo esc_url( $content->featured_media->media_details->sizes->{'spine-small_size'}->source_url ); ?>" alt="<?php echo esc_attr( $content->featured_media->alt_text ); ?>"></a>
+						<a href="<?php echo esc_url( $content->link ); ?>"><img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $content->featured_media->alt_text ); ?>"></a>
 						<?php
 
 						// If a caption is not manually assigned, then WordPress will auto-create a caption that we should not use.
