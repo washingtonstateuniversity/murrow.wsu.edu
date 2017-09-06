@@ -26,6 +26,10 @@ main section {
 	padding: 2rem 0 0;
 }
 
+main section.bg-light {
+	background: none;
+}
+
 main .hentry section {
 	padding: 2rem 0 4rem;
 }
@@ -87,7 +91,8 @@ main .breadcrumbs-bottom {
 
 /* no red tab for you */
 #jacket #binder .hentry section.row:first-of-type:before,
-#jacket #binder main section.breadcrumbs-bottom:before {
+#jacket #binder main section.breadcrumbs-bottom:before,
+#jacket #binder main section.no-tab:before {
 	display: none;
 }
 
@@ -162,14 +167,16 @@ footer.site-footer {
 	color: #fff;
 }
 
-.single-post .article-header {
+.single-post .article-header,
+main section.bg-dark {
 	background: #191919;
 	color: #fff;
 	margin: 0 -2rem;
 	padding: 0 0 2rem 2rem;
 }
 
-.article-header * {
+.article-header *,
+main section.bg-dark * {
 	color: #fff;
 }
 
