@@ -186,22 +186,37 @@ footer.site-footer {
 	padding: 4rem 0 !important;
 }
 
+.article-body.side-right .one {
+	padding-right: 2rem !important;
+}
+
 .meta-head {
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 3.5%;
 	font-weight: 700;
-	margin-top: .5rem;
 	padding-bottom: 0;
+	padding-left: 1.25rem;
 	text-transform: uppercase;
+}
+
+.meta-topic {
+	background-image: url(images/icons/topic.svg);
+}
+
+.meta-people {
+	background-image: url(images/icons/people.svg);
 }
 
 .meta-item-list {
 	list-style: none;
-	margin: 0;
+	margin: .25rem 0 .75rem;
 	padding: 0;
 }
 
 .meta-item {
 	font-size: .9em;
-	padding: 0 0 0 .15rem;
+	padding: 0 0 .15rem 1.4rem;
 }
 
 .meta-item a {
