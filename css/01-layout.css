@@ -167,12 +167,16 @@ footer.site-footer {
 	color: #fff;
 }
 
-.single-post .article-header,
-main section.bg-dark {
+.single-post .article-header {
 	background: #191919;
 	color: #fff;
 	margin: 0 -2rem;
 	padding: 0 0 2rem 2rem;
+}
+
+main section.bg-dark {
+	background: #191919;
+	color: #fff;
 }
 
 .article-header *,
