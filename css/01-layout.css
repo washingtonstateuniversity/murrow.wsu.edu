@@ -86,7 +86,7 @@ main .breadcrumbs-bottom {
 }
 
 .article-body .column.two:before {
-	left: 0;
+	left: 2rem;
 }
 
 /* no red tab for you */
@@ -170,7 +170,7 @@ footer.site-footer {
 .single-post .article-header {
 	background: #191919;
 	color: #fff;
-	margin: 0 -2rem;
+	margin: 0;
 	padding: 0 0 2rem 2rem;
 }
 
@@ -194,11 +194,11 @@ main section.bg-dark * {
 }
 
 .article-body .column {
-	padding: 4rem 0 !important;
+	padding-top: 4rem;
 }
 
 .article-body.side-right .one {
-	padding-right: 2rem !important;
+	padding-right: 2rem;
 }
 
 .meta-head {
