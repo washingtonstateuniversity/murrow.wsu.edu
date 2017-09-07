@@ -1,13 +1,9 @@
 <section class="row single gutter">
 
-	<div class="column one">
+	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php get_template_part( 'articles/post', get_post_type() ) ?>
 
-			<?php get_template_part( 'articles/post', get_post_type() ) ?>
-
-		<?php endwhile; ?>
-
-	</div><!--/column-->
+	<?php endwhile; ?>
 
 </section>
