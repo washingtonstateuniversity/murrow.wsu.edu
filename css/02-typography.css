@@ -128,6 +128,14 @@ h3 + ul {
 	margin-top: -.5em;
 }
 
+blockquote {
+	font-size: 1.5rem;
+	font-family: "Open Sans";
+	font-style: italic;
+	font-weight: 300;
+	padding: 2rem 0 1.5rem 3rem;
+}
+
 ::selection {
 	background: #000;
 	color: #fff;

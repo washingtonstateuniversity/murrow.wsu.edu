@@ -76,6 +76,7 @@
 .content-item-categories a {
 	color: rgba(0, 0, 0, .7);
 	font-size: .7rem;
+	white-space: nowrap;
 }
 
 .content-item-categories a:hover {
