@@ -11,7 +11,7 @@ include_once __DIR__ . '/includes/breadcrumb.php';
 
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
-	return '0.5.5';
+	return '0.5.6';
 }
 
 // Disable background image selection for posts and pages.
