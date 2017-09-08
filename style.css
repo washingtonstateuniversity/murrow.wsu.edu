@@ -106,6 +106,16 @@ main .breadcrumbs-bottom {
 	display: none;
 }
 
+/* bleed two sections together - also removes red tab */
+main .hentry section.no-space {
+	margin-top: -3rem;
+	padding-top: 0;
+}
+
+#jacket #binder main section.no-space:before {
+	display: none;
+}
+
 
 /* Max widths for content sections */
 .main-header,
@@ -255,7 +265,7 @@ main ul.meta-item-list li:before {
 }
 
 .article-footer {
-	padding-bottom: 2rem;
+	padding: 1rem 2rem;
 }
 
 section.pager {
