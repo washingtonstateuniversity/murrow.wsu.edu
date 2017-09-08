@@ -102,7 +102,8 @@ main .breadcrumbs-bottom {
 /* no red tab for you */
 #jacket #binder .hentry section.row:first-of-type:before,
 #jacket #binder main section.breadcrumbs-bottom:before,
-#jacket #binder main section.no-tab:before {
+#jacket #binder main section.no-tab:before,
+#jacket #binder main section.bg-light:before {
 	display: none;
 }
 
@@ -114,6 +115,10 @@ main .hentry section.no-space {
 
 #jacket #binder main section.no-space:before {
 	display: none;
+}
+
+#jacket #binder main section.no-space.bg-dark:before {
+	display: block;
 }
 
 
@@ -179,24 +184,26 @@ footer.site-footer {
 }
 
 .single-post .breadcrumbs-top {
-	background: #191919;
+	background: #292929;
 	color: #fff;
 }
 
 .single-post .breadcrumbs-top a {
 	color: #fff;
+	border: none;
 }
 
 .single-post .article-header {
-	background: #191919;
+	background: #292929;
 	color: #fff;
 	margin: 0;
 	padding: 0 0 2rem 2rem;
 }
 
 main section.bg-dark {
-	background: #191919;
+	background: #292929;
 	color: #fff;
+	margin-top: 0;
 }
 
 .article-header *,
@@ -254,10 +261,39 @@ main section.bg-dark * {
 
 .meta-item a {
 	color: #777;
+	border: none;
+	position: relative;
+	transition: all .3s ease;
 }
 
 .meta-item a:hover {
-	color: #a60f2d;
+	border-bottom: 1px solid;
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a {
+	border: none;
+	position: relative;
+}
+
+.meta-item a:after,
+main h1 a:after,
+main h2 a:after,
+main h3 a:after,
+main h4 a:after {
+	content: "";
+	background-image: url(images/icons/link.svg);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 70%;
+	padding-bottom: 0;
+	margin-left: .25rem;
+	position: absolute;
+	top: 0;
+	height: 1rem;
+	width: 1rem;
 }
 
 main ul.meta-item-list li:before {
@@ -458,6 +494,20 @@ h6 {
 	padding: 20px 0 5px;
 }
 
+main a {
+	border-bottom: 1px solid #fa5735;
+	color: inherit;
+	transition: all .3s ease;
+}
+
+main p a {
+	font-weight: 400;
+}
+
+main a:hover {
+	color: #fa5735;
+}
+
 main ul {
 	list-style: none;
 	padding: 0 0 1.5em 2.5em;
@@ -486,6 +536,11 @@ main ul li:before {
 
 strong {
 	font-weight: 700;
+}
+
+p.sub-callout {
+	font-weight: 700;
+	padding-bottom: 0;
 }
 
 p + ul,
@@ -1211,6 +1266,18 @@ main a.button:active {
 .content-item-cta {
 	font-size: .85rem;
 	font-weight: 400;
+	margin-top: 1rem;
+}
+
+main .content-item-cta a {
+	border: none;
+	background-image: url(images/icons/arrow-right.svg);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 8.5%;
+	color: #a60f2d;
+	margin-left: .25rem;
+	padding: .8rem;
 }
 
 .content-item-categories {
@@ -1218,7 +1285,8 @@ main a.button:active {
 	padding-top: 2rem;
 }
 
-.content-item-categories a {
+main .content-item-categories a {
+	border-bottom: none;
 	color: rgba(0, 0, 0, .7);
 	font-size: .7rem;
 	white-space: nowrap;
@@ -1226,6 +1294,7 @@ main a.button:active {
 
 .content-item-categories a:hover {
 	border-bottom: 1px solid;
+	color: #fa5735;
 }
 
 

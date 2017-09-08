@@ -66,6 +66,18 @@
 .content-item-cta {
 	font-size: .85rem;
 	font-weight: 400;
+	margin-top: 1rem;
+}
+
+main .content-item-cta a {
+	border: none;
+	background-image: url(images/icons/arrow-right.svg);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 8.5%;
+	color: #a60f2d;
+	margin-left: .25rem;
+	padding: .8rem;
 }
 
 .content-item-categories {
@@ -73,7 +85,8 @@
 	padding-top: 2rem;
 }
 
-.content-item-categories a {
+main .content-item-categories a {
+	border-bottom: none;
 	color: rgba(0, 0, 0, .7);
 	font-size: .7rem;
 	white-space: nowrap;
@@ -81,6 +94,7 @@
 
 .content-item-categories a:hover {
 	border-bottom: 1px solid;
+	color: #fa5735;
 }
 
 
