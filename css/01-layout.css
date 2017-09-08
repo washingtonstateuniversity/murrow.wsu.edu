@@ -92,7 +92,8 @@ main .breadcrumbs-bottom {
 /* no red tab for you */
 #jacket #binder .hentry section.row:first-of-type:before,
 #jacket #binder main section.breadcrumbs-bottom:before,
-#jacket #binder main section.no-tab:before {
+#jacket #binder main section.no-tab:before,
+#jacket #binder main section.bg-light:before {
 	display: none;
 }
 
@@ -104,6 +105,10 @@ main .hentry section.no-space {
 
 #jacket #binder main section.no-space:before {
 	display: none;
+}
+
+#jacket #binder main section.no-space.bg-dark:before {
+	display: block;
 }
 
 
@@ -169,24 +174,26 @@ footer.site-footer {
 }
 
 .single-post .breadcrumbs-top {
-	background: #191919;
+	background: #292929;
 	color: #fff;
 }
 
 .single-post .breadcrumbs-top a {
 	color: #fff;
+	border: none;
 }
 
 .single-post .article-header {
-	background: #191919;
+	background: #292929;
 	color: #fff;
 	margin: 0;
 	padding: 0 0 2rem 2rem;
 }
 
 main section.bg-dark {
-	background: #191919;
+	background: #292929;
 	color: #fff;
+	margin-top: 0;
 }
 
 .article-header *,
@@ -242,10 +249,39 @@ main section.bg-dark * {
 
 .meta-item a {
 	color: #777;
+	border: none;
+	position: relative;
+	transition: all .3s ease;
 }
 
 .meta-item a:hover {
-	color: #a60f2d;
+	border-bottom: 1px solid;
+}
+
+main h1 a,
+main h2 a,
+main h3 a,
+main h4 a {
+	border: none;
+	position: relative;
+}
+
+.meta-item a:after,
+main h1 a:after,
+main h2 a:after,
+main h3 a:after,
+main h4 a:after {
+	content: "";
+	background-image: url(images/icons/link.svg);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 70%;
+	padding-bottom: 0;
+	margin-left: .25rem;
+	position: absolute;
+	top: 0;
+	height: 1rem;
+	width: 1rem;
 }
 
 main ul.meta-item-list li:before {

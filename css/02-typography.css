@@ -91,6 +91,20 @@ h6 {
 	padding: 20px 0 5px;
 }
 
+main a {
+	border-bottom: 1px solid #fa5735;
+	color: inherit;
+	transition: all .3s ease;
+}
+
+main p a {
+	font-weight: 400;
+}
+
+main a:hover {
+	color: #fa5735;
+}
+
 main ul {
 	list-style: none;
 	padding: 0 0 1.5em 2.5em;
@@ -119,6 +133,11 @@ main ul li:before {
 
 strong {
 	font-weight: 700;
+}
+
+p.sub-callout {
+	font-weight: 700;
+	padding-bottom: 0;
 }
 
 p + ul,
