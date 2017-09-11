@@ -59,7 +59,7 @@ function custom_style_formats( $settings ) {
  * @return array
  */
 function editor_stylesheets_version( $stylesheets ) {
-	foreach( $stylesheets as $k => $stylesheet ) {
+	foreach ( $stylesheets as $k => $stylesheet ) {
 		if ( 0 !== strpos( $stylesheet, get_stylesheet_directory_uri() ) ) {
 			continue;
 		}
