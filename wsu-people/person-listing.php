@@ -65,9 +65,6 @@
 
 			<?php if ( $display['link'] ) { ?>
 			<span class="profile-link">
-				<svg xmlns="http://www.w3.org/2000/svg" width="8" height="18">
-					<use href="#person-card-icon_arrow-right" />
-				</svg>
 				<a href="<?php echo esc_url( $display['link'] ); ?>">View full profile</a>
 			<?php } ?>
 
