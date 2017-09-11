@@ -5,6 +5,11 @@ namespace WSU\Murrow\Content_Syndicate;
 add_action( 'rest_api_init', 'WSU\Murrow\Content_Syndicate\register_api_fields' );
 add_filter( 'wsu_content_syndicate_host_data', 'WSU\Murrow\Content_Syndicate\manage_subset_data', 10, 2 );
 add_filter( 'wsuwp_content_syndicate_json_output', 'WSU\Murrow\Content_Syndicate\wsuwp_json_output', 10, 3 );
+add_filter( 'wsuwp_content_syndicate_default_atts', 'WSU\Murrow\Content_Syndicate\append_default_attributes' );
+add_filter( 'wsuwp_content_syndicate_taxonomy_filters', 'WSU\Murrow\Content_Syndicate\modify_rest_url', 10, 2 );
+add_action( 'rest_query_vars', 'WSU\Murrow\Content_Syndicate\rest_query_vars' );
+add_filter( 'query_vars', 'WSU\Murrow\Content_Syndicate\query_vars' );
+add_filter( 'rest_post_query', 'WSU\Murrow\Content_Syndicate\rest_post_query', 12 );
 
 /**
  * Register a syndicate_categories field in the REST API to provide specific
@@ -185,4 +190,87 @@ function wsuwp_json_output( $content, $data, $atts ) {
 	}
 
 	return $content;
+}
+
+/**
+ * Add support for a "featured" flag.
+ *
+ * @param array $atts WSUWP Content Syndicate shortcode attributes.
+ *
+ * @return array Modified list of default shortcode attributes.
+ */
+function append_default_attributes( $atts ) {
+	$atts['featured'] = '';
+
+	return $atts;
+}
+
+/**
+ * Include the featured flag as part of the REST API request.
+ *
+ * @param string $request_url
+ * @param array $atts
+ *
+ * @return string
+ */
+function modify_rest_url( $request_url, $atts ) {
+	if ( ! in_array( $atts['featured'], array( 'yes', 'no' ), true ) ) {
+		return $request_url;
+	}
+
+	$request_url = add_query_arg( array(
+		'filter[featured]' => $atts['featured'],
+	), $request_url );
+
+	return $request_url;
+}
+
+/**
+ * Make the `meta_query` argument available to the REST API request.
+ *
+ * @param array $vars
+ *
+ * @return array
+ */
+function rest_query_vars( $vars ) {
+	array_push( $vars, 'meta_query' );
+
+	return $vars;
+}
+
+/**
+ * Filter the query vars that the plugin expects to be available through the
+ * the `filter` query argument attached to REST request URLs.
+ *
+ * @param array $vars
+ *
+ * @return array
+ */
+function query_vars( $vars ) {
+	array_push( $vars, 'featured' );
+
+	return $vars;
+}
+
+/**
+ * Build a meta query from the featured flag passed via filter parameters
+ * in the REST API request.
+ *
+ * @param array $args
+ *
+ * @return array
+ */
+function rest_post_query( $args ) {
+	if ( ! isset( $args['featured'] ) || ! in_array( $args['featured'], array( 'yes', 'no' ), true ) ) {
+		return $args;
+	}
+
+	$args['meta_query'] = array(
+		array(
+			'key' => '_murrow_featured',
+			'value' => $args['featured'],
+		),
+	);
+
+	return $args;
 }
