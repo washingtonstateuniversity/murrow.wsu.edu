@@ -265,12 +265,21 @@ function rest_post_query( $args ) {
 		return $args;
 	}
 
-	$args['meta_query'] = array(
-		array(
-			'key' => '_murrow_featured',
-			'value' => $args['featured'],
-		),
-	);
+	if ( 'yes' === $args['featured'] ) {
+		$args['meta_query'] = array(
+			array(
+				'key' => '_murrow_featured',
+				'value' => $args['featured'],
+			),
+		);
+	} elseif ( 'no' === $args['featured'] ) {
+		$args['meta_query'] = array(
+			array(
+				'key' => '_murrow_featured',
+				'compare' => 'NOT EXISTS',
+			),
+		);
+	}
 
 	return $args;
 }
