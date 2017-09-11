@@ -92,17 +92,18 @@ h6 {
 }
 
 main a {
-	border-bottom: 1px solid #fa5735;
+	border-bottom: 1px solid #da1e00;
 	color: inherit;
 	transition: all .3s ease;
 }
 
-main p a {
+main p a,
+main li a {
 	font-weight: 400;
 }
 
 main a:hover {
-	color: #fa5735;
+	color: #da1e00;
 }
 
 main ul {
@@ -135,7 +136,7 @@ strong {
 	font-weight: 700;
 }
 
-p.sub-callout {
+.pageheader-sub {
 	font-weight: 700;
 	padding-bottom: 0;
 }
@@ -155,6 +156,21 @@ blockquote {
 	padding: 2rem 0 1.5rem 3rem;
 }
 
+blockquote cite {
+	letter-spacing: 1px;
+	font-size: .8rem;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+cite:before {
+	content: "\2014";
+	color: #a60f2d;
+	font-size: 1.1em;
+	padding-right: .5rem;
+}
+
 ::selection {
 	background: #000;
 	color: #fff;
@@ -166,7 +182,7 @@ p::selection {
 }
 
 main a::selection {
-	background: #fa5735;
+	background: #da1e00;
 	color: #fff;
 }
 
