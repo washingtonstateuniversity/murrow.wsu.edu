@@ -49,6 +49,11 @@
 	text-transform: uppercase;
 }
 
+.wsu-people-filters .search input {
+	background: url(images/icons/search-crimson.svg) center right no-repeat;
+	background-size: 1em;
+}
+
 .wsu-people-filter-label:after {
 	background: url(images/icons/arrow-down.svg) center no-repeat;
 	background-size: 1.25em;
@@ -119,6 +124,10 @@
 	background: #fff;
 	padding: 5rem 1rem;
 	position: relative;
+	display: grid;
+	grid-column-gap: 0;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	margin: 1rem -1rem 0;
 }
 
 .page-template-people .wsu-people:before {
@@ -134,7 +143,7 @@
 .page-template-people .wsu-person {
 	padding: 0;
 	transition: background .3s ease;
-	width: calc(100% / 3);
+	width: 100%;
 }
 
 .page-template-people .wsu-person:hover {
@@ -227,7 +236,9 @@
 }
 
 .page-template-people .wsu-person .contact .title {
-	font-weight: 700;
+	font-size: .85em;
+	font-weight: 400;
+	line-height: 1.5;
 	margin-bottom: 1em;
 	padding-left: 0;
 }
@@ -244,4 +255,19 @@
 
 .page-template-people .wsu-person:hover .profile-link {
 	opacity: 1;
+}
+
+@media only screen and (max-width: 693px) {
+
+	.page-template-people .wsu-people-filters {
+		flex-direction: column;
+	}
+
+	.page-template-people .wsu-people-filter {
+		margin-bottom: 2rem;
+	}
+
+	.page-template-people .wsu-people-filters .search {
+		margin: 0;
+	}
 }
