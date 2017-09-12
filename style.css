@@ -51,7 +51,7 @@ main .hentry section:first-child {
 }
 
 /* images */
-#jacket #binder main section.side-right .column.one img.alignright {
+#jacket #binder main section.side-right .column.one img.alignnone {
 	width: 100%;
 	max-width: calc((1188px - 4rem) / 2);
 	float: right;
@@ -61,7 +61,7 @@ main .hentry section:first-child {
 
 @media (max-width: 1252px) {
 
-	#jacket #binder main section.side-right .column.one img.alignright {
+	#jacket #binder main section.side-right .column.one img.alignnone {
 		max-width: calc((100vw - 8rem) / 2);
 		margin-right: calc((100vw - 8rem) / -3);
 	}
