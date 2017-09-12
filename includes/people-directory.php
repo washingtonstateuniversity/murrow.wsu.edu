@@ -74,3 +74,13 @@ function icons() {
 	</svg>
 	<?php
 }
+
+add_filter( 'wsuwp_people_search_filter_label', 'WSU\Murrow\People_Directory\search_label' );
+/**
+ * Change the search input placeholder text.
+ *
+ * @since 0.6.1
+ */
+function search_label() {
+	return 'Search people';
+}
