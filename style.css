@@ -5,7 +5,7 @@
  Author:      WSU University Communications
  Author URI:  https://web.wsu.edu
  Template:    spine
- Version:     0.6.0
+ Version:     0.6.1
 */
 
 
@@ -1805,7 +1805,7 @@ a.social-linkedin {
 	display: grid;
 	grid-column-gap: 0;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	margin: 1rem -1rem 0;
+	margin: 0 -2rem 0 0;
 }
 
 .page-template-people .wsu-people:before {
