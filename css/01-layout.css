@@ -40,6 +40,23 @@ main .hentry section:first-child {
 	padding: 0;
 }
 
+/* images */
+#jacket #binder main section.side-right .column.one img.alignright {
+	width: 100%;
+	max-width: calc((1188px - 4rem) / 2);
+	float: right;
+	margin: 2rem;
+	margin-right: calc((1188px - 4rem) / -3);
+}
+
+@media (max-width: 1252px) {
+
+	#jacket #binder main section.side-right .column.one img.alignright {
+		max-width: calc((100vw - 8rem) / 2);
+		margin-right: calc((100vw - 8rem) / -3);
+	}
+}
+
 /* breadcrumbs */
 main .breadcrumbs {
 	background: none;
