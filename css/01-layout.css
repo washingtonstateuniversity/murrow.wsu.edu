@@ -143,6 +143,52 @@ footer.site-footer {
 }
 
 /* --- pages with featured image --- */
+
+/* Fallback for CSS Grid */
+.page .hentry,
+.single-post .article-header {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.page .hentry section,
+.featured-image-wrapper,
+.page.has-featured-image .hentry .featured-image-wrapper + section,
+.single-post hgroup {
+	flex: 1 100%;
+}
+
+.single-post .article-header > * {
+	padding: 0 2rem;
+}
+
+.page.has-featured-image .hentry .featured-image-wrapper + section {
+	flex: 1;
+	order: -1;
+}
+
+.single-post hgroup {
+	flex: 1;
+}
+
+.featured-image-wrapper {
+	flex: 1;
+	margin-left: 2rem;
+}
+
+@supports (display: grid) {
+
+	.single-post .article-header > *,
+	.page.has-featured-image .hentry .featured-image-wrapper + section {
+		padding: 0;
+	}
+
+	.featured-image-wrapper {
+		margin-left: 0;
+	}
+}
+
+/* CSS Grid */
 .page .hentry,
 .single-post .article-header {
 	display: grid;
@@ -177,7 +223,8 @@ footer.site-footer {
 
 .featured-image-wrapper {
 	grid-column: 3 / 4;
-	margin: 6rem 2rem 0 0;
+	margin-top: 6rem;
+	margin-right: 2rem;
 }
 
 .single-post .featured-image-wrapper {
