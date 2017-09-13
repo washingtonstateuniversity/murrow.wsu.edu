@@ -88,6 +88,14 @@
 	margin-top: 0;
 }
 
+.page-template-people .single .column.one {
+	padding: 0;
+}
+
+.page-template-people .single.breadcrumbs .column.one {
+	padding: 2rem 2rem 0;
+}
+
 .page-template-people .article-header,
 .wsu-people-filters {
 	padding: 0 2rem;
@@ -112,7 +120,6 @@
 	display: grid;
 	grid-column-gap: 0;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	margin: 0 -2rem 0 0;
 }
 
 .page-template-people .wsu-people:before {
