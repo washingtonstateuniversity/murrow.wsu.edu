@@ -358,9 +358,7 @@ function people_html( $html, $person ) {
 
 		<div class="wsu-person-info">
 
-			<div class="name">
-				<a href="<?php echo esc_url( $person->link ); ?>"><?php echo esc_html( $person->title->rendered ); ?></a>
-			</div>
+			<div class="name"><?php echo esc_html( $person->title->rendered ); ?></div>
 
 			<?php foreach ( $titles as $title ) { ?>
 			<div class="title"><?php echo esc_html( $title ); ?></div>

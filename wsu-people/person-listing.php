@@ -20,11 +20,7 @@
 
 	<div class="wsu-person-info">
 
-		<div class="name">
-			<?php if ( $display['link'] ) { ?><a href="<?php echo esc_url( $display['link'] ); ?>"><?php } ?>
-			<?php echo esc_html( $display['name'] ); ?>
-			<?php if ( $display['link'] ) { ?></a><?php } ?>
-		</div>
+		<div class="name"><?php echo esc_html( $display['name'] ); ?></div>
 
 		<?php
 		if ( $display['titles'] ) {
@@ -64,7 +60,7 @@
 		<?php if ( $display['link'] ) { ?>
 		<div class="profile-link">
 			<a href="<?php echo esc_url( $display['link'] ); ?>">View full profile</a>
-		<div>
+		</div>
 		<?php } ?>
 
 	</div>
