@@ -1,3 +1,17 @@
+/* CSS Grid fallback */
+.content-syndicate-wrapper,
+.wsuwp-people-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.content-syndicate-item,
+.wsuwp-person-container {
+	flex: 1;
+	min-width: 300px;
+}
+
+/* CSS Grid */
 .content-syndicate-wrapper,
 .wsuwp-people-wrapper {
 	display: grid;
