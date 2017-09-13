@@ -3,6 +3,10 @@
 namespace WSU\Murrow\People_Directory;
 
 add_filter( 'wsuwp_people_default_rewrite_slug', 'WSU\Murrow\People_Directory\rewrite_arguments' );
+add_filter( 'wsuwp_search_post_data', 'WSU\Murrow\People_Directory\search_data', 10, 2 );
+add_action( 'wp_footer', 'WSU\Murrow\People_Directory\icons' );
+add_filter( 'wsuwp_people_search_filter_label', 'WSU\Murrow\People_Directory\search_label' );
+
 /**
  * Filter the rewrite arguments passed to register_post_type by the people directory.
  *
@@ -17,7 +21,6 @@ function rewrite_arguments( $rewrite ) {
 	);
 }
 
-add_filter( 'wsuwp_search_post_data', 'WSU\Murrow\People_Directory\search_data', 10, 2 );
 /**
  * Filter the data sent to Elasticsearch for a profile record.
  *
@@ -40,7 +43,6 @@ function search_data( $data, $post ) {
 	return $data;
 }
 
-add_action( 'wp_footer', 'WSU\Murrow\People_Directory\icons' );
 /**
  * Provides icons for use in profile cards.
  *
@@ -87,7 +89,6 @@ function people_card_icons() {
 	return $content;
 }
 
-add_filter( 'wsuwp_people_search_filter_label', 'WSU\Murrow\People_Directory\search_label' );
 /**
  * Change the search input placeholder text.
  *
