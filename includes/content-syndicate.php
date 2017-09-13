@@ -11,7 +11,7 @@ add_action( 'rest_query_vars', 'WSU\Murrow\Content_Syndicate\rest_query_vars' );
 add_filter( 'query_vars', 'WSU\Murrow\Content_Syndicate\query_vars' );
 add_filter( 'rest_post_query', 'WSU\Murrow\Content_Syndicate\rest_post_query', 12 );
 add_filter( 'wsuwp_people_item_html', 'WSU\Murrow\Content_Syndicate\people_html', 10, 2 );
-
+add_action( 'wp_footer', 'WSU\Murrow\Content_Syndicate\people_icons' );
 
 /**
  * Register a syndicate_categories field in the REST API to provide specific
@@ -402,4 +402,17 @@ function people_html( $html, $person ) {
 	ob_end_clean();
 
 	return $html;
+}
+
+/**
+ * Provides icons for use in profile cards.
+ *
+ * @since 0.6.2
+ */
+function people_icons() {
+	$post = get_post();
+
+	if ( $post->post_content && has_shortcode( $post->post_content, 'wsuwp_people' ) ) {
+		echo \WSU\Murrow\People_Directory\people_card_icons(); // @codingStandardsIgnoreLine
+	}
 }

@@ -50,11 +50,20 @@ function icons() {
 	$post = get_post();
 	$template = get_post_meta( $post->ID, '_wp_page_template', true );
 
-	if ( ! $template || 'templates/people.php' !== $template ) {
-		return;
+	if ( $template && 'templates/people.php' === $template ) {
+		echo people_card_icons(); // @codingStandardsIgnoreLine
 	}
+}
+
+/**
+ * Returns the SVG containing the symbols used as icons for people cards.
+ *
+ * @since 0.6.2
+ */
+function people_card_icons() {
+	ob_start();
 	?>
-	<svg xmlns="http://www.w3.org/2000/svg" class="icon-set">
+	<svg xmlns="http://www.w3.org/2000/svg" class="people-card-icon-set">
 
 		<symbol id="person-card-icon_phone" viewBox="0 0 15 15">
 			<title>Phone number</title>
@@ -73,6 +82,9 @@ function icons() {
 
 	</svg>
 	<?php
+	$content = ob_get_clean();
+
+	return $content;
 }
 
 add_filter( 'wsuwp_people_search_filter_label', 'WSU\Murrow\People_Directory\search_label' );
