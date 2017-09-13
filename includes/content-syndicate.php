@@ -10,6 +10,8 @@ add_filter( 'wsuwp_content_syndicate_taxonomy_filters', 'WSU\Murrow\Content_Synd
 add_action( 'rest_query_vars', 'WSU\Murrow\Content_Syndicate\rest_query_vars' );
 add_filter( 'query_vars', 'WSU\Murrow\Content_Syndicate\query_vars' );
 add_filter( 'rest_post_query', 'WSU\Murrow\Content_Syndicate\rest_post_query', 12 );
+add_filter( 'wsuwp_people_item_html', 'WSU\Murrow\Content_Syndicate\people_html', 10, 2 );
+
 
 /**
  * Register a syndicate_categories field in the REST API to provide specific
@@ -282,4 +284,122 @@ function rest_post_query( $args ) {
 	}
 
 	return $args;
+}
+
+/**
+ * Provide a custom HTML template for use with syndicated people.
+ *
+ * @since 0.6.2
+ *
+ * @param string   $html   The HTML to output for an individual person.
+ * @param stdClass $person Object representing a person received from people.wsu.edu.
+ *
+ * @return string The HTML to output for a person.
+ */
+function people_html( $html, $person ) {
+	// Cast the collection as an array to account for scenarios
+	// where it can sometimes come through as an object.
+	$photo_collection = (array) $person->photos;
+	$photo = false;
+
+	// Get the URL of the display photo.
+	if ( ! empty( $photo_collection ) ) {
+		if ( ! empty( $person->display_photo ) && isset( $photo_collection[ $person->display_photo ] ) ) {
+			$photo = $photo_collection[ $person->display_photo ]->thumbnail;
+		} elseif ( isset( $photo_collection[0] ) ) {
+			$photo = $photo_collection[0]->thumbnail;
+		}
+	}
+
+	// Get the legacy profile photo URL if the person's collection is empty.
+	if ( ! $photo && isset( $person->profile_photo ) ) {
+		$photo = $person->profile_photo;
+	}
+
+	// Get the display title(s).
+	if ( ! empty( $person->working_titles ) ) {
+		if ( ! empty( $person->display_title ) ) {
+			$display_titles = explode( ',', $person->display_title );
+			foreach ( $display_titles as $display_title ) {
+				if ( isset( $person->working_titles[ $display_title ] ) ) {
+					$titles[] = $person->working_titles[ $display_title ];
+				}
+			}
+		} else {
+			$titles = $person->working_titles;
+		}
+	} else {
+		$titles = array( $person->position_title );
+	}
+
+	// Get the email address to display.
+	if ( ! empty( $person->email_alt ) ) {
+		$email = $person->email_alt;
+	} else {
+		$email = $person->email;
+	}
+
+	// Get the phone number to display.
+	if ( ! empty( $person->phone_alt ) ) {
+		$phone = $person->phone_alt;
+	} else {
+		$phone = $person->phone;
+	}
+
+	ob_start();
+	?>
+	<article class="wsu-person">
+
+		<?php if ( $photo ) { ?>
+		<figure class="photo">
+			<a href="<?php echo esc_url( $person->link ); ?>"><img src="<?php echo esc_url( $photo ); ?>" alt="<?php echo esc_attr( $person->title->rendered ); ?>" /></a>
+		</figure>
+		<?php } ?>
+
+		<div class="wsu-person-info">
+
+			<div class="name">
+				<a href="<?php echo esc_url( $person->link ); ?>"><?php echo esc_html( $person->title->rendered ); ?></a>
+			</div>
+
+			<?php foreach ( $titles as $title ) { ?>
+			<div class="title"><?php echo esc_html( $title ); ?></div>
+			<?php } ?>
+
+			 <div class="phone">
+				<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+					<use href="#person-card-icon_phone" />
+				</svg>
+				<a href="tel:+1-<?php echo esc_attr( $phone ); ?>"><?php echo esc_html( $phone ); ?></a>
+			</div>
+
+			<div class="email">
+				<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11">
+					<use href="#person-card-icon_email" />
+				</svg>
+				<a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+			</div>
+
+			<?php if ( ! empty( $person->website ) ) { ?>
+			<div class="website">
+				<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+					<use href="#person-card-icon_link" />
+				</svg>
+				<a href="<?php echo esc_url( $person->website ); ?>"><?php echo esc_url( $person->website ); ?></a>
+			</div>
+			<?php } ?>
+
+			<div class="profile-link">
+				<a href="<?php echo esc_url( $person->link ); ?>">View full profile</a>
+			</div>
+
+		</div>
+
+	</article>
+
+	<?php
+	$html = ob_get_contents();
+	ob_end_clean();
+
+	return $html;
 }
