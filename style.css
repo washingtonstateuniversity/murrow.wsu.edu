@@ -1749,17 +1749,115 @@ a.social-linkedin {
 	margin-left: .5rem;
 }
 
-.page-template-people .icon-set {
+.people-card-icon-set {
 	display: none;
 }
 
+.wsu-person {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+	padding: 1rem 1rem 3rem;
+	transition: background .3s ease;
+}
+
+.wsu-person:hover {
+	background: #f2f2f2;
+}
+
+.wsu-person a {
+	color: #424242;
+
+}
+
+.wsu-person .photo {
+	width: 40%;
+}
+
+.wsu-person .photo a {
+	border-bottom: none;
+}
+
+.wsu-person-info {
+	box-sizing: border-box;
+	padding-left: 1.5rem;
+	width: 60%;
+}
+
+.wsu-person-info div {
+	margin-bottom: .25rem;
+	padding-left: 1.75rem;
+	overflow: hidden;
+	position: relative;
+	text-overflow: ellipsis;
+}
+
+.wsu-person-info .name {
+	font-size: 1.75em;
+	line-height: normal;
+	padding: 0 0 .5em;
+}
+
+.wsu-person-info .name a,
+.wsu-person-info .profile-link a {
+	border-bottom: none;
+	color: #a60f2d;
+	transition: border-bottom .3s ease;
+}
+
+.wsu-person-info .name a:hover,
+.wsu-person-info .profile-link a:hover {
+	border-bottom: 1px solid #fa5735;
+	color: #a60f2d;
+}
+
+.wsu-person-info .name a:after {
+	content: "";
+	background: url(images/icons/link.svg) right center no-repeat;
+	background-size: 70%;
+	display: inline-block;
+	height: .9em;
+	position: relative;
+	top: .05em;
+	width: .9em;
+}
+
+.wsu-person-info svg {
+	left: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+
+.wsu-person-info .title {
+	font-size: .85em;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 1em;
+	padding-left: 0;
+}
+
+.wsu-person-info .profile-link {
+	background: url(images/icons/arrow-right.svg) 3px center no-repeat;
+	background-size: 8px 16px;
+	font-size: .85rem;
+	font-weight: 400;
+	margin-top: 1.55rem;
+}
+
+/* Directory page layout adjustments. */
 .page-template-people main section {
 	background: none;
 	margin-top: 0;
 }
 
 .page-template-people main .single .column {
-	padding: 0;
+	padding: 2rem 0 0;
 }
 
 .page-template-people .article-header,
@@ -1779,6 +1877,7 @@ a.social-linkedin {
 	grid-column: 1 / 4;
 }
 
+/* Directory page filters */
 .page-template-people .wsu-people-filters {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1895,125 +1994,6 @@ a.social-linkedin {
 	position: absolute;
 	top: 0;
 	width: 3rem;
-}
-
-.page-template-people .wsu-person {
-	padding: 0;
-	transition: background .3s ease;
-	width: 100%;
-}
-
-.page-template-people .wsu-person:hover {
-	background: #f2f2f2;
-}
-
-.page-template-people .wsu-person a {
-	color: #424242;
-	border-bottom: none;
-	transition: border-bottom .3s ease;
-}
-
-.page-template-people .wsu-person a:hover {
-	border-bottom: 1px solid #fa5735;
-}
-
-.page-template-people .wsu-person .card {
-	display: block;
-	overflow: hidden;
-	padding: 1rem 1rem 2rem;
-}
-
-.page-template-people .wsu-person .photo {
-	float: left;
-	margin: 0;
-	padding: 0;
-	width: 40%;
-}
-
-.page-template-people .wsu-person .photo a:hover {
-	border-bottom: none;
-}
-
-.page-template-people .wsu-person .photo img {
-	position: static;
-}
-
-.page-template-people .wsu-person .name,
-.page-template-people .wsu-person .contact {
-	box-sizing: border-box;
-	float: right;
-	padding-left: 1.5rem;
-	width: 60%;
-}
-
-.page-template-people .wsu-person .name {
-	font-size: 1.75em;
-	line-height: normal;
-	padding-bottom: .5em;
-	overflow: hidden;
-	position: relative;
-	text-overflow: ellipsis;
-}
-
-.page-template-people .wsu-person .name a,
-.page-template-people .wsu-person .profile-link a {
-	color: #a60f2d;
-	position: static;
-}
-
-.page-template-people .wsu-person .name a:hover {
-	color: #a60f2d;
-}
-
-.page-template-people .wsu-person .name a:after {
-	display: none;
-	height: .9em;
-	position: relative;
-	top: .05em;
-	width: .9em;
-}
-
-.page-template-people .wsu-person:hover .name a:after {
-	display: inline-block;
-}
-
-.page-template-people .wsu-person .contact span {
-	margin-bottom: .25rem;
-	padding-left: 1.75rem;
-	overflow: hidden;
-	position: relative;
-	text-overflow: ellipsis;
-}
-
-.page-template-people .wsu-person .contact svg {
-	left: 0;
-	position: absolute;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	    -ms-transform: translateY(-50%);
-	        transform: translateY(-50%);
-}
-
-.page-template-people .wsu-person .contact .title {
-	font-size: .85em;
-	font-weight: 400;
-	line-height: 1.5;
-	margin-bottom: 1em;
-	padding-left: 0;
-}
-
-.page-template-people .wsu-person .profile-link {
-	background: url(images/icons/arrow-right.svg) 3px center no-repeat;
-	background-size: 8px 16px;
-	font-size: .9em;
-	font-weight: 700;
-	margin-top: 2em;
-	opacity: 0;
-	transition: opacity .3s ease;
-}
-
-.page-template-people .wsu-person:hover .profile-link {
-	opacity: 1;
 }
 
 @media only screen and (max-width: 693px) {
