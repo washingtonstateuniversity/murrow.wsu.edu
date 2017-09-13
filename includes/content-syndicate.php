@@ -289,7 +289,7 @@ function rest_post_query( $args ) {
 /**
  * Provide a custom HTML template for use with syndicated people.
  *
- * @since 0.6.2
+ * @since 0.6.3
  *
  * @param string   $html   The HTML to output for an individual person.
  * @param stdClass $person Object representing a person received from people.wsu.edu.
@@ -405,7 +405,7 @@ function people_html( $html, $person ) {
 /**
  * Provides icons for use in profile cards.
  *
- * @since 0.6.2
+ * @since 0.6.3
  */
 function people_icons() {
 	$post = get_post();

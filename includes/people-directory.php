@@ -60,7 +60,7 @@ function icons() {
 /**
  * Returns the SVG containing the symbols used as icons for people cards.
  *
- * @since 0.6.2
+ * @since 0.6.3
  */
 function people_card_icons() {
 	ob_start();
