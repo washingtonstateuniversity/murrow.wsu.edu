@@ -1,0 +1,322 @@
+.people-card-icon-set {
+	display: none;
+}
+
+.wsu-person {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 6rem;
+	padding: 1rem;
+	transition: background .3s ease;
+}
+
+.wsu-person:hover {
+	background: #f2f2f2;
+}
+
+.wsu-person a {
+	color: #424242;
+
+}
+
+.wsu-person .photo {
+	width: 40%;
+}
+
+.wsu-person .photo a {
+	border-bottom: none;
+}
+
+.wsu-person-info {
+	box-sizing: border-box;
+	padding-left: 1.5rem;
+	width: 60%;
+}
+
+.wsu-person-info div {
+	margin-bottom: .25rem;
+	padding-left: 1.5rem;
+	overflow: hidden;
+	position: relative;
+	text-overflow: ellipsis;
+}
+
+.wsu-person-info .name {
+	font-size: 1.5em;
+	line-height: normal;
+	padding: 0 0 .5em;
+}
+
+.wsu-person-info svg {
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.wsu-person-info .title {
+	font-size: .85em;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 1em;
+	padding-left: 0;
+}
+
+.wsu-person-info .profile-link {
+	background: url(images/icons/arrow-right.svg) 3px center no-repeat;
+	background-size: 6px;
+	font-size: .9em;
+	font-weight: 700;
+	margin-top: 1.5rem;
+	padding-left: 1rem;
+}
+
+.wsu-person-info .profile-link a {
+	border-bottom: none;
+	color: #a60f2d;
+	transition: border-bottom .3s ease;
+}
+
+.wsu-person-info .profile-link a:hover {
+	border-bottom: 1px solid #fa5735;
+	color: #a60f2d;
+}
+
+/* Directory page layout adjustments. */
+.page-template-people main section {
+	background: none;
+	margin-top: 0;
+}
+
+.page-template-people .single .column.one {
+	padding: 0;
+}
+
+.page-template-people .single.breadcrumbs .column.one {
+	padding: 2rem 2rem 0;
+}
+
+.page-template-people .article-header,
+.wsu-people-filters {
+	padding: 0 2rem;
+}
+
+.page-template-people .article-header {
+	grid-column: 1 / 3;
+}
+
+.page-template-people .article-header * {
+	color: #a60f2d;
+}
+
+.page-template-people .wsu-people-wrapper {
+	grid-column: 1 / 5;
+}
+
+.page-template-people .wsu-people {
+	background: #fff;
+	padding: 5rem 1rem;
+	position: relative;
+	display: grid;
+	grid-column-gap: 0;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.page-template-people .wsu-people:before {
+	background: #a60f2d;
+	content: "";
+	height: .65rem;
+	left: 2rem;
+	position: absolute;
+	top: 0;
+	width: 3rem;
+}
+
+/* Directory page filters. */
+.page-template-people .wsu-people-filters {
+	display: flex;
+	margin-bottom: 4rem;
+}
+
+.wsu-people-filters .search input,
+.wsu-people-filter-label,
+.wsu-people-filter-label:hover,
+.wsu-people-filter-label:focus {
+	background: none;
+	border-radius: 1px;
+	border: 1px solid #a60f2d;
+	box-sizing: border-box;
+	color: #a60f2d;
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 13px;
+	letter-spacing: 1px;
+	margin: 0;
+	outline: none;
+	padding: .75rem 1.75rem;
+	text-transform: uppercase;
+	width: 100%;
+	appearance: none;
+}
+
+.wsu-people-filters .search {
+	flex: 1 0 auto;
+	margin-left: 4rem;
+	order: 1;
+}
+
+.wsu-people-filters .search input {
+	background: url(images/icons/search-crimson.svg) right center no-repeat;
+	background-size: 1em;
+	border-color: transparent;
+	border-bottom-color: #a60f2d;
+	padding-left: 0;
+	transition: padding-left .3s ease;
+}
+
+.wsu-people-filters .search input:focus {
+	padding-left: 1.75rem;
+}
+
+.wsu-people-filters .search input[type="search"]::-webkit-search-decoration {
+	display: none;
+}
+
+.wsu-people-filters .search input::-webkit-input-placeholder {
+	color: #a60f2d;
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 13px;
+}
+
+.wsu-people-filters .search input::-moz-placeholder {
+	color: #a60f2d;
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 13px;
+	opacity: 1;
+}
+
+.wsu-people-filters .search input:-ms-input-placeholder {
+	color: #a60f2d;
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 13px;
+}
+
+.wsu-people-filters .search input:-moz-placeholder {
+	color: #a60f2d;
+	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 13px;
+	opacity: 1;
+}
+
+.wsu-people-filter-label {
+	position: relative;
+}
+
+.wsu-people-filter-label:focus {
+	background: #a60f2d;
+	border-color: #a60f2d;
+	color: #fff;
+}
+
+.wsu-people-filter-label:after {
+	background: url(images/icons/arrow-down.svg) center no-repeat;
+	background-size: 1.25em;
+	content: "";
+	display: inline-block;
+	height: 1em;
+	margin-left: .75em;
+	right: 1rem;
+	text-align: right;
+	top: 0;
+	width: 1.25em;
+}
+
+.wsu-people-filter-label:focus:after {
+	background-image: url(images/icons/arrow-down-white.svg);
+}
+
+.wsu-people-filter-label[aria-expanded="true"]:after {
+	background-image: url(images/icons/arrow-up.svg);
+}
+
+.wsu-people-filter-label[aria-expanded="true"]:focus:after {
+	background-image: url(images/icons/arrow-up-white.svg);
+}
+
+.wsu-people-filter-terms {
+	background: #585858;
+	display: none;
+	list-style: none;
+	padding: 0;
+}
+
+.open + .wsu-people-filter-terms {
+	display: block;
+}
+
+.wsu-people-filter-terms li {
+	padding: 0;
+}
+
+.wsu-people-filter-terms li:before {
+	content: initial;
+}
+
+.wsu-people-filter-terms input[type="checkbox"] {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+}
+
+.wsu-people-filter-terms span {
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	padding: .3rem 1rem;
+}
+
+.wsu-people-filter-terms :focus + span,
+.wsu-people-filter-terms span:hover {
+	background: #404040;
+}
+
+.wsu-people-filter-terms :checked + span {
+	background: #a60f2d;
+}
+
+.wsu-people-filter-terms :checked + span:hover {
+	background: #ca1237;
+}
+
+@media only screen and (min-width: 990px) {
+
+	.page-template-people .wsu-people-filters {
+		width: calc((100% / 3) * 2);
+	}
+}
+
+@media only screen and (min-width: 693px) {
+
+	/* Horribly hacky. */
+	.wsu-people-filter.location {
+		width: 260px;
+	}
+}
+
+@media only screen and (max-width: 693px) {
+
+	.page-template-people .wsu-people-filters {
+		flex-direction: column;
+	}
+
+	.page-template-people .wsu-people-filter {
+		margin-bottom: 2rem;
+	}
+
+	.page-template-people .wsu-people-filters .search {
+		margin: 0;
+	}
+}
