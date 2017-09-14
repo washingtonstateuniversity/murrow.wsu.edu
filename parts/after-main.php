@@ -25,9 +25,11 @@ $murrow_footer_menu_args = array(
 							<a href="mailto:christine.curtis@wsu.edu">christine.curtis@wsu.edu</a></span>
 		</p>
 	</div>
+	<?php if ( has_nav_menu( 'site-footer-menu' ) ) : ?>
 	<nav class="footer-nav">
 		<?php wp_nav_menu( $murrow_footer_menu_args ); ?>
 	</nav>
+	<?php endif; ?>
 	<div class="social-wrap">
 		<header>
 			Social media
