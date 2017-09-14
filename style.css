@@ -1763,6 +1763,18 @@ figcaption {
 	color: #fff;
 }
 
+.general-contact {
+	-webkit-box-ordinal-group: 2;
+	    -ms-flex-order: 1;
+	        order: 1;
+}
+
+.footer-nav {
+	-webkit-box-ordinal-group: 3;
+	    -ms-flex-order: 2;
+	        order: 2;
+}
+
 .general-contact,
 .footer-nav {
 	font-weight: 300;
@@ -1797,6 +1809,9 @@ figcaption {
 .social-wrap {
 	margin-left: auto;
 	text-align: right;
+	-webkit-box-ordinal-group: 4;
+	    -ms-flex-order: 3;
+	        order: 3;
 }
 
 .social-wrap header {
@@ -1883,6 +1898,9 @@ a.social-linkedin {
 	font-size: .7rem;
 	padding-top: .75rem;
 	width: 100%;
+	-webkit-box-ordinal-group: 5;
+	    -ms-flex-order: 4;
+	        order: 4;
 }
 
 .footer-contact-info span {

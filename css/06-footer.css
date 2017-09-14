@@ -19,6 +19,14 @@
 	color: #fff;
 }
 
+.general-contact {
+	order: 1;
+}
+
+.footer-nav {
+	order: 2;
+}
+
 .general-contact,
 .footer-nav {
 	font-weight: 300;
@@ -53,6 +61,7 @@
 .social-wrap {
 	margin-left: auto;
 	text-align: right;
+	order: 3;
 }
 
 .social-wrap header {
@@ -136,6 +145,7 @@ a.social-linkedin {
 	font-size: .7rem;
 	padding-top: .75rem;
 	width: 100%;
+	order: 4;
 }
 
 .footer-contact-info span {
