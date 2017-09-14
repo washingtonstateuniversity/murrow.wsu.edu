@@ -1870,22 +1870,30 @@ a.social-linkedin {
 	background-size: 65%;
 }
 
-.wsu-signature {
+.wsu-signature,
+.wsu-signature-mobile {
 	margin-top: 3rem;
 }
 
+.wsu-signature-mobile a:hover,
 .wsu-signature a:hover {
 	border-bottom: none;
 }
 
+.wsu-signature-mobile img,
 .wsu-signature img {
 	opacity: .8;
 	width: 200px;
 	transition: all .3s ease;
 }
 
+.wsu-signature-mobile img:hover,
 .wsu-signature img:hover {
 	opacity: 1;
+}
+
+.wsu-signature-mobile {
+	display: none;
 }
 
 .footer-bottom-wrap {
@@ -1924,6 +1932,38 @@ a.social-linkedin {
 
 	.footer-nav {
 		display: none;
+	}
+}
+
+@media (max-width: 530px) {
+
+	.social-wrap {
+		width: 100%;
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+	}
+
+	.general-contact {
+		padding-left: 0;
+		padding-top: 2rem;
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+	}
+
+	.site-footer .wsu-signature {
+		display: none;
+	}
+
+	.site-footer .wsu-signature-mobile {
+		display: block;
+		-webkit-box-ordinal-group: 4;
+		    -ms-flex-order: 3;
+		        order: 3;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 1rem;
 	}
 }
 
