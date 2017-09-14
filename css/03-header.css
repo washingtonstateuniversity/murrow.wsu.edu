@@ -95,11 +95,29 @@
 		text-transform: uppercase;
 		font-size: 11px;
 		letter-spacing: .5px;
+		position: relative;
 		transition: color .3s ease;
 	}
 
 	#jacket .global-bar a.global-home:hover {
 		color: #cecece;
+	}
+
+	#jacket .global-bar a.global-home:after {
+		background: url(images/icons/link-light-gray.svg) left center no-repeat;
+		background-size: 98%;
+		content: "";
+		height: 100%;
+		margin-left: .25rem;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		transition: opacity .3s ease;
+		width: 1em;
+	}
+
+	#jacket .global-bar a.global-home:hover:after {
+		opacity: 1;
 	}
 
 	.site-search {
