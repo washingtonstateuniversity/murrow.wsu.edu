@@ -52,6 +52,10 @@
 	background-repeat: no-repeat;
 }
 
+.site-search input.search-submit:focus {
+	background-image: url(./images/icons/search-crimson.svg);
+}
+
 .site-search input[placeholder],
 .site-search [placeholder],
 .site-search *[placeholder] {
