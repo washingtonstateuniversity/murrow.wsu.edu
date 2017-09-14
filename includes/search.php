@@ -103,7 +103,7 @@ function get_elastic_response( $var ) {
 		return $results;
 	}
 
-	$request_url = 'https://elastic.wsu.edu/wsu-web/_search?q=%2bhostname:stage.murrow.wsu.edu%20%2b' . rawurlencode( $var );
+	$request_url = 'https://elastic.wsu.edu/wsu-web/_search?q=%2bhostname:murrow.wsu.edu%20%2b' . rawurlencode( $var );
 
 	$response = wp_remote_get( $request_url );
 
