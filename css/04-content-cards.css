@@ -13,7 +13,8 @@
 
 /* CSS Grid */
 .content-syndicate-wrapper,
-.wsuwp-people-wrapper {
+.wsuwp-people-wrapper,
+.archive .row .column.one {
 	display: grid;
 	grid-column-gap: 0;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -22,7 +23,8 @@
 
 /* - allow aligning elements within an item - */
 .content-syndicate-item,
-.wsuwp-person-container {
+.wsuwp-person-container,
+.archive article {
 	display: flex;
 	flex-direction: column;
 	align-content: flex-start;
@@ -31,13 +33,15 @@
 }
 
 .content-syndicate-item:hover,
-.wsuwp-person-container:hover {
+.wsuwp-person-container:hover,
+.archive article:hover {
 	background-color: rgba(0, 0, 0, .035);
 }
 
 /* - allow for different size images to discplay uniformally - */
 .content-syndicate-item figure a,
-.wsuwp-person-container figure a {
+.wsuwp-person-container figure a,
+.archive article figure a {
 	display: block;
 	height: 0;
 	padding-bottom: 57.5%;
@@ -46,7 +50,8 @@
 }
 
 .content-syndicate-item figure a img,
-.wsuwp-person-container figure a img {
+.wsuwp-person-container figure a img,
+.archive article figure a img {
 	object-fit: cover;
 	object-position: 50%;
 	width: 100%;
@@ -71,19 +76,22 @@
 }
 
 .content-item-title,
-.wsuwp-person-name {
+.wsuwp-person-name,
+.archive article .article-title {
 	font-size: .95rem;
 	font-weight: 400;
 	margin: 1rem 0 .5rem;
 }
 
-.content-item-cta {
+.content-item-cta,
+.archive article .article-read-more {
 	font-size: .85rem;
 	font-weight: 400;
 	margin-top: 1rem;
 }
 
-main .content-item-cta a {
+main .content-item-cta a,
+.archive article .article-read-more a {
 	border: none;
 	background-image: url(images/icons/arrow-right.svg);
 	background-position: left center;
@@ -99,7 +107,8 @@ main .content-item-cta a {
 	padding-top: 2rem;
 }
 
-main .content-item-categories a {
+main .content-item-categories a,
+.archive .article-footer dl dd a {
 	border-bottom: none;
 	color: rgba(0, 0, 0, .7);
 	font-size: .7rem;
@@ -111,6 +120,118 @@ main .content-item-categories a {
 	color: #da1e00;
 }
 
+/* Additional archive styles */
+.archive .article-title {
+	font-size: .95rem;
+	font-weight: 400;
+	margin: 1rem 0 .5rem;
+	text-transform: none;
+}
+
+.archive .article-title a {
+	color: #a60f2d;
+}
+
+.archive article .article-title a:after {
+	display: inline-block;
+	margin: 0 0 .2em .25rem;
+	position: relative;
+}
+
+.archive figure.article-thumbnail {
+	float: none;
+	margin: 0;
+}
+
+.archive .article-subhead {
+	padding: .5rem;
+}
+
+.archive .article-footer {
+	border-top: none;
+	margin-top: auto;
+	padding: 2rem 0 0;
+}
+
+.archive .article-footer dl dt {
+	display: none;
+}
+
+/* Content Syndicate "Excerpts" output */
+.wsuwp-content-syndicate-list {
+	padding: 0;
+	margin-left: -2rem;
+}
+
+.wsuwp-content-syndicate-list .wsuwp-content-syndicate-item {
+	border-bottom: 10px solid #f2f2f2;
+	padding: 2rem 0 4rem 2rem;
+}
+
+.wsuwp-content-syndicate-list .wsuwp-content-syndicate-item:before {
+	content: initial;
+}
+
+.wsuwp-content-syndicate-list .content-item-thumbnail,
+.wsuwp-content-syndicate-list .content-item-excerpt img {
+	display: none;
+}
+
+.wsuwp-content-syndicate-list .content-item-title,
+.wsuwp-content-syndicate-list .content-item-excerpt {
+	padding: 0;
+}
+
+.wsuwp-content-syndicate-list .content-item-title {
+	color: #a60f2d;
+	font-size: 1.75em;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 1em;
+	margin: 1.75rem 0 .5em;
+}
+
+.wsuwp-content-syndicate-list .content-item-title a {
+	border-bottom: none;
+}
+
+.wsuwp-content-syndicate-list .content-item-title a:after {
+	background: url(./images/icons/link.svg) left center no-repeat;
+	background-size: 70%;
+	content: "";
+	display: inline-block;
+	height: 1rem;
+	margin: 0 0 .2em .25rem;
+	width: 1rem;
+}
+
+/* This one is less than great - the attempt is to target the "byline" */
+.wsuwp-content-syndicate-list .content-item-excerpt p:first-child strong {
+	display: block;
+	font-size: .9em;
+	font-weight: 400;
+	margin-bottom: 1em;
+}
+
+.wsuwp-content-syndicate-list .content-item-read-story {
+	background: none;
+	border: 1px solid;
+	border-radius: 0;
+	color: #a60f2d;
+	display: inline-block;
+	font-size: .9em;
+	font-weight: 600;
+	margin-top: 1.2rem;
+	padding: .5rem 1rem;
+	transition: all .3s ease;
+}
+
+.wsuwp-content-syndicate-list .content-item-read-story:hover,
+.wsuwp-content-syndicate-list .content-item-read-story:active {
+	background: #a60f3d;
+	border: 1px solid #a60f3d;
+	color: #fff;
+}
 
 /* determine how to handle later */
 .content-item-byline,
