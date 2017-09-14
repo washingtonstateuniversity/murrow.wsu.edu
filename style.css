@@ -346,7 +346,7 @@ main section.bg-dark * {
 }
 
 .meta-item a {
-	color: #777;
+	color: #737373;
 	border: none;
 	position: relative;
 	transition: all .3s ease;
@@ -755,6 +755,10 @@ main a.button:active {
 	color: #fff;
 }
 
+article footer a:hover {
+	color: #da1e00;
+}
+
 /* Use Open Sans for the Spine */
 #spine,
 .site-search {
@@ -811,6 +815,10 @@ main a.button:active {
 	background-repeat: no-repeat;
 }
 
+.site-search input.search-submit:focus {
+	background-image: url(./images/icons/search-crimson.svg);
+}
+
 .site-search input[placeholder],
 .site-search [placeholder],
 .site-search *[placeholder] {
@@ -854,11 +862,29 @@ main a.button:active {
 		text-transform: uppercase;
 		font-size: 11px;
 		letter-spacing: .5px;
+		position: relative;
 		transition: color .3s ease;
 	}
 
 	#jacket .global-bar a.global-home:hover {
 		color: #cecece;
+	}
+
+	#jacket .global-bar a.global-home:after {
+		background: url(images/icons/link-light-gray.svg) left center no-repeat;
+		background-size: 98%;
+		content: "";
+		height: 100%;
+		margin-left: .25rem;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		transition: opacity .3s ease;
+		width: 1em;
+	}
+
+	#jacket .global-bar a.global-home:hover:after {
+		opacity: 1;
 	}
 
 	.site-search {
@@ -1612,6 +1638,7 @@ figcaption {
 }
 
 .site-footer a:hover {
+	border-bottom: 1px solid #fff;
 	color: #fff;
 }
 
@@ -1667,6 +1694,7 @@ figcaption {
 }
 
 .social-channels a {
+	border-bottom: 1px solid transparent;
 	background-repeat: no-repeat;
 	background-position: center;
 	display: block;
@@ -1708,6 +1736,10 @@ a.social-linkedin {
 
 .wsu-signature {
 	margin-top: 3rem;
+}
+
+.wsu-signature a:hover {
+	border-bottom: none;
 }
 
 .wsu-signature img {

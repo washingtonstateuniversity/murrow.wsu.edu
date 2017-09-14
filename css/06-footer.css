@@ -15,6 +15,7 @@
 }
 
 .site-footer a:hover {
+	border-bottom: 1px solid #fff;
 	color: #fff;
 }
 
@@ -70,6 +71,7 @@
 }
 
 .social-channels a {
+	border-bottom: 1px solid transparent;
 	background-repeat: no-repeat;
 	background-position: center;
 	display: block;
@@ -111,6 +113,10 @@ a.social-linkedin {
 
 .wsu-signature {
 	margin-top: 3rem;
+}
+
+.wsu-signature a:hover {
+	border-bottom: none;
 }
 
 .wsu-signature img {
