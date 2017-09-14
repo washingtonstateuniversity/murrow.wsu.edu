@@ -19,6 +19,14 @@
 	color: #fff;
 }
 
+.general-contact {
+	order: 1;
+}
+
+.footer-nav {
+	order: 2;
+}
+
 .general-contact,
 .footer-nav {
 	font-weight: 300;
@@ -53,6 +61,7 @@
 .social-wrap {
 	margin-left: auto;
 	text-align: right;
+	order: 3;
 }
 
 .social-wrap header {
@@ -111,22 +120,30 @@ a.social-linkedin {
 	background-size: 65%;
 }
 
-.wsu-signature {
+.wsu-signature,
+.wsu-signature-mobile {
 	margin-top: 3rem;
 }
 
+.wsu-signature-mobile a:hover,
 .wsu-signature a:hover {
 	border-bottom: none;
 }
 
+.wsu-signature-mobile img,
 .wsu-signature img {
 	opacity: .8;
 	width: 200px;
 	transition: all .3s ease;
 }
 
+.wsu-signature-mobile img:hover,
 .wsu-signature img:hover {
 	opacity: 1;
+}
+
+.wsu-signature-mobile {
+	display: none;
 }
 
 .footer-bottom-wrap {
@@ -136,6 +153,7 @@ a.social-linkedin {
 	font-size: .7rem;
 	padding-top: .75rem;
 	width: 100%;
+	order: 4;
 }
 
 .footer-contact-info span {
@@ -153,4 +171,37 @@ a.social-linkedin {
 .global-links li {
 	display: inline;
 	margin-left: .5rem;
+}
+
+@media (max-width: 989px) {
+
+	.footer-nav {
+		display: none;
+	}
+}
+
+@media (max-width: 530px) {
+
+	.social-wrap {
+		width: 100%;
+		order: 1;
+	}
+
+	.general-contact {
+		padding-left: 0;
+		padding-top: 2rem;
+		order: 2;
+	}
+
+	.site-footer .wsu-signature {
+		display: none;
+	}
+
+	.site-footer .wsu-signature-mobile {
+		display: block;
+		order: 3;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
 }

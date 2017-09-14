@@ -25,9 +25,11 @@ $murrow_footer_menu_args = array(
 							<a href="mailto:christine.curtis@wsu.edu">christine.curtis@wsu.edu</a></span>
 		</p>
 	</div>
+	<?php if ( has_nav_menu( 'site-footer-menu' ) ) : ?>
 	<nav class="footer-nav">
 		<?php wp_nav_menu( $murrow_footer_menu_args ); ?>
 	</nav>
+	<?php endif; ?>
 	<div class="social-wrap">
 		<header>
 			Social media
@@ -45,6 +47,9 @@ $murrow_footer_menu_args = array(
 		<div class="wsu-signature">
 			<a href="https://wsu.edu"><img alt="Washington State University logo" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/wsu-logo-white.svg' ); ?>"></a>
 		</div>
+	</div>
+	<div class="wsu-signature-mobile">
+		<a href="https://wsu.edu"><img alt="Washington State University logo" src="https://medicine.wsu.edu/wp-content/themes/wsu-medicine/images/wsu-logo-wht.svg"></a>
 	</div>
 	<div class="footer-bottom-wrap">
 		<address class="footer-contact-info">
