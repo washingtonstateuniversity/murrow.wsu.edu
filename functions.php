@@ -13,7 +13,7 @@ include_once __DIR__ . '/includes/featured-stories.php';
 
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
-	return '0.6.5';
+	return '0.6.6';
 }
 
 // Disable background image selection for posts and pages.
