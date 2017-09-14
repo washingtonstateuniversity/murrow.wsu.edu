@@ -164,3 +164,10 @@ a.social-linkedin {
 	display: inline;
 	margin-left: .5rem;
 }
+
+@media (max-width: 989px) {
+
+	.footer-nav {
+		display: none;
+	}
+}

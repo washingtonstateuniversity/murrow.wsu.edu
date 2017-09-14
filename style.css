@@ -1920,6 +1920,13 @@ a.social-linkedin {
 	margin-left: .5rem;
 }
 
+@media (max-width: 989px) {
+
+	.footer-nav {
+		display: none;
+	}
+}
+
 .people-card-icon-set {
 	display: none;
 }
