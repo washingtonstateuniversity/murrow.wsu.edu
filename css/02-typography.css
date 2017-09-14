@@ -229,3 +229,7 @@ main a.button:active {
 	border: 1px solid #a60f3d;
 	color: #fff;
 }
+
+article footer a:hover {
+	color: #da1e00;
+}

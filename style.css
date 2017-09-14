@@ -755,6 +755,10 @@ main a.button:active {
 	color: #fff;
 }
 
+article footer a:hover {
+	color: #da1e00;
+}
+
 /* Use Open Sans for the Spine */
 #spine,
 .site-search {
