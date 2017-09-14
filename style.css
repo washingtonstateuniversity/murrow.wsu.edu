@@ -1382,7 +1382,8 @@ article footer a:hover {
 
 /* CSS Grid */
 .content-syndicate-wrapper,
-.wsuwp-people-wrapper {
+.wsuwp-people-wrapper,
+.archive .row .column.one {
 	display: grid;
 	grid-column-gap: 0;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1391,7 +1392,8 @@ article footer a:hover {
 
 /* - allow aligning elements within an item - */
 .content-syndicate-item,
-.wsuwp-person-container {
+.wsuwp-person-container,
+.archive article {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1406,13 +1408,15 @@ article footer a:hover {
 }
 
 .content-syndicate-item:hover,
-.wsuwp-person-container:hover {
+.wsuwp-person-container:hover,
+.archive article:hover {
 	background-color: rgba(0, 0, 0, .035);
 }
 
 /* - allow for different size images to discplay uniformally - */
 .content-syndicate-item figure a,
-.wsuwp-person-container figure a {
+.wsuwp-person-container figure a,
+.archive article figure a {
 	display: block;
 	height: 0;
 	padding-bottom: 57.5%;
@@ -1421,7 +1425,8 @@ article footer a:hover {
 }
 
 .content-syndicate-item figure a img,
-.wsuwp-person-container figure a img {
+.wsuwp-person-container figure a img,
+.archive article figure a img {
 	-o-object-fit: cover;
 	   object-fit: cover;
 	-o-object-position: 50%;
@@ -1448,19 +1453,22 @@ article footer a:hover {
 }
 
 .content-item-title,
-.wsuwp-person-name {
+.wsuwp-person-name,
+.archive article .article-title {
 	font-size: .95rem;
 	font-weight: 400;
 	margin: 1rem 0 .5rem;
 }
 
-.content-item-cta {
+.content-item-cta,
+.archive article .article-read-more {
 	font-size: .85rem;
 	font-weight: 400;
 	margin-top: 1rem;
 }
 
-main .content-item-cta a {
+main .content-item-cta a,
+.archive article .article-read-more a {
 	border: none;
 	background-image: url(images/icons/arrow-right.svg);
 	background-position: left center;
@@ -1476,7 +1484,8 @@ main .content-item-cta a {
 	padding-top: 2rem;
 }
 
-main .content-item-categories a {
+main .content-item-categories a,
+.archive .article-footer dl dd a {
 	border-bottom: none;
 	color: rgba(0, 0, 0, .7);
 	font-size: .7rem;
@@ -1486,6 +1495,43 @@ main .content-item-categories a {
 .content-item-categories a:hover {
 	border-bottom: 1px solid;
 	color: #da1e00;
+}
+
+/* Additional archive styles */
+.archive .article-title {
+	font-size: .95rem;
+	font-weight: 400;
+	margin: 1rem 0 .5rem;
+	text-transform: none;
+}
+
+.archive .article-title a {
+	color: #a60f2d;
+}
+
+.archive article .article-title a:after {
+	display: inline-block;
+	margin: 0 0 .2em .25rem;
+	position: relative;
+}
+
+.archive figure.article-thumbnail {
+	float: none;
+	margin: 0;
+}
+
+.archive .article-subhead {
+	padding: .5rem;
+}
+
+.archive .article-footer {
+	border-top: none;
+	margin-top: auto;
+	padding: 2rem 0 0;
+}
+
+.archive .article-footer dl dt {
+	display: none;
 }
 
 /* Content Syndicate "Excerpts" output */
