@@ -8,15 +8,13 @@
 ?>
 <article class="<?php echo esc_attr( $display['card_classes'] ); ?>"<?php echo wp_kses_post( $display['card_attributes'] ); ?>>
 
-	<?php if ( $display['photo'] ) { ?>
 	<figure class="photo">
 		<?php if ( $display['link'] ) { ?><a href="<?php echo esc_url( $display['link'] ); ?>"><?php } ?>
-		<img src=""
-			 data-photo="<?php echo esc_url( $display['photo']->thumbnail ); ?>"
+		<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/murrow-avatar.jpg' ); ?>"
+			 data-photo="<?php if ( $display['photo'] ) { echo esc_url( $display['photo']->thumbnail ); } ?>"
 			 alt="<?php echo esc_html( $display['name'] ); ?>" />
 		<?php if ( $display['link'] ) { ?></a><?php } ?>
 	</figure>
-	<?php } ?>
 
 	<div class="wsu-person-info">
 

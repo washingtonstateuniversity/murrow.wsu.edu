@@ -58,7 +58,11 @@
 }
 
 .wsuwp_people_profile .contact a {
-	border-bottom: 1px solid #f75734;
+	border-bottom: 1px solid #da1e00;
+}
+
+.wsuwp_people_profile .contact a:hover {
+	color: #da1e00;
 }
 
 .wsuwp_people_profile > .row {
@@ -79,5 +83,10 @@
 
 	.wsuwp_people_profile .article-header {
 		flex-wrap: wrap;
+	}
+
+	.wsuwp_people_profile .article-header hgroup {
+		margin-top: 2rem;
+		width: 100%;
 	}
 }
