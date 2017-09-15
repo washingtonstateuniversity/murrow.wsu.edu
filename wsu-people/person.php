@@ -8,12 +8,11 @@
 ?>
 <header class="article-header">
 
-	<?php if ( $display['photo'] ) { ?>
+	<?php $photo_url = ( $display['photo'] ) ? $display['photo']->thumbnail : get_stylesheet_directory_uri() . '/images/murrow-avatar.jpg'; ?>
 	<figure class="photo">
-		<img src="<?php echo esc_url( $display['photo']->thumbnail ); ?>"
+		<img src="<?php echo esc_url( $photo_url ); ?>"
 			 alt="<?php echo esc_html( $display['name'] ); ?>" />
 	</figure>
-	<?php } ?>
 
 	<hgroup>
 		<h1 class="article-title"><?php echo esc_html( $display['name'] ); ?></h1>
