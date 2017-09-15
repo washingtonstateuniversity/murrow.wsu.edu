@@ -115,7 +115,8 @@ main .content-item-categories a,
 	white-space: nowrap;
 }
 
-.content-item-categories a:hover {
+.content-item-categories a:hover,
+.archive .article-footer dl dd a:hover {
 	border-bottom: 1px solid;
 	color: #da1e00;
 }
