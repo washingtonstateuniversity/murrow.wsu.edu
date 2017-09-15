@@ -1668,7 +1668,7 @@ figcaption {
 }
 
 .wsuwp_people_profile .photo {
-	margin: 0 2rem 2rem 0;
+	margin-right: 2rem;
 	-webkit-box-flex: 0;
 	    -ms-flex: 0 0 198px;
 	        flex: 0 0 198px;
@@ -1741,6 +1741,11 @@ figcaption {
 	.wsuwp_people_profile .article-header {
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
+	}
+
+	.wsuwp_people_profile .article-header hgroup {
+		margin-top: 2rem;
+		width: 100%;
 	}
 }
 
