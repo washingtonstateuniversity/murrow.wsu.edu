@@ -12,12 +12,16 @@ get_header();
 
 			<?php get_template_part( 'parts/headers' ); ?>
 
-			<section class="row single gutter pad-ends">
+			<section class="row side-right gutter pad-top search-results-header">
+				<header>
+					<h1>Search Results</h1>
+				</header>
 				<div class="column one">
 					<?php get_search_form(); ?>
 				</div>
+				<div class="column two"></div>
 			</section>
-			<section class="row side-right gutter pad-ends">
+			<section class="row side-right gutter pad-ends search-results-container">
 
 				<div class="column one">
 					<?php
