@@ -1547,6 +1547,10 @@ article footer a:hover {
 	margin: 1rem -1rem 0;
 }
 
+.archive .row.breadcrumbs .column.one {
+	display: block;
+}
+
 /* - allow aligning elements within an item - */
 .content-syndicate-item,
 .wsuwp-person-container,
