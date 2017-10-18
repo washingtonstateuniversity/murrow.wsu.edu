@@ -1016,7 +1016,7 @@ article footer a:hover {
 
 	.site-search {
 		position: absolute;
-		width: 100%;
+		right: calc(50vw - 990px / 2 - 6rem);
 		z-index: 3;
 	}
 
@@ -1392,6 +1392,10 @@ article footer a:hover {
 }
 
 @media (max-width: 1252px) {
+
+	.site-search {
+		right: 0;
+	}
 
 	#jacket #binder #spine header.spine-header,
 	#spine nav.spine-sitenav {
