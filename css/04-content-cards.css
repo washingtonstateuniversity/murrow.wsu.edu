@@ -133,7 +133,14 @@ main .content-item-categories a,
 }
 
 .archive .article-title a {
+	border-bottom: 1px solid transparent;
 	color: #a60f2d;
+	transition: color .3s ease, border-bottom-color .3s ease;
+}
+
+.archive .article-title a:hover {
+	border-bottom-color: #da1e00;
+	color: #da1e00;
 }
 
 .archive article .article-title a:after {
