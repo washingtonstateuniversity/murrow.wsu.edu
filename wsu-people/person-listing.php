@@ -31,7 +31,7 @@
 		<?php if ( ! empty( $display['phone'] ) ) { ?>
 		<div class="phone">
 			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-				<use href="#person-card-icon_phone" />
+				<use xlink:href="#person-card-icon_phone" />
 			</svg>
 			<a href="tel:+1-<?php echo esc_attr( $display['phone'] ); ?>"><?php echo esc_html( $display['phone'] ); ?></a>
 		</div>
@@ -40,7 +40,7 @@
 		<?php if ( ! empty( $display['email'] ) ) { ?>
 		<div class="email">
 			<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11">
-				<use href="#person-card-icon_email" />
+				<use xlink:href="#person-card-icon_email" />
 			</svg>
 			<a href="mailto:<?php echo esc_attr( $display['email'] ); ?>"><?php echo esc_html( $display['email'] ); ?></a>
 		</div>
@@ -49,7 +49,7 @@
 		<?php if ( ! empty( $display['website'] ) ) { ?>
 		<div class="website">
 			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-				<use href="#person-card-icon_link" />
+				<use xlink:href="#person-card-icon_link" />
 			</svg>
 			<a href="<?php echo esc_url( $display['website'] ); ?>"><?php echo esc_url( $display['website'] ); ?></a>
 		</div>
