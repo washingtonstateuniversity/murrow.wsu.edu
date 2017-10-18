@@ -1,4 +1,3 @@
-
 html {
 	background: #f2f2f2;
 }
@@ -529,4 +528,60 @@ section.pager {
 .search-results-header .search-form .search-submit:active {
 	background: #ca1237;
 	border-color: #ca1237;
+}
+
+.article-header hgroup {
+	padding: 0;
+}
+
+@media (max-width: 693px) {
+
+	.page .hentry,
+	.single-post .article-header,
+	.featured-image-wrapper,
+	.page.has-featured-image .hentry .featured-image-wrapper + section,
+	.single-post hgroup {
+		display: block;
+	}
+
+	main section {
+		margin-top: 2rem;
+	}
+}
+
+@media (max-width: 989px) {
+
+	#jacket #binder #spine header.spine-header,
+	#spine nav.spine-sitenav {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (max-width: 791px) {
+
+	#binder.fluid #spine #wsu-actions section {
+		width: 100%;
+	}
+}
+
+@media (min-width: 990px) {
+
+	#jacket #binder #spine header.spine-header {
+		position: relative;
+	}
+}
+
+@media (min-width: 1186px) {
+
+	#binder #spine header {
+		left: 0;
+	}
+}
+
+@media (min-width: 1825px) {
+
+	#wsu-signature {
+		left: 0;
+	}
 }

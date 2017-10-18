@@ -21,7 +21,7 @@
 	font-size: 1em;
 	font-weight: 300;
 	padding: .25em 1.5em .25em .5em;
-	width: 6.5em;
+	width: 7.5em;
 	transition: all .3s ease;
 }
 
@@ -126,7 +126,7 @@
 
 	.site-search {
 		position: absolute;
-		width: 100%;
+		right: calc(50vw - 990px / 2 - 6rem);
 		z-index: 3;
 	}
 
@@ -427,6 +427,32 @@
 		padding-bottom: .35em;
 	}
 
+	/* Non-color hover designator for second-level links without children */
+	#jacket #spine .spine-sitenav > ul > li > ul > li > a {
+		position: relative;
+		transition: color .3s ease, padding-left .3s ease;
+	}
+
+	#jacket #spine .spine-sitenav > ul > li > ul > li > a:hover {
+		padding-left: 10px;
+	}
+
+	#jacket #spine .spine-sitenav > ul > li > ul > li > a:before {
+		content: "";
+		position: absolute;
+		top: 8px;
+		left: 0;
+		height: 2px;
+		width: 6px;
+		background: #a60f2d;
+		opacity: 0;
+		transition: all .5s ease;
+	}
+
+	#jacket #spine .spine-sitenav > ul > li > ul > li > a:hover:before {
+		opacity: 1;
+	}
+
 	/* Add padding for parent li of fourth level nav */
 	#spine nav ul > li > ul > li > ul > li.parent.opened > a {
 		padding-bottom: 3px;
@@ -489,6 +515,10 @@
 }
 
 @media (max-width: 1252px) {
+
+	.site-search {
+		right: 0;
+	}
 
 	#jacket #binder #spine header.spine-header,
 	#spine nav.spine-sitenav {

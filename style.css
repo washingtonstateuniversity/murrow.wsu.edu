@@ -5,9 +5,8 @@
  Author:      WSU University Communications
  Author URI:  https://web.wsu.edu
  Template:    spine
- Version:     0.6.6
+ Version:     0.6.7
 */
-
 
 html {
 	background: #f2f2f2;
@@ -571,6 +570,62 @@ section.pager {
 	border-color: #ca1237;
 }
 
+.article-header hgroup {
+	padding: 0;
+}
+
+@media (max-width: 693px) {
+
+	.page .hentry,
+	.single-post .article-header,
+	.featured-image-wrapper,
+	.page.has-featured-image .hentry .featured-image-wrapper + section,
+	.single-post hgroup {
+		display: block;
+	}
+
+	main section {
+		margin-top: 2rem;
+	}
+}
+
+@media (max-width: 989px) {
+
+	#jacket #binder #spine header.spine-header,
+	#spine nav.spine-sitenav {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media screen and (max-width: 791px) {
+
+	#binder.fluid #spine #wsu-actions section {
+		width: 100%;
+	}
+}
+
+@media (min-width: 990px) {
+
+	#jacket #binder #spine header.spine-header {
+		position: relative;
+	}
+}
+
+@media (min-width: 1186px) {
+
+	#binder #spine header {
+		left: 0;
+	}
+}
+
+@media (min-width: 1825px) {
+
+	#wsu-signature {
+		left: 0;
+	}
+}
+
 body {
 	color: #424242;
 	font-weight: 300;
@@ -609,6 +664,14 @@ h1 {
 
 	h1 {
 		margin-top: 2rem;
+	}
+
+	.hero header h1 {
+		font-size: 2.75rem;
+	}
+
+	.hero header h1:before {
+		display: none;
 	}
 }
 
@@ -822,6 +885,7 @@ article footer a:hover {
 	color: #da1e00;
 }
 
+
 /* Use Open Sans for the Spine */
 #spine,
 .site-search {
@@ -847,7 +911,7 @@ article footer a:hover {
 	font-size: 1em;
 	font-weight: 300;
 	padding: .25em 1.5em .25em .5em;
-	width: 6.5em;
+	width: 7.5em;
 	transition: all .3s ease;
 }
 
@@ -952,7 +1016,7 @@ article footer a:hover {
 
 	.site-search {
 		position: absolute;
-		width: 100%;
+		right: calc(50vw - 990px / 2 - 6rem);
 		z-index: 3;
 	}
 
@@ -1263,6 +1327,32 @@ article footer a:hover {
 		padding-bottom: .35em;
 	}
 
+	/* Non-color hover designator for second-level links without children */
+	#jacket #spine .spine-sitenav > ul > li > ul > li > a {
+		position: relative;
+		transition: color .3s ease, padding-left .3s ease;
+	}
+
+	#jacket #spine .spine-sitenav > ul > li > ul > li > a:hover {
+		padding-left: 10px;
+	}
+
+	#jacket #spine .spine-sitenav > ul > li > ul > li > a:before {
+		content: "";
+		position: absolute;
+		top: 8px;
+		left: 0;
+		height: 2px;
+		width: 6px;
+		background: #a60f2d;
+		opacity: 0;
+		transition: all .5s ease;
+	}
+
+	#jacket #spine .spine-sitenav > ul > li > ul > li > a:hover:before {
+		opacity: 1;
+	}
+
 	/* Add padding for parent li of fourth level nav */
 	#spine nav ul > li > ul > li > ul > li.parent.opened > a {
 		padding-bottom: 3px;
@@ -1328,6 +1418,10 @@ article footer a:hover {
 }
 
 @media (max-width: 1252px) {
+
+	.site-search {
+		right: 0;
+	}
 
 	#jacket #binder #spine header.spine-header,
 	#spine nav.spine-sitenav {
@@ -1453,6 +1547,10 @@ article footer a:hover {
 	margin: 1rem -1rem 0;
 }
 
+.archive .row.breadcrumbs .column.one {
+	display: block;
+}
+
 /* - allow aligning elements within an item - */
 .content-syndicate-item,
 .wsuwp-person-container,
@@ -1525,21 +1623,24 @@ article footer a:hover {
 
 .content-item-cta,
 .archive article .article-read-more {
+	background: url(images/icons/arrow-right.svg) left center no-repeat;
+	background-size: 8px;
 	font-size: .85rem;
 	font-weight: 400;
-	margin-top: 1rem;
+	margin: 1rem 0 0 .75rem;
+	padding: 0 0 0 .8rem;
 }
 
 main .content-item-cta a,
 .archive article .article-read-more a {
-	border: none;
-	background-image: url(images/icons/arrow-right.svg);
-	background-position: left center;
-	background-repeat: no-repeat;
-	background-size: 8px;
+	border-bottom: 1px solid transparent;
 	color: #a60f2d;
-	margin-left: .25rem;
-	padding: .8rem;
+	transition: border-bottom-color .3s ease;
+}
+
+main .content-item-cta a:hover,
+.archive article .article-read-more a:hover {
+	border-bottom-color: #da1e00;
 }
 
 .content-item-categories {
@@ -1570,7 +1671,14 @@ main .content-item-categories a,
 }
 
 .archive .article-title a {
+	border-bottom: 1px solid transparent;
 	color: #a60f2d;
+	transition: color .3s ease, border-bottom-color .3s ease;
+}
+
+.archive .article-title a:hover {
+	border-bottom-color: #da1e00;
+	color: #da1e00;
 }
 
 .archive article .article-title a:after {
@@ -2136,13 +2244,13 @@ a.social-linkedin {
 }
 
 .wsu-person-info .profile-link a {
-	border-bottom: none;
+	border-bottom: 1px solid transparent;
 	color: #a60f2d;
-	transition: border-bottom .3s ease;
+	transition: border-bottom-color .3s ease;
 }
 
 .wsu-person-info .profile-link a:hover {
-	border-bottom: 1px solid #fa5735;
+	border-bottom-color: #fa5735;
 	color: #a60f2d;
 }
 

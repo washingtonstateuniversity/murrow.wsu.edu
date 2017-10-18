@@ -72,13 +72,13 @@
 }
 
 .wsu-person-info .profile-link a {
-	border-bottom: none;
+	border-bottom: 1px solid transparent;
 	color: #a60f2d;
-	transition: border-bottom .3s ease;
+	transition: border-bottom-color .3s ease;
 }
 
 .wsu-person-info .profile-link a:hover {
-	border-bottom: 1px solid #fa5735;
+	border-bottom-color: #fa5735;
 	color: #a60f2d;
 }
 
