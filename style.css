@@ -301,6 +301,7 @@ main section.bg-dark * {
 .article-header hgroup {
 	-ms-flex-item-align: end;
 	    align-self: flex-end;
+	padding: 0;
 }
 
 .single-post .featured-image-wrapper {
@@ -570,10 +571,6 @@ section.pager {
 	border-color: #ca1237;
 }
 
-.article-header hgroup {
-	padding: 0;
-}
-
 @media (max-width: 693px) {
 
 	.page .hentry,
@@ -586,43 +583,6 @@ section.pager {
 
 	main section {
 		margin-top: 2rem;
-	}
-}
-
-@media (max-width: 989px) {
-
-	#jacket #binder #spine header.spine-header,
-	#spine nav.spine-sitenav {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-@media screen and (max-width: 791px) {
-
-	#binder.fluid #spine #wsu-actions section {
-		width: 100%;
-	}
-}
-
-@media (min-width: 990px) {
-
-	#jacket #binder #spine header.spine-header {
-		position: relative;
-	}
-}
-
-@media (min-width: 1186px) {
-
-	#binder #spine header {
-		left: 0;
-	}
-}
-
-@media (min-width: 1825px) {
-
-	#wsu-signature {
-		left: 0;
 	}
 }
 
@@ -1086,7 +1046,7 @@ article footer a:hover {
 		height: 95px;
 		padding: 1.25rem 0 1rem;
 		margin: 0 auto;
-		position: static;
+		position: relative;
 	}
 
 	#binder #wsu-signature {
@@ -1433,7 +1393,7 @@ article footer a:hover {
 @media (min-width: 1186px) {
 
 	#binder #spine header {
-		left: 32px;
+		left: 0;
 	}
 }
 
@@ -1441,7 +1401,6 @@ article footer a:hover {
 
 	#wsu-signature {
 		position: absolute;
-		left: 2em;
 	}
 }
 
@@ -1510,12 +1469,25 @@ article footer a:hover {
 	.spine-mobile #binder #wsu-signature {
 		background-image: url(./images/murrow-logo-horizontal.svg);
 	}
+
+	#jacket #binder #spine header.spine-header,
+	#spine nav.spine-sitenav {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 @media (min-width: 530px ) and (max-width: 633px ) {
 
 	#binder #wsu-signature {
 		background-size: auto 25px;
+	}
+}
+
+@media screen and (max-width: 791px) {
+
+	#binder.fluid #spine #wsu-actions section {
+		width: 100%;
 	}
 }
 
