@@ -517,6 +517,7 @@
 @media (max-width: 1252px) {
 
 	.site-search {
+		padding-right: 2rem;
 		right: 0;
 	}
 
@@ -542,11 +543,6 @@
 }
 
 @media (max-width: 1250px) {
-
-	.site-search ul {
-		padding-left: 2rem;
-		padding-right: 2rem;
-	}
 
 	#jacket .global-bar a.global-home {
 		padding-right: 2rem;
