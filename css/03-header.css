@@ -604,6 +604,10 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+
+	#binder #spine #wsu-actions section {
+		width: 100%;
+	}
 }
 
 @media (min-width: 530px ) and (max-width: 633px ) {
