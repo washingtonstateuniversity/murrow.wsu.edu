@@ -331,3 +331,47 @@ function murrow_get_main_header() {
 	}
 	return $main_header;
 }
+
+add_action( 'wp_footer', 'murrow_tracking_pixel' );
+
+/**
+ * Add tracking script(s) to the Murrow site.
+ *
+ * @since 0.6.9
+ */
+function murrow_tracking_pixel() {
+	if ( 'murrow.wsu.edu' === get_site()->domain && '/' === get_site()->path && is_page( 'learn-more' ) ) {
+
+		/**
+		 * Tracking script provided by AdRoll for use on murrow.wsu.edu/learn-more/
+		 */
+		?>
+		<!--
+		* Marketing script for murrow.wsu.edu/learn-more/
+		*
+		* WSU contact: Corrie Wilder - corrie.wilder@wsu.edu
+		* Script provider: AdRoll https://www.adroll.com/about/privacy
+		* Campaign expiration: TBD
+		-->
+		<script type="text/javascript">
+			adroll_adv_id = "OYAYJRVMBVGRZAXYJ6G6G5";
+			adroll_pix_id = "WVGH62TJ4REALLAVY7WGYK";
+			(function () {
+				var _onload = function(){
+					if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+					if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+					var scr = document.createElement("script");
+					var host = "https://s.adroll.com";
+					scr.setAttribute('async', 'true');
+					scr.type = "text/javascript";
+					scr.src = host + "/j/roundtrip.js";
+					((document.getElementsByTagName('head') || [null])[0] ||
+						document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+				};
+				if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+				else {window.attachEvent('onload', _onload)}
+			}());
+		</script>
+		<?php
+	}
+}
