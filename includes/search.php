@@ -139,6 +139,10 @@ function get_elastic_response( $var ) {
  * @return array
  */
 function filter_post_types( $post_types ) {
+	if ( ! class_exists( 'WSUWP_People_Directory' ) ) {
+		return $post_types;
+	}
+
 	if ( ! in_array( 'wsuwp_people_profile', $post_types, true ) ) {
 		$post_types[] = 'wsuwp_people_profile';
 	}

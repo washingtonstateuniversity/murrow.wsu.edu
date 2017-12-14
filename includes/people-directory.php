@@ -32,6 +32,10 @@ function rewrite_arguments( $rewrite ) {
  * @return array
  */
 function search_data( $data, $post ) {
+	if ( ! class_exists( 'WSUWP_People_Directory' ) ) {
+		return $data;
+	}
+
 	$nid = get_post_meta( $post->ID, '_wsuwp_profile_ad_nid', true );
 	$person = \WSUWP_People_Post_Type::get_rest_data( $nid );
 	$person = \WSUWP_Person_Display::get_data( $person );
