@@ -14,6 +14,10 @@ add_action( 'bcn_after_fill', 'WSU\Murrow\Breadcrumb\remove_current_item' );
  * @param \bcn_breadcrumb_trail $trail The object containing the breadcrumb trail.
  */
 function remove_current_item( $trail ) {
+	if ( ! is_object( $trail ) ) {
+		return;
+	}
+
 	$types = $trail->breadcrumbs[0]->get_types();
 
 	if ( is_array( $types ) && in_array( 'current-item', $types, true ) ) {
