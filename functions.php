@@ -1,15 +1,15 @@
 <?php
 
-include_once __DIR__ . '/includes/search.php';
-include_once __DIR__ . '/includes/university-center-objects.php';
-include_once __DIR__ . '/includes/sub-headline.php';
-include_once __DIR__ . '/includes/feature-video.php';
-include_once __DIR__ . '/includes/people-directory.php';
-include_once __DIR__ . '/includes/content-syndicate.php';
-include_once __DIR__ . '/includes/media-library.php';
-include_once __DIR__ . '/includes/breadcrumb.php';
-include_once __DIR__ . '/includes/editor.php';
-include_once __DIR__ . '/includes/featured-stories.php';
+require_once __DIR__ . '/includes/search.php';
+require_once __DIR__ . '/includes/university-center-objects.php';
+require_once __DIR__ . '/includes/sub-headline.php';
+require_once __DIR__ . '/includes/feature-video.php';
+require_once __DIR__ . '/includes/people-directory.php';
+require_once __DIR__ . '/includes/content-syndicate.php';
+require_once __DIR__ . '/includes/media-library.php';
+require_once __DIR__ . '/includes/breadcrumb.php';
+require_once __DIR__ . '/includes/editor.php';
+require_once __DIR__ . '/includes/featured-stories.php';
 
 add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 function murrow_theme_version() {
