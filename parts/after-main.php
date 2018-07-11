@@ -53,7 +53,12 @@ $murrow_footer_menu_args = array(
 	</div>
 	<div class="footer-bottom-wrap">
 		<address class="footer-contact-info">
-			<span class="dept-name address-item">Edward R. Murrow College of Communication</span><span class="street-address address-item">Washington State University, PO Box 642520, Pullman, WA 99164-2520</span>
+			<span class="dept-name address-item"><?php echo esc_attr( spine_get_option( 'contact_department' ) ); ?></span>
+			<span class="street-address address-item"><?php
+				echo esc_attr( spine_get_option( 'contact_streetAddress' ) ) . ', ';
+				echo esc_attr( spine_get_option( 'contact_addressLocality' ) ) . ' ';
+				echo esc_attr( spine_get_option( 'contact_postalCode' ) );
+			?></span>
 		</address>
 		<nav class="global-links">
 			<ul>
