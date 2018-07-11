@@ -158,7 +158,6 @@ footer.site-footer {
 /* Fallback for CSS Grid */
 .page .hentry,
 .single-post .article-header {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
@@ -169,9 +168,8 @@ footer.site-footer {
 .featured-image-wrapper,
 .page.has-featured-image .hentry .featured-image-wrapper + section,
 .single-post hgroup {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 100%;
-	        flex: 1 100%;
+	-ms-flex: 1 100%;
+	    flex: 1 100%;
 }
 
 .single-post .article-header > * {
@@ -179,24 +177,20 @@ footer.site-footer {
 }
 
 .page.has-featured-image .hentry .featured-image-wrapper + section {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
-	-webkit-box-ordinal-group: 0;
-	    -ms-flex-order: -1;
-	        order: -1;
+	-ms-flex: 1;
+	    flex: 1;
+	-ms-flex-order: -1;
+	    order: -1;
 }
 
 .single-post hgroup {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
+	-ms-flex: 1;
+	    flex: 1;
 }
 
 .featured-image-wrapper {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
+	-ms-flex: 1;
+	    flex: 1;
 	margin-left: 2rem;
 }
 
@@ -430,13 +424,10 @@ section.pager {
 
 .home main .hentry section:first-child .column.one .video-wrap {
 	background-color: #777;
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	    flex-direction: column;
 	padding: 2rem;
 }
 
@@ -461,12 +452,10 @@ section.pager {
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	    align-items: center;
 	margin: 0;
 	padding: 2rem;
 	height: 100%;
@@ -512,15 +501,13 @@ section.pager {
 
 /* Search results page search form */
 .search-results-header .search-form {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
 .search-results-header .search-form label {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 0 auto;
-	        flex: 1 0 auto;
+	-ms-flex: 1 0 auto;
+	    flex: 1 0 auto;
 }
 
 .search-results-header .search-form .search-field,
@@ -981,13 +968,11 @@ article footer a:hover {
 	}
 
 	.site-search ul {
-		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		font-size: .9em;
-		-webkit-box-pack: end;
-		    -ms-flex-pack: end;
-		        justify-content: flex-end;
+		-ms-flex-pack: end;
+		    justify-content: flex-end;
 		list-style: none;
 		padding: 0;
 		margin-top: 2.5em;
@@ -1112,7 +1097,6 @@ article footer a:hover {
 	#spine nav.spine-sitenav > ul > li > ul {
 		position: absolute;
 		width: 100%;
-		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		background: #333;
@@ -1173,15 +1157,13 @@ article footer a:hover {
 	}
 
 	#spine nav.spine-sitenav > ul > li > ul {
-		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 	}
 
 	#spine nav > ul > li > ul > li {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1;
-		        flex: 1;
+		-ms-flex: 1;
+		    flex: 1;
 	}
 
 	#jacket #spine nav > ul > li > ul > li > a,
@@ -1354,7 +1336,6 @@ article footer a:hover {
 
 	/* Navigation for site header */
 	#spine nav.spine-sitenav > ul {
-		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
@@ -1447,15 +1428,13 @@ article footer a:hover {
 	}
 
 	.spine-animating.spine-move-right #glue {
-		-webkit-transform: translate(100vw);
-		    -ms-transform: translate(100vw);
-		        transform: translate(100vw);
+		-ms-transform: translate(100vw);
+		    transform: translate(100vw);
 	}
 
 	.spine-animating.spine-move-left #glue {
-		-webkit-transform: translate(-100vw);
-		    -ms-transform: translate(-100vw);
-		        transform: translate(-100vw);
+		-ms-transform: translate(-100vw);
+		    transform: translate(-100vw);
 	}
 
 	.spine-mobile #spine footer {
@@ -1494,7 +1473,6 @@ article footer a:hover {
 /* CSS Grid fallback */
 .content-syndicate-wrapper,
 .wsuwp-people-wrapper {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
@@ -1503,9 +1481,8 @@ article footer a:hover {
 
 .content-syndicate-item,
 .wsuwp-person-container {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
+	-ms-flex: 1;
+	    flex: 1;
 	min-width: 300px;
 }
 
@@ -1527,13 +1504,10 @@ article footer a:hover {
 .content-syndicate-item,
 .wsuwp-person-container,
 .archive article {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	    flex-direction: column;
 	-ms-flex-line-pack: start;
 	    align-content: flex-start;
 	padding: 1rem;
@@ -1787,13 +1761,10 @@ figcaption {
 }
 
 .two .wsu-person.has-photo .card {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	    flex-direction: column;
 }
 
 .two .wsu-person figure.photo img {
@@ -1802,9 +1773,8 @@ figcaption {
 }
 
 .two .wsu-person figure.photo {
-	-webkit-box-ordinal-group: 0;
-	    -ms-flex-order: -1;
-	        order: -1;
+	-ms-flex-order: -1;
+	    order: -1;
 }
 
 .two .wsu-person .email,
@@ -1820,7 +1790,6 @@ figcaption {
 }
 
 .wsuwp_people_profile .article-header {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	max-width: calc(.67 * 1188px + 4rem);
@@ -1833,9 +1802,8 @@ figcaption {
 
 .wsuwp_people_profile .photo {
 	margin-right: 2rem;
-	-webkit-box-flex: 0;
-	    -ms-flex: 0 0 198px;
-	        flex: 0 0 198px;
+	-ms-flex: 0 0 198px;
+	    flex: 0 0 198px;
 }
 
 .wsuwp_people_profile .article-title,
@@ -1919,7 +1887,6 @@ figcaption {
 	box-sizing: border-box;
 	color: rgba(255, 255, 255, .7);
 	font-family: "Open Sans", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
@@ -1938,15 +1905,13 @@ figcaption {
 }
 
 .general-contact {
-	-webkit-box-ordinal-group: 2;
-	    -ms-flex-order: 1;
-	        order: 1;
+	-ms-flex-order: 1;
+	    order: 1;
 }
 
 .footer-nav {
-	-webkit-box-ordinal-group: 3;
-	    -ms-flex-order: 2;
-	        order: 2;
+	-ms-flex-order: 2;
+	    order: 2;
 }
 
 .general-contact,
@@ -1983,9 +1948,8 @@ figcaption {
 .social-wrap {
 	margin-left: auto;
 	text-align: right;
-	-webkit-box-ordinal-group: 4;
-	    -ms-flex-order: 3;
-	        order: 3;
+	-ms-flex-order: 3;
+	    order: 3;
 }
 
 .social-wrap header {
@@ -2072,7 +2036,6 @@ a.social-linkedin {
 
 .footer-bottom-wrap {
 	border-top: solid 1px rgba(255, 255, 255, .2);
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
@@ -2080,9 +2043,8 @@ a.social-linkedin {
 	font-size: .7rem;
 	padding-top: .75rem;
 	width: 100%;
-	-webkit-box-ordinal-group: 5;
-	    -ms-flex-order: 4;
-	        order: 4;
+	-ms-flex-order: 4;
+	    order: 4;
 }
 
 .footer-contact-info span {
@@ -2113,17 +2075,15 @@ a.social-linkedin {
 
 	.social-wrap {
 		width: 100%;
-		-webkit-box-ordinal-group: 2;
-		    -ms-flex-order: 1;
-		        order: 1;
+		-ms-flex-order: 1;
+		    order: 1;
 	}
 
 	.general-contact {
 		padding-left: 0;
 		padding-top: 2rem;
-		-webkit-box-ordinal-group: 3;
-		    -ms-flex-order: 2;
-		        order: 2;
+		-ms-flex-order: 2;
+		    order: 2;
 	}
 
 	.site-footer .wsu-signature {
@@ -2132,9 +2092,8 @@ a.social-linkedin {
 
 	.site-footer .wsu-signature-mobile {
 		display: block;
-		-webkit-box-ordinal-group: 4;
-		    -ms-flex-order: 3;
-		        order: 3;
+		-ms-flex-order: 3;
+		    order: 3;
 		width: 100%;
 		text-align: center;
 		margin-bottom: 1rem;
@@ -2146,12 +2105,10 @@ a.social-linkedin {
 }
 
 .wsu-person {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: end;
-	    -ms-flex-pack: end;
-	        justify-content: flex-end;
+	-ms-flex-pack: end;
+	    justify-content: flex-end;
 	margin-bottom: 6rem;
 	padding: 1rem;
 	transition: background .3s ease;
@@ -2198,9 +2155,8 @@ a.social-linkedin {
 	left: 0;
 	position: absolute;
 	top: 50%;
-	-webkit-transform: translateY(-50%);
-	    -ms-transform: translateY(-50%);
-	        transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	    transform: translateY(-50%);
 }
 
 .wsu-person-info .title {
@@ -2283,7 +2239,6 @@ a.social-linkedin {
 
 /* Directory page filters. */
 .page-template-people .wsu-people-filters {
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	margin-bottom: 4rem;
@@ -2312,13 +2267,11 @@ a.social-linkedin {
 }
 
 .wsu-people-filters .search {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 0 auto;
-	        flex: 1 0 auto;
+	-ms-flex: 1 0 auto;
+	    flex: 1 0 auto;
 	margin-left: 4rem;
-	-webkit-box-ordinal-group: 2;
-	    -ms-flex-order: 1;
-	        order: 1;
+	-ms-flex-order: 1;
+	    order: 1;
 }
 
 .wsu-people-filters .search input {
@@ -2467,10 +2420,8 @@ a.social-linkedin {
 @media only screen and (max-width: 693px) {
 
 	.page-template-people .wsu-people-filters {
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
+		-ms-flex-direction: column;
+		    flex-direction: column;
 	}
 
 	.page-template-people .wsu-people-filter {
