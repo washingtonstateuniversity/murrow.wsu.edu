@@ -31,6 +31,7 @@ add_filter( 'bcn_breadcrumb_url', 'murrow_modify_breadcrumb_url', 10, 3 );
 add_filter( 'nav_menu_item_id', 'murrow_nav_menu_id', 20 );
 add_action( 'after_setup_theme', 'murrow_nav_menu_register' );
 add_action( 'wp_footer', 'murrow_tracking_pixel' );
+add_action( 'widgets_init', 'murrow_widgets' );
 
 /**
  * Provides a theme version for use in cache busting.
@@ -388,3 +389,17 @@ function murrow_tracking_pixel() {
 	}
 }
 
+/**
+ * Registers a custom sidebar.
+ */
+function murrow_widgets() {
+	register_sidebar( array(
+		'name' => 'Footer Contact Information',
+		'id' => 'murrow-footer-contact',
+		'description' => 'Displays the "Contact Us" area in the site footer',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+}
