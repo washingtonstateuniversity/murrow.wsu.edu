@@ -8,9 +8,11 @@
  */
 ?>
 
-<div class="introductory-text">
-	<?php the_excerpt(); ?>
-</div>
+<?php if ( has_excerpt() ) { ?>
+	<div class="introductory-text">
+		<?php the_excerpt(); ?>
+	</div>
+<?php } ?>
 
 <div class="<?php echo esc_attr( $directory_data['wrapper_classes'] ); ?>">
 
