@@ -5,7 +5,7 @@
  Author:      WSU University Communications
  Author URI:  https://web.wsu.edu
  Template:    spine
- Version:     0.6.13
+ Version:     0.6.14
 */
 
 html {
@@ -2010,7 +2010,7 @@ a.social-linkedin {
 
 .wsu-signature,
 .wsu-signature-mobile {
-	margin-top: 3rem;
+	margin: 3rem 0;
 }
 
 .wsu-signature-mobile a:hover,
@@ -2202,7 +2202,8 @@ a.social-linkedin {
 }
 
 .page-template-people .article-header,
-.wsu-people-filters {
+.wsu-people-filters,
+.page-template-people .introductory-text {
 	padding: 0 2rem;
 }
 
@@ -2212,6 +2213,12 @@ a.social-linkedin {
 
 .page-template-people .article-header * {
 	color: #a60f2d;
+}
+
+.page-template-people .introductory-text {
+	grid-column: 1 / 4;
+	margin-bottom: 3rem;
+	width: 67%;
 }
 
 .page-template-people .wsu-people-wrapper {

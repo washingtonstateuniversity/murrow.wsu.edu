@@ -11,11 +11,6 @@ require_once __DIR__ . '/includes/breadcrumb.php';
 require_once __DIR__ . '/includes/editor.php';
 require_once __DIR__ . '/includes/featured-stories.php';
 
-add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
-function murrow_theme_version() {
-	return '0.6.13';
-}
-
 // Disable background image selection for posts and pages.
 add_filter( 'spine_post_supports_background_image', '__return_false' );
 add_filter( 'spine_page_supports_background_image', '__return_false' );
@@ -24,22 +19,48 @@ add_filter( 'spine_page_supports_background_image', '__return_false' );
 add_filter( 'spine_post_supports_thumbnail_image', '__return_false' );
 add_filter( 'spine_page_supports_thumbnail_image', '__return_false' );
 
+add_filter( 'spine_child_theme_version', 'murrow_theme_version' );
 add_action( 'init', 'murrow_remove_spine_wp_enqueue_scripts' );
+add_filter( 'spine_get_campus_home_url', 'murrow_spine_campus_home_url' );
+add_filter( 'spine_get_campus_data', 'murrow_spine_campus_data' );
+add_action( 'wp_enqueue_scripts', 'murrow_spine_wp_enqueue_scripts', 20 );
+add_filter( 'bu_filter_list_section_defaults', 'murrow_bu_navigation_sub_menu_class' );
+add_filter( 'nav_menu_link_attributes', 'murrow_nav_menu_link_attributes', 20, 3 );
+add_filter( 'nav_menu_css_class', 'murrow_nav_menu_css_class', 20, 3 );
+add_filter( 'bcn_breadcrumb_url', 'murrow_modify_breadcrumb_url', 10, 3 );
+add_filter( 'nav_menu_item_id', 'murrow_nav_menu_id', 20 );
+add_action( 'after_setup_theme', 'murrow_nav_menu_register' );
+add_action( 'wp_footer', 'murrow_tracking_pixel' );
+add_action( 'widgets_init', 'murrow_widgets' );
+
+/**
+ * Provides a theme version for use in cache busting.
+ */
+function murrow_theme_version() {
+	return '0.6.14';
+}
+
+/**
+ * Dequeues the default Spine assets required for front end pageviews.
+ */
 function murrow_remove_spine_wp_enqueue_scripts() {
 	remove_action( 'wp_enqueue_scripts', 'spine_wp_enqueue_scripts', 20 );
 }
 
-add_filter( 'spine_get_campus_home_url', 'murrow_spine_campus_home_url' );
+/**
+ * Filters the Spine logo link url.
+ */
 function murrow_spine_campus_home_url() {
 	return 'https://murrow.wsu.edu';
 }
 
-add_filter( 'spine_get_campus_data', 'murrow_spine_campus_data' );
+/**
+ * Filters the Spine logo link text.
+ */
 function murrow_spine_campus_data() {
 	return 'Edward R. Murrow College of Communication';
 }
 
-add_action( 'wp_enqueue_scripts', 'murrow_spine_wp_enqueue_scripts', 20 );
 /**
  * Enqueue scripts and styles required for front end pageviews.
  */
@@ -161,7 +182,6 @@ function murrow_spine_wp_enqueue_scripts() {
 	wp_enqueue_script( 'wsu-spine-theme-js', get_template_directory_uri() . '/js/spine-theme.js', array( 'jquery' ), spine_get_script_version(), true );
 }
 
-add_filter( 'bu_filter_list_section_defaults', 'murrow_bu_navigation_sub_menu_class' );
 /**
  * Add a sub-menu class to child menus in the main navigation.
  *
@@ -177,7 +197,6 @@ function murrow_bu_navigation_sub_menu_class( $atts ) {
 	return $atts;
 }
 
-add_filter( 'nav_menu_link_attributes', 'murrow_nav_menu_link_attributes', 20, 3 );
 /**
  * Alters the anchor HREF on section label pages to output as # when building
  * a site navigation.
@@ -201,7 +220,6 @@ function murrow_nav_menu_link_attributes( $atts, $item, $args ) {
 	return $atts;
 }
 
-add_filter( 'nav_menu_css_class', 'murrow_nav_menu_css_class', 20, 3 );
 /**
  * Assign a class of `.non-anchor` to any menu items that are custom links
  * with an href of #.
@@ -228,7 +246,6 @@ function murrow_nav_menu_css_class( $classes, $item, $args ) {
 	return $classes;
 }
 
-add_filter( 'bcn_breadcrumb_url', 'murrow_modify_breadcrumb_url', 10, 3 );
 /**
  * Removes the URL from pages that are assigned the section label template.
  *
@@ -252,7 +269,6 @@ function murrow_modify_breadcrumb_url( $url, $type, $id ) {
 	return $url;
 }
 
-add_filter( 'nav_menu_item_id', 'murrow_nav_menu_id', 20 );
 /**
  * Strips menu item IDs as navigation is built.
  *
@@ -264,7 +280,6 @@ function murrow_nav_menu_id( $id ) {
 	return false;
 }
 
-add_action( 'after_setup_theme', 'murrow_nav_menu_register' );
 /**
  * Register additional menus used by the theme.
  */
@@ -332,8 +347,6 @@ function murrow_get_main_header() {
 	return $main_header;
 }
 
-add_action( 'wp_footer', 'murrow_tracking_pixel' );
-
 /**
  * Add tracking script(s) to the Murrow site.
  *
@@ -374,4 +387,19 @@ function murrow_tracking_pixel() {
 		</script>
 		<?php
 	}
+}
+
+/**
+ * Registers a custom sidebar.
+ */
+function murrow_widgets() {
+	register_sidebar( array(
+		'name' => 'Footer Contact Information',
+		'id' => 'murrow-footer-contact',
+		'description' => 'Displays the "Contact Us" area in the site footer',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
 }
