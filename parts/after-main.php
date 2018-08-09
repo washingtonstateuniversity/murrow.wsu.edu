@@ -11,19 +11,11 @@ $murrow_footer_menu_args = array(
 ?>
 <footer class="site-footer single">
 	<div class="general-contact">
-		<header>
-			Contact us
-		</header>
-		<p class="contact-section">
-			<span class="contact-section-head">Student services:</span>
-			<span class="contact-section-info">(509) 335-7333<br>
-							<a href="mailto:communication@wsu.edu">communication@wsu.edu</a></span>
-		</p>
-		<p class="contact-section">
-			<span class="contact-section-head">Graduate programs:</span>
-			<span class="contact-section-info">(509) 335-5608<br>
-							<a href="mailto:christine.curtis@wsu.edu">christine.curtis@wsu.edu</a></span>
-		</p>
+		<?php
+		if ( is_active_sidebar( 'murrow-footer-contact' ) ) {
+			dynamic_sidebar( 'murrow-footer-contact' );
+		}
+		?>
 	</div>
 	<?php if ( has_nav_menu( 'site-footer-menu' ) ) : ?>
 	<nav class="footer-nav">
