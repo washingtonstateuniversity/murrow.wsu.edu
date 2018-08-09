@@ -145,7 +145,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-stylelint" );
 
 	// Default task(s).
-	grunt.registerTask( "default", [ "jscs", "jshint", "stylelint", "concat", "postcss", "clean", "uglify" ] );
+	grunt.registerTask( "default", [ "jscs", "jshint", "stylelint", "concat", "postcss", "clean", "uglify", "phpcs" ] );
 
 	grunt.registerTask( "serve", [ "connect", "watch" ] );
 };
