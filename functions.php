@@ -37,7 +37,7 @@ add_action( 'widgets_init', 'murrow_widgets' );
  * Provides a theme version for use in cache busting.
  */
 function murrow_theme_version() {
-	return '0.6.13';
+	return '0.6.14';
 }
 
 /**
