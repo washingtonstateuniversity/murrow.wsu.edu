@@ -531,6 +531,34 @@ section.pager {
 	border-color: #ca1237;
 }
 
+.gsc-control-cse {
+	border: none !important;
+	margin: 0 1rem;
+}
+
+.gs-title {
+	text-decoration: none !important;
+}
+
+a.gs-title {
+	color: #a60f2d !important;
+	text-decoration: none !important;
+}
+
+.gs-visibleUrl {
+	color: #333 !important;
+	font-size: 0.7rem;
+}
+
+.gs-web-image-box {
+    margin-right: 4px;
+}
+
+.gs-snippet {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+}
+
 @media (max-width: 693px) {
 
 	.page .hentry,
