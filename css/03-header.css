@@ -198,7 +198,7 @@
 	#binder #wsu-signature {
 		background-image: url(./images/murrow-logo.svg);
 		background-position: left;
-		background-size: 297px auto;
+		background-size: auto auto;
 		width: 297px;
 		height: 57px;
 		text-indent: 99163px;
